@@ -1,6 +1,42 @@
 /* my css */
 
-#header-top .th-news-logo{
+.fab {
+	font-size: 25px;
+	 text-align: center; 
+	 text-decoration: none; 
+	 display: inline-block;
+	 /* border: 1px solid black; */
+  }
+  
+  .fab:hover {
+	  opacity: 0.7;
+  }
+  
+  .fa-facebook {
+	background: white;
+	color: rgb(0, 83, 238);
+  }
+
+  .fa-youtube{
+	  background: white;
+	  color: red;
+  }
+
+  .icon-container{
+	  position: relative;
+  }
+
+  .social-icon{
+		position: absolute;
+  		top: 50%;
+  		transform: translateY(-50%);
+  }
+
+  #icon-container-facebook{
+	  margin-right: 50px;
+  }
+
+/* #header-top .th-news-logo{
 	width: 132px;
 	line-height: 46px;
 }
@@ -18,5 +54,5 @@
 #header-top .top-header{
 	display: flex;
 	width: 100%;
-}
+} */
 /*  */

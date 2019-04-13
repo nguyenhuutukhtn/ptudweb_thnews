@@ -8,12 +8,102 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/index_style.css">
 
+    <title>Kênh tin tức TH-News</title>
+</head>
+
+<body>
+    <header>
+        <div id="header-top">
+            <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
+                <div class="container-fluid">
+                    <a href="index.html" class="nav-brand"><img src="./imgs/logo.png" alt="TH-News logo"></a>
+
+                    <ul class="nav navbar-nav navbar-right ml-auto">
+                        <li>
+                            <div class="icon-container" id="icon-container-facebook"></div>
+                            <ul class="nav navbar-nav social-icon">
+                                <li><a href="http://youtube.com/"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="http://facebook.com/"><i class="fab fa-facebook"></i></a></li>
+                                
+
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="nav navbar-nav">
+                                <li><button type="button" class="btn btn-default">
+                                        <span class="btn-label"><i class="fas fa-user-plus"></i></span>
+                                        Đăng ký
+                                    </button></li>
+                                <li><button type="button" class="btn btn-default">
+                                        <span class="btn-label"><i class="fas fa-sign-in-alt"></i></span>
+                                        Đăng nhập
+                                    </button></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+        </div>
+        </nav>
+        <!-- <div class="container-fluid">
+                <div class="row">
+                        <div class="col-sm-3">
+                                <a href="index.html" class="navbar-brand"><img src="./imgs/logo.png" alt="th-news logo"></a>
+                            </div>
+                            <div class="col-sm-3">
+                                <form class='navbar-form ml-auto'>
+                                    <div class='input-group'>
+                                        <input class='form-control' type='text' name='search' placeholder='Tìm kiếm' />
+                                        <span class="input-group-btn">
+                                            <button type='submit' class='btn btn-default'>
+                                                <span ><i class="fas fa-search"></i></span>
+                                            </button>
+                                        </span>
+            
+                                    </div>
+                                </form>
+                            </div>
+                </div>
+               
+
+            </div> -->
+
+        </div>
+        <!-- navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light navbar-fixed-top">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand"><img src="./imgs/logo.png" alt="th-news logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarReponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarReponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Trang chủ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- js  -->
     <!-- font awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/solid.js"
         integrity="sha384-4KkAk2UXMS9Xl3FoAAN43VJxRZ/emjElCz60xUTegPOZlbPLZGylvor2v7wQ0JNb"
@@ -27,32 +117,17 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/fontawesome.js"
         integrity="sha384-l7FyBM+wFIWpfmy8RYkWgEu/Me6Hrz98ijLu4nP3PkGbTtTCvtHB5ktI8hLEgEG3"
         crossorigin="anonymous"></script>
-    <!-- css -->
-    <link rel="stylesheet" href="./css/index_style.css">
 
-    <title>Kênh tin tức TH-News</title>
-</head>
-
-<body>
-    <header>
-        <div class="header-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </header>
-    <main>
-
-    </main>
-
-    <footer>
-        
-    </footer>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
