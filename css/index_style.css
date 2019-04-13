@@ -26,15 +26,30 @@
 	  position: relative;
   }
 
-  .social-icon{
-		position: absolute;
+  .social-icon-list{
+		position: relative;
   		top: 50%;
-  		transform: translateY(-50%);
+		  transform: translateY(-50%);
+		  /* border: 1px solid black; */
+		  margin-right: 50px;
   }
 
-  #icon-container-facebook{
-	  margin-right: 50px;
+  .social-icon{
+	  /* border: 1px solid black; */
+	  margin-left: 20px;
   }
+
+  #header-top{
+	  background: rgb(243, 243, 243);
+  }
+
+  #header-top img{
+	  height: 40px;;
+  }
+
+  /* #icon-container-facebook{
+	  margin-right: 50px;
+  } */
 
 /* #header-top .th-news-logo{
 	width: 132px;
