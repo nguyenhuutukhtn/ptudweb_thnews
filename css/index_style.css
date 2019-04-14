@@ -1,5 +1,6 @@
 /* my css */
 
+
 .fab {
 	font-size: 25px;
 	 text-align: center; 
@@ -13,12 +14,12 @@
   }
   
   .fa-facebook {
-	background: white;
+	/* background: white; */
 	color: rgb(0, 83, 238);
   }
 
   .fa-youtube{
-	  background: white;
+	  /* background: white; */
 	  color: red;
   }
 
@@ -47,6 +48,10 @@
 	  height: 40px;;
   }
 
+  #header-top-content{
+	  width: 80%;
+	  margin: auto;
+  }
   /* #icon-container-facebook{
 	  margin-right: 50px;
   } */

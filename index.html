@@ -22,33 +22,54 @@
 <body>
     <header>
         <div id="header-top">
-            <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light">
-                <div class="container-fluid">
-                    <a href="index.html" class="nav-brand"><img src="./imgs/logo.png" alt="TH-News logo"></a>
-                    <div></div>
-                    <ul class="nav navbar-nav navbar-right ml-auto">
-                        <li>
-                            <!-- <div class="icon-container" id="icon-container-facebook"></div> -->
-                            <ul class="nav navbar-nav social-icon-list">
-                                <!-- <li class="social-icon"><a href="http://.com/"><i class="fab fa-youtube"></i></a></li> -->
-                                <li class="social-icon"><a href="http://youtube.com/"><i class="fab fa-youtube"></i></a></li>
-                                <li class="social-icon"><a href="http://facebook.com/"><i class="fab fa-facebook"></i></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="nav navbar-nav">
-                                <li><button type="button" class="btn btn-default">
-                                        <span class="btn-label"><i class="fas fa-user-plus"></i></span>
-                                        Đăng ký
-                                    </button></li>
-                                <li><button type="button" class="btn btn-default">
-                                        <span class="btn-label"><i class="fas fa-sign-in-alt"></i></span>
-                                        Đăng nhập
-                                    </button></li>
-                            </ul>
-                        </li>
-
-                    </ul>
+            <nav class="navbar navbar-expand-lg navbar-expand-md navbar-default">
+                <div class="container-fluid" id="header-top-content">
+                    <div class="navbar-header">
+                        <a href="index.html" class="nav-brand"><img src="./imgs/logo.png" alt="TH-News logo"></a>
+                    </div>
+                    <div class="nav navbar-nav navbar-right">
+                            <form action="" class="navbar-form">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Tìm kiếm" name="search">
+                                        <div class="input-group-btn">
+                                                <button class="btn btn-default" type="submit">
+                                                        <i class="fas fa-search"></i>
+                                                </button>
+                                              </div>
+                                    </div>
+                                </form>
+                                <ul class="nav navbar-nav">
+                                    <li>
+            
+                                        <ul class="nav navbar-nav social-icon-list">
+            
+                                            <li class="social-icon"><a href="http://youtube.com/"><i class="fab fa-youtube"></i></a>
+                                            </li>
+                                            <li class="social-icon"><a href="http://facebook.com/"><i
+                                                        class="fab fa-facebook"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                            data-target="#navbarReponsive">
+                                            <span class="navbar-toggler-icon"></span>
+            
+                                        </button>
+                                        <ul class="nav navbar-nav" id="navbarReponsive">
+                                            <li><button type="button" class="btn btn-default">
+                                                    <span class="btn-label"><i class="fas fa-user-plus"></i></span>
+                                                    Đăng ký
+                                                </button></li>
+                                            <li><button type="button" class="btn btn-default">
+                                                    <span class="btn-label"><i class="fas fa-sign-in-alt"></i></span>
+                                                    Đăng nhập
+                                                </button></li>
+                                        </ul>
+                                    </li>
+            
+                                </ul>
+                    </div>
+                    
                 </div>
         </div>
         </nav>
@@ -75,16 +96,22 @@
 
             </div> -->
 
-        </div>
+        <!-- </div> -->
         <!-- navigation bar -->
         <!-- <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light navbar-fixed-top">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand"><img src="./imgs/logo.png" alt="th-news logo"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarReponsive">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarReponsive1">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarReponsive">
+                <div class="collapse navbar-collapse" id="navbarReponsive1">
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Trang chủ</a>
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Trang chủ</a>
                         </li>
