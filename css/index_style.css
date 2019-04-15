@@ -52,6 +52,30 @@
 	  width: 80%;
 	  margin: auto;
   }
+
+  .nav-link{
+	  background: red;
+	  border-left: 0.5px solid rgb(194, 115, 115);
+  }
+
+  #navbarReponsive ul{
+	  display: table;
+  }
+
+  #navbarReponsive ul li {
+	  display: table-cell;
+  }
+
+  .navigation-bar{
+	  width: 80%;
+	  margin: auto;
+  }
+
+  .collapse{
+	  width: 100%;
+	  margin: auto;
+	  border: 1px solid black;
+  }
   /* #icon-container-facebook{
 	  margin-right: 50px;
   } */
