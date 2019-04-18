@@ -5,216 +5,326 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="Đồ án giữa kỳ ">
-	<meta name="author" content="Huỳnh Trung Tín-Lê Minh Trí-Nguyễn Hữu Tú">
-	<meta name="keyword" content="kinh doanh">
-	<!-- Shareable -->
 	<title>Trang biên tập</title>
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="../scripts/bootstrap/bootstrap.min.css">
-	<!-- IonIcons -->
-	<link rel="stylesheet" href="../scripts/ionicons/css/ionicons.min.css">
-	<!-- Toast -->
-	<link rel="stylesheet" href="../scripts/toast/jquery.toast.min.css">
-	<!-- OwlCarousel -->
-	<link rel="stylesheet" href="../scripts/owlcarousel/dist/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="../scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="../scripts/magnific-popup/dist/magnific-popup.css">
-	<link rel="stylesheet" href="../scripts/sweetalert/dist/sweetalert.css">
-	<!-- Custom style -->
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/skins/all.css">
-	<link rel="stylesheet" href="../css/demo.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+		integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+	<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		.cke {
+			visibility: hidden;
+		}
+	</style>
+	<script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/config.js?t=H8DA"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/skins/moono-lisa/editor_gecko.css?t=H8DA">
+	<script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/lang/en.js?t=H8DA"></script>
+	<script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/styles.js?t=H8DA"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/plugins/scayt/skins/moono-lisa/scayt.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/plugins/scayt/dialogs/dialog.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/plugins/tableselection/styles/tableselection.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/plugins/wsc/skins/moono-lisa/wsc.css">
 </head>
 
 <body>
-	<header>
-		<nav class="navbar navbar-expand-sm navbar-dark bg-light p-0">
-			<div class="container">
-				<a href="index.html" class="navbar-brand">Trang biên tập</a>
-				<button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse"></button>
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+		<div class="container">
+			<a href="index.html" class="navbar-brand">Trang biên tập</a>
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item px-2">
+						<a href="index.html" class="nav-link active">Dashboard</a>
+					</li>
+					<li class="nav-item px-2">
+						<a href="posts.html" class="nav-link">Bài viết</a>
+					</li>
+					<li class="nav-item px-2">
+						<a href="categories.html" class="nav-link">Danh mục</a>
+					</li>
+					<!-- <li class="nav-item px-2">
+						<a href="users.html" class="nav-link">Users</a>
+					</li> -->
+				</ul>
+
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown mr-3">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-user"> Welcome Tú</i>
+						</a>
+						<div class="dropdown-menu">
+							<a href="profile.html" class="dropdown-item">
+								<i class="fa fa-user-circle"> Profile</i>
+							</a>
+							<a href="settings.html" class="dropdown-item">
+								<i class="fa fa-gear"> Settings</i>
+							</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a href="login.html" class="nav-link">
+							<i class="fa fa-user-times"></i> Đăng xuất
+						</a>
+					</li>
+				</ul>
 			</div>
-		</nav>
-	</header>
-
-	<main>
-
-	</main>
-
-	<footer class="footer">
+		</div>
+	</nav>
+	<header id="main-header" class="py-2 bg-secondary text-white">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-6 col-xs-12">
-					<div class="block">
-						<h1 class="block-title">Kênh tin tức</h1>
-						<div class="block-body">
-							<figure class="foot-logo">
-								<img src="../images/logo.png" class="img-responsive" alt="Logo">
-							</figure>
-							<p class="brand-description">
-								TH-News là kênh tin tức được phát triển bởi nhóm đẹp trai -HCMUS
-							</p>
-							<a href="../page.html" class="btn btn-magz white">Giới thiệu <i
-									class="ion-ios-arrow-thin-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12">
-					<div class="block">
-						<h1 class="block-title">Tìm kiếm nhiều <div class="right"><a href="#">See All <i
-										class="ion-ios-arrow-thin-right"></i></a></div>
-						</h1>
-						<div class="block-body">
-							<ul class="tags">
-								<li><a href="#">Trâm Anh</a></li>
-								<li><a href="#">Chùa Ba Vàng</a></li>
-								<li><a href="#">Liverpool</a></li>
-								<li><a href="#">Link 4 phút</a></li>
-								<li><a href="#">Điểm thi</a></li>
-								<li><a href="#">Hố đen</a></li>
-								<li><a href="#">Giỗ tổ</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="line"></div>
-					<div class="block">
-						<h1 class="block-title">Tin tức qua email</h1>
-						<div class="block-body">
-							<p>Theo dõi để cập nhật tin mới qua email</p>
-							<form class="newsletter">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="ion-ios-email-outline"></i>
-									</div>
-									<input type="email" class="form-control email" placeholder="Nhập email">
-								</div>
-								<button class="btn btn-primary btn-block white">Theo dõi</button>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12">
-					<div class="block">
-						<h1 class="block-title">Tin mới</h1>
-						<div class="block-body">
-							<article class="article-mini">
-								<div class="inner">
-									<figure>
-										<a href="../single.html">
-											<img src="../images/news/ngu-dan-nghia-hiep.jpg" alt="Ngư dân nghĩa hiệp">
-										</a>
-									</figure>
-									<div class="padding">
-										<h1><a href="../single.html">Anh ngư dân nghĩa hiệp</a></h1>
-									</div>
-								</div>
-							</article>
-							<article class="article-mini">
-								<div class="inner">
-									<figure>
-										<a href="../single.html">
-											<img src="../images/news/song-theo-tu-nhien.jpg" alt="Sống theo tự nhiên">
-										</a>
-									</figure>
-									<div class="padding">
-										<h1><a href="../single.html">Về vườn để học sống thuận theo tự nhiên</a></h1>
-									</div>
-								</div>
-							</article>
-							<article class="article-mini">
-								<div class="inner">
-									<figure>
-										<a href="../single.html">
-											<img src="../images/news/kiatisuk.jpg" alt="Kiatisuk">
-										</a>
-									</figure>
-									<div class="padding">
-										<h1><a href="../single.html">Kiatisak bận rộn ra sao mà người Thái Lan không cầu
-												cứu? </a></h1>
-									</div>
-								</div>
-							</article>
-							<article class="article-mini">
-								<div class="inner">
-									<figure>
-										<a href="../single.html">
-											<img src="../images/news/nu-sinh-tu-tu.jpg" alt="Nu sinh tu tu">
-										</a>
-									</figure>
-									<div class="padding">
-										<h1><a href="../single.html">Nữ sinh nhảy cầu tự tử, hai nam sinh xuống cứu nhưng
-												bất thành </a></h1>
-									</div>
-								</div>
-							</article>
-							<a href="#" class="btn btn-magz white btn-block">Xem thêm <i
-									class="ion-ios-arrow-thin-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-12 col-sm-6">
-					<div class="block">
-						<h1 class="block-title">Follow</h1>
-						<div class="block-body">
-							<p>Theo dõi các trang mạng xã hội để cập nhật tin tức mới nhất</p>
-							<ul class="social trp">
-								<li>
-									<a href="#" class="facebook">
-										<svg>
-											<rect width="0" height="0" /></svg>
-										<i class="ion-social-facebook"></i>
-									</a>
-								</li>
-
-								<li>
-									<a href="#" class="youtube">
-										<svg>
-											<rect width="0" height="0" /></svg>
-										<i class="ion-social-youtube-outline"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="googleplus">
-										<svg>
-											<rect width="0" height="0" /></svg>
-										<i class="ion-social-googleplus"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="instagram">
-										<svg>
-											<rect width="0" height="0" /></svg>
-										<i class="ion-social-instagram-outline"></i>
-									</a>
-								</li>
-
-							</ul>
-						</div>
-					</div>
-					<div class="line"></div>
-					<div class="block">
-						<div class="block-body no-margin">
-							<ul class="footer-nav-horizontal">
-								<li><a href="../index.html">Trang chủ</a></li>
-								<li><a href="#">Tin tức</a></li>
-								<li><a href="../contact.html">Liên hệ</a></li>
-								<li><a href="../page.html">Giới thiệu</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="copyright">
-						COPYRIGHT &copy; BY LE MINH TRI-HUYNH TRUNG-TIN-NGUYEN HUU TU
-					</div>
+				<div class="col-md-6">
+					<h1><i class="fa fa-gear"></i> Dashboard</h1>
 				</div>
 			</div>
 		</div>
-	</footer>
+	</header>
+
+	<main>
+		<section id="action" class="py-4 mb-4 bg-light">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addPostModal">
+							<i class="fa fa-plus"></i> Viết bài mới
+						</a>
+					</div>
+					<div class="col-md-3">
+						<a href="#" class="btn btn-success btn-block" data-toggle="modal"
+							data-target="#addCategoryModal">
+							<i class="fa fa-plus"></i> Tạo danh mục
+						</a>
+					</div>
+					<!-- <div class="col-md-3">
+						<a href="#" class="btn btn-warning btn-block" data-toggle="modal" data-target="#addUserModal">
+							<i class="fa fa-plus"></i> Add User
+						</a>
+					</div> -->
+				</div>
+			</div>
+		</section>
+
+		<section id="posts">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<div class="card">
+							<div class="card-header">
+								<h4>Bài viết mới nhất</h4>
+							</div>
+							<table class="table table-striped">
+								<thead class="thead-inverse">
+									<tr>
+										<th>#</th>
+										<th>Tiêu đề</th>
+										<th>Danh mục</th>
+										<th>Ngày viết</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td scope="">1</td>
+										<td>Bê tông hóa Đà Lạt</td>
+										<td>Góc nhìn</td>
+										<td>16/04/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+									<tr>
+										<td scope="">2</td>
+										<td>Ajax - Nơi tôi luyện những cầu thủ can trường</td>
+										<td>Thể thao</td>
+										<td>17/04/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+									
+									<tr>
+										<td scope="">3</td>
+										<td>Súng nổ giữa quốc lộ khi nhóm giang hồ chặn đầu xe khách </td>
+										<td>Pháp luật</td>
+										<td>15/04/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+									<tr>
+										<td scope="">4</td>
+										<td>Luật sư: Phụ huynh mua điểm cho con có thể bị khởi tố đưa hối lộ </td>
+										<td>Tư vấn</td>
+										<td>18/04/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+									<tr>
+										<td scope="">5</td>
+										<td>Cái chết thảm chưa có lời giải của đôi vợ chồng </td>
+										<td>Hồ sơ phá án</td>
+										<td>15/4/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card text-center bg-primary text-white mb-3">
+							<div class="card-body">
+								<h3>Bài đã viết</h3>
+								<h1 class="display-4">
+									<i class="fa fa-pencil"></i> 6
+								</h1>
+								<a href="posts.html" class="btn btn-outline-light btn-sm">Xem</a>
+							</div>
+						</div>
+						<div class="card text-center bg-success text-white mb-3">
+							<div class="card-body">
+								<h3>Danh mục</h3>
+								<h1 class="display-4">
+									<i class="fa fa-folder-open-o"></i> 4
+								</h1>
+								<a href="categories.html" class="btn btn-outline-light btn-sm">Xem</a>
+							</div>
+						</div>
+
+						<!-- <div class="card text-center bg-warning text-white mb-3">
+							<div class="card-body">
+								<h3>Bài chờ duyệt</h3>
+								<h1 class="display-4">
+										<i class="far fa-newspaper"></i> 2
+								</h1>
+								<a href="users.html" class="btn btn-outline-light btn-sm">Xem</a>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="posts">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-9">
+							<div class="card">
+								<div class="card-header">
+									<h4>Bài viết đã duyệt</h4>
+								</div>
+								<table class="table table-striped">
+									<thead class="thead-inverse">
+										<tr>
+											<th>#</th>
+											<th>Tiêu đề</th>
+											<th>Danh mục</th>
+											<th>Ngày viết</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td scope="">1</td>
+											<td>Bê tông hóa Đà Lạt</td>
+											<td>Góc nhìn</td>
+											<td>16/04/2019</td>
+											<td><a href="details.html" class="btn btn-secondary">
+													<i class="fa fa-angle-double-right"></i> Chi tiết
+												</a></td>
+										</tr>
+										<tr>
+											<td scope="">2</td>
+											<td>Ajax - Nơi tôi luyện những cầu thủ can trường</td>
+											<td>Thể thao</td>
+											<td>17/04/2019</td>
+											<td><a href="details.html" class="btn btn-secondary">
+													<i class="fa fa-angle-double-right"></i> Chi tiết
+												</a></td>
+										</tr>
+										
+										<tr>
+											<td scope="">3</td>
+											<td>Súng nổ giữa quốc lộ khi nhóm giang hồ chặn đầu xe khách </td>
+											<td>Pháp luật</td>
+											<td>15/04/2019</td>
+											<td><a href="details.html" class="btn btn-secondary">
+													<i class="fa fa-angle-double-right"></i> Chi tiết
+												</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+
+			<section id="posts">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-9">
+								<div class="card">
+									<div class="card-header">
+										<h4>Bài viết chờ duyệt>
+									</div>
+									<table class="table table-striped">
+										<thead class="thead-inverse">
+											<tr>
+												<th>#</th>
+												<th>Tiêu đề</th>
+												<th>Danh mục</th>
+												<th>Ngày viết</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											
+											<tr>
+												<td scope="">4</td>
+												<td>Luật sư: Phụ huynh mua điểm cho con có thể bị khởi tố đưa hối lộ </td>
+												<td>Tư vấn</td>
+												<td>18/04/2019</td>
+												<td><a href="details.html" class="btn btn-secondary">
+														<i class="fa fa-angle-double-right"></i> Chi tiết
+													</a></td>
+											</tr>
+											<tr>
+												<td scope="">5</td>
+												<td>Cái chết thảm chưa có lời giải của đôi vợ chồng </td>
+												<td>Hồ sơ phá án</td>
+												<td>15/4/2019</td>
+												<td><a href="details.html" class="btn btn-secondary">
+														<i class="fa fa-angle-double-right"></i> Chi tiết
+													</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</section>
+
+
+
+	</main>
+
+	<footer></footer>
+	
 </body>
 
 </html>
