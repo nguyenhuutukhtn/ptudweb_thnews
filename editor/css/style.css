@@ -2715,7 +2715,6 @@ aside .article-mini h1 {
   .box .box-body {
     padding: 20px;
   }
-}
 
 
   .sidebar {
@@ -2726,7 +2725,6 @@ aside .article-mini h1 {
   article figure {
     height: 200px;
   }
-}
 footer.footer {
   background-color: #252e38;
   color: #848f9a;
@@ -3725,7 +3723,4 @@ blockquote {
   z-index: 2001;
 }
 
-/*# sourceMappingURL=style.css.map */
-/* #menu-list{
-  background:red;
-} */
+}
