@@ -4,63 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blogen Admin UI</title>
+  <title>Quản lý người dùng</title>
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
-    <div class="container">
-      <a href="index.html" class="navbar-brand">Blogen</a>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item px-2">
-            <a href="index.html" class="nav-link">Dashboard</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="posts.html" class="nav-link">Posts</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="categories.html" class="nav-link">Categories</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="users.html" class="nav-link active">Users</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown mr-3">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-user"> Welcome Mark</i>
-            </a>
-            <div class="dropdown-menu">
-              <a href="profile.html" class="dropdown-item">
-                <i class="fa fa-user-circle"> Profile</i>
-              </a>
-              <a href="settings.html" class="dropdown-item">
-                <i class="fa fa-gear"> Settings</i>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="login.html" class="nav-link">
-              <i class="fa fa-user-times"></i> Logout
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+        <div class="container">
+          <a href="index.html" class="navbar-brand">TH-News Admin</a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item px-2">
+                <a href="index.html" class="nav-link">Dashboard</a>
+              </li>
+              <li class="nav-item px-2">
+                <a href="posts.html" class="nav-link ">Tag</a>
+              </li>
+              <li class="nav-item px-2">
+                <a href="categories.html" class="nav-link">Chuyên mục</a>
+              </li>
+              <li class="nav-item px-2">
+                <a href="users.html" class="nav-link active">Người dùng</a>
+              </li>
+            </ul>
+    
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown mr-3">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-user"> Welcome Tú</i>
+                </a>
+                <div class="dropdown-menu">
+                  <a href="profile.html" class="dropdown-item">
+                    <i class="fa fa-user-circle"> Hồ sơ</i>
+                  </a>
+                  <a href="settings.html" class="dropdown-item">
+                    <i class="fa fa-gear"> Cài đặt</i>
+                  </a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="login.html" class="nav-link">
+                  <i class="fa fa-user-times"></i> Đăng xuất
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
   <header id="main-header" class="py-2 bg-warning text-white">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1><i class="fa fa-users"></i> Users</h1>
+          <h1><i class="fa fa-users"></i> Quản lý người dùng</h1>
         </div>
       </div>
     </div>
@@ -72,9 +72,9 @@
       <div class="row">
         <div class="col-md-6 ml-auto">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Tìm kiếm">
             <span class="input-group-btn">
-              <button class="btn btn-warning">Search</button>
+              <button class="btn btn-warning">Tìm kiếm</button>
             </span>
           </div>
         </div>
@@ -89,30 +89,68 @@
         <div class="col">
           <div class="card">
             <div class="card-header">
-              <h4>Latest Users</h4>
+              <h4>Đọc giả</h4>
             </div>
             <table class="table table-striped">
-              <thead class="thead-inverse">
-                <tr>
-                  <th>#</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>John Doe</td>
-                  <td>jdoe@gmail.com</td>
-                </tr>
-                <tr>
-                  <td scope="row">2</td>
-                  <td>Brad Traversy</td>
-                  <td>test@test.com</td>
-                </tr>
-              </tbody>
-            </table>
+                <thead class="thead-inverse">
+                  <tr>
+                    <th>#</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Ngày hết hạn</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope>1</td>
+                    <td>Tín Huỳnh</td>
+                    <td>abc@gmail.com</td>
+                    <td>Active</td>
+                    <td>November 5, 2019</td>
+                    <td>
+                        <a href="details.html" class="btn btn-secondary">
+                          <i class="fa fa-angle-double-right"></i> Chi tiết
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fa fa-plus-square-o"></i> Gia hạn
+                          </a>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td scope>2</td>
+                    <td>Tú dz</td>
+                    <td>tudz@gmail.com</td>
+                    <td>Unactive</td>
+                    <td>November 6, 2019</td>
+                    <td>
+                        <a href="details.html" class="btn btn-secondary">
+                          <i class="fa fa-angle-double-right"></i> Chi tiết
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fa fa-plus-square-o"></i> Gia hạn
+                          </a>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td scope>3</td>
+                    <td>LMTri</td>
+                    <td>tri@gmail.com</td>
+                    <td>Unactive</td>
+                    <td>November 9, 2019</td>
+                    <td>
+                        <a href="details.html" class="btn btn-secondary">
+                          <i class="fa fa-angle-double-right"></i> Chi tiết
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fa fa-plus-square-o"></i> Gia hạn
+                          </a>
+                      </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
 
             <nav class="ml-4">
               <ul class="pagination">
@@ -128,12 +166,170 @@
       </div>
     </div>
   </section>
+  <section id="posts">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                <h4>Phóng viên</h4>
+              </div>
+              <table class="table table-striped">
+                  <thead class="thead-inverse">
+                    <tr>
+                      <th>#</th>
+                      <th>Tên</th>
+                      <th>Email</th>
+                      <th>Chuyên mục</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope>1</td>
+                      <td>Tín Huỳnh</td>
+                      <td>abc@gmail.com</td>
+                      <td>Thể thao</td>
+                      <td>
+                          <a href="details.html" class="btn btn-secondary">
+                            <i class="fa fa-angle-double-right"></i> Chi tiết
+                          </a>
+                          <a href="#" class="btn btn-secondary">
+                              <i class="fa fa fa-trash-o"></i> Xóa
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td scope>2</td>
+                      <td>Tú dz</td>
+                      <td>tudz@gmail.com</td>
+                      <td>Phim</td>
+                      <td>
+                          <a href="details.html" class="btn btn-secondary">
+                            <i class="fa fa-angle-double-right"></i> Chi tiết
+                          </a>
+                          <a href="#" class="btn btn-secondary">
+                              <i class="fa fa fa-trash-o"></i> Xóa
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td scope>3</td>
+                      <td>LMTri</td>
+                      <td>tri@gmail.com</td>
+                      <td>Giáo dục</td>
+                      <td>
+                          <a href="details.html" class="btn btn-secondary">
+                            <i class="fa fa-angle-double-right"></i> Chi tiết
+                          </a>
+                          <a href="#" class="btn btn-secondary">
+                              <i class="fa fa fa-trash-o"></i> Xóa
+                            </a>
+                        </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+  
+              <nav class="ml-4">
+                <ul class="pagination">
+                  <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
+                  <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                  <li class="page-item"><a href="#" class="page-link">2</a></li>
+                  <li class="page-item"><a href="#" class="page-link">3</a></li>
+                  <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="posts">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Biên tập viên</h4>
+                </div>
+                <table class="table table-striped">
+                    <thead class="thead-inverse">
+                      <tr>
+                        <th>#</th>
+                        <th>Tên</th>
+                        <th>Email</th>
+                        <th>Chuyên mục quản lý</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope>1</td>
+                        <td>Tín Huỳnh</td>
+                        <td>abc@gmail.com</td>
+                        <td>Giáo duc</td>
+                        <td>
+                            <a href="details.html" class="btn btn-secondary">
+                              <i class="fa fa-angle-double-right"></i> Chi tiết
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i class="fa fa-plus-square-o"></i> Phân công
+                              </a>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td scope>2</td>
+                        <td>Tú dz</td>
+                        <td>tudz@gmail.com</td>
+                        <td>November 6, 2019</td>
+                        <td>
+                            <a href="details.html" class="btn btn-secondary">
+                              <i class="fa fa-angle-double-right"></i> Chi tiết
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i class="fa fa-plus-square-o"></i> Phân công
+                              </a>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td scope>3</td>
+                        <td>LMTri</td>
+                        <td>tri@gmail.com</td>
+                        <td>November 9, 2019</td>
+                        <td>
+                            <a href="details.html" class="btn btn-secondary">
+                              <i class="fa fa-angle-double-right"></i> Chi tiết
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i class="fa fa-plus-square-o"></i> Phân công
+                              </a>
+                          </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+    
+                <nav class="ml-4">
+                  <ul class="pagination">
+                    <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
   <footer id="main-footer" class="bg-dark text-white mt-5 p-5">
     <div class="container">
       <div class="row">
         <div class="col">
-          <p class="lead text-center">Copyright &copy; 2017 Blogen</p>
+            <p class="lead text-center">Copyright &copy; 2019 Huỳnh Trung Tín-Lê Minh Trí-Nguyễn Hữu Tú</p>
         </div>
       </div>
     </div>

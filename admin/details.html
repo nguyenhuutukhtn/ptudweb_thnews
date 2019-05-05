@@ -1,66 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blogen Admin UI</title>
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Details</title>
+  <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+	<!-- <link rel="stylesheet" href="../css/bootstrap.css"> -->
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="../scripts/bootstrap/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+		integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">	
+	<!-- IonIcons -->
+	<!-- <link rel="stylesheet" href="../scripts/ionicons/css/ionicons.min.css"> -->
+	<!-- Toast -->
+	<!-- <link rel="stylesheet" href="../scripts/toast/jquery.toast.min.css"> -->
+	<!-- OwlCarousel -->
+	<!-- <link rel="stylesheet" href="../scripts/owlcarousel/dist/assets/owl.carousel.min.css"> -->
+	<!-- <link rel="stylesheet" href="../scripts/owlcarousel/dist/assets/owl.theme.default.min.css"> -->
+	<!-- Magnific Popup -->
+	<!-- <link rel="stylesheet" href="../scripts/magnific-popup/dist/magnific-popup.css"> -->
+	<!-- <link rel="stylesheet" href="../scripts/sweetalert/dist/sweetalert.css"> -->
+	<!-- Custom style -->
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+	<!-- <link rel="stylesheet" href="../css/skins/all.css"> -->
+	<!-- <link rel="stylesheet" href="../css/demo.css"> -->
 </head>
-<body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
-    <div class="container">
-      <a href="index.html" class="navbar-brand">Blogen</a>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item px-2">
-            <a href="index.html" class="nav-link">Dashboard</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="posts.html" class="nav-link">Posts</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="categories.html" class="nav-link">Categories</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="users.html" class="nav-link">Users</a>
-          </li>
-        </ul>
 
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown mr-3">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-user"> Welcome Mark</i>
-            </a>
-            <div class="dropdown-menu">
-              <a href="profile.html" class="dropdown-item">
-                <i class="fa fa-user-circle"> Profile</i>
-              </a>
-              <a href="settings.html" class="dropdown-item">
-                <i class="fa fa-gear"> Settings</i>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="login.html" class="nav-link">
-              <i class="fa fa-user-times"></i> Logout
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<body>
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+				<div class="container">
+					<a href="index.html" class="navbar-brand">TH-News Admin</a>
+					<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item px-2">
+								<a href="index.html" class="nav-link">Dashboard</a>
+							</li>
+							<li class="nav-item px-2">
+								<a href="posts.html" class="nav-link">Tag</a>
+							</li>
+							<li class="nav-item px-2">
+								<a href="categories.html" class="nav-link">Chuyên mục</a>
+							</li>
+							<li class="nav-item px-2">
+								<a href="users.html" class="nav-link">Người dùng</a>
+							</li>
+						</ul>
+		
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item dropdown mr-3">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+									<i class="fa fa-user"> Welcome Tú</i>
+								</a>
+								<div class="dropdown-menu">
+									<a href="profile.html" class="dropdown-item">
+										<i class="fa fa-user-circle"> Hồ sơ</i>
+									</a>
+									<a href="settings.html" class="dropdown-item">
+										<i class="fa fa-gear"> Cài đặt</i>
+									</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a href="login.html" class="nav-link">
+									<i class="fa fa-user-times"></i> Đăng xuất
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
 
   <header id="main-header" class="py-2 bg-secondary text-white">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1><i></i> Post One</h1>
+          <h1><i></i> Bài viết chờ xuất bản</h1>
         </div>
       </div>
     </div>
@@ -77,12 +99,12 @@
         </div>
         <div class="col-md-3">
           <a href="#" class="btn btn-success btn-block">
-            <i class="fa fa-check"></i> Save Changes
+            <i class="fa fa-check"></i> Xuất bản
           </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="btn btn-danger btn-block">
-            <i class="fa fa-remove"></i> Delete Post
+            <i class="fa fa-remove"></i> Từ chối
           </a>
         </div>
       </div>
@@ -90,51 +112,122 @@
   </section>
 
   <!-- POSTS -->
-  <section id="posts">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            <div class="card-header">
-              <h4>Edit Post</h4>
-            </div>
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <label for="title">Title</label>
-                  <input type="text" class="form-control" value="Post One">
-                </div>
-                <div class="form-group">
-                  <label for="title">Category</label>
-                  <select class="form-control">
-                    <option value="">Web Development</option>
-                    <option value="">Tech Gadgets</option>
-                    <option value="">Business</option>
-                    <option value="">Health & Wellness</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="file">Image Upload</label>
-                  <input type="file" class="form-control-file">
-                  <small class="form-text text-muted">Max Size 3mb</small>
-                </div>
-                <div class="form-group">
-                  <lable for="title">Body</lable>
-                  <textarea name="editor1" class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam culpa sed deserunt impedit aspernatur voluptates in facere, eveniet unde tempora eos pariatur fugit, ipsa nobis deleniti adipisci vel necessitatibus iure? Eum nisi voluptate iste neque, odit facilis rerum, praesentium magnam placeat veniam soluta incidunt explicabo laborum? Voluptatem rem, tempore maxime.</textarea>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="single">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<ol class="breadcrumb">
+						<li><a href="#">Trang chủ</a></li>
+						<li class="active">>Thời sự</li>
+					</ol>
+					<article class="article main-article">
+						<header>
+							<h1>Nữ sinh nhảy cầu tự tử, hai nam sinh xuống cứu nhưng bất thành</h1>
+							<ul class="details">
+								<li>Ngày đăng: 11/4/2019</li>
+								<li><a>Thời sự</a></li>
+								<li>Người đăng <a href="#">Tú đẹp trai</a></li>
+							</ul>
+						</header>
+						<div class="main">
+							<p>Thông tin ban đầu, vụ việc xảy ra vào khoảng 8h sáng nay (15-4) tại khu vực cầu Hồ, thuộc
+								địa phận thị trấn Hồ, huyện Thuận Thành, tỉnh Bắc Ninh.
+
+								Theo người dân có mặt ở hiện trường, vào thời điểm trên có 2 nữ sinh và một nam sinh
+								đang theo học một trường cấp III trên địa bàn đi ra khu vực Cầu Hồ đứng nói chuyện.</p>
+							<div class="featured">
+								<figure>
+									<img src="../images/news/nu-sinh-tu-tu.jpg">
+									<figcaption>Lực lượng chức năng tiến hành tìm kiếm nữ sinh nhảy cầu - Ảnh: ĐẶNG THUỶ
+									</figcaption>
+								</figure>
+							</div>
+
+							<p>Bất ngờ, một nữ sinh trèo qua lan can cầu rồi nhảy xuống sông. Ngay sau đó, có hai nam
+								sinh bơi ra cứu nữ sinh này nhưng không được.
+								<br></p>
+							<p>Người dân nhanh chóng báo cho lực lượng chức năng tiến hành tìm kiếm cô gái.<br></p>
+							<p>Lãnh đạo Công an huyện Thuận Thành xác nhận vụ việc và cho biết trong lúc nhảy xuống sông
+								cứu nữ sinh, hai nam sinh cũng bị đuối nước nhưng được người dân cứu đưa lên bờ an
+								toàn.<br></p>
+							<p>"Hiện tại chúng tôi vẫn chưa tìm thấy thi thể nữ sinh lớp 12 mất tích.<span
+									style="">&nbsp;Đến trưa cùng ngày, lực lượng cứu hộ vẫn đang rà, tìm kiếm quanh khu
+									vực cầu. Riêng về t</span><span style="">hông tin 3 học sinh nhảy cầu lan truyền
+									trên mạng xã hội là không chính xác</span><span style="">", vị lãnh đạo này thông
+									tin thêm.</span></p>
+							<p>Hiện tại cơ quan chức năng đang xác minh danh tính nữ sinh và điều tra nguyên nhân vụ
+								việc.<span style=""><br></span></p>
+							
+						</div>
+						<footer>
+							<div class="col">
+								<ul class="tags">
+									<li><a href="#">Chết đuối</a></li>
+									<li><a href="#">Nữ sinh</a></li>
+									<li><a href="#">Tự tử</a></li>
+									<li><a href="#">Thời sự</a></li>
+									<li><a href="#">Tin tức</a></li>
+									<li><a href="#">Bắc Ninh</a></li>
+								</ul>
+							</div>
+							
+						</footer>
+					</article>
+					
+					<div class="line">
+						<div>Tác giả</div>
+					</div>
+					<div class="author">
+						<figure>
+							<img src="../images/tu-dep-trai.jpg">
+						</figure>
+						<div class="details">
+							<div class="job">Phóng viên</div>
+							<h3 class="name">Tú đẹp trai</h3>
+							<p></p>
+							<ul class="social trp sm">
+								<li>
+									<a href="#" class="facebook">
+										<svg>
+											<rect /></svg>
+										<i class="ion-social-facebook"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="twitter">
+										<svg>
+											<rect /></svg>
+										<i class="ion-social-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="youtube">
+										<svg>
+											<rect /></svg>
+										<i class="ion-social-youtube"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="googleplus">
+										<svg>
+											<rect /></svg>
+										<i class="ion-social-googleplus"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
 
   <footer id="main-footer" class="bg-dark text-white mt-5 p-5">
     <div class="container">
       <div class="row">
         <div class="col">
-          <p class="lead text-center">Copyright &copy; 2017 Blogen</p>
+						<p class="lead text-center">Copyright &copy; 2019 Huỳnh Trung Tín-Lê Minh Trí-Nguyễn Hữu Tú</p>
         </div>
       </div>
     </div>
@@ -146,11 +239,14 @@
   <script src="js/jquery.min.js"></script>
   <!-- <script src="js/popper.min.js"></script> -->
   <!-- Path to Popper - it is for dropsdowns etc in bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
   <script>
-			CKEDITOR.replace( 'editor1' );
-		</script>
+    CKEDITOR.replace('editor1');
+  </script>
 </body>
+
 </html>
