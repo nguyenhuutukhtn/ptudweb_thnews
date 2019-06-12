@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Trang biên tập</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+		integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+	<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		.cke {
+			visibility: hidden;
+		}
+	</style>
+	<script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/config.js?t=H8DA"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/skins/moono-lisa/editor_gecko.css?t=H8DA">
+	<script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/lang/en.js?t=H8DA"></script>
+	<script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/styles.js?t=H8DA"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/plugins/scayt/skins/moono-lisa/scayt.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/plugins/scayt/dialogs/dialog.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/plugins/tableselection/styles/tableselection.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.ckeditor.com/4.7.3/standard/plugins/wsc/skins/moono-lisa/wsc.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+		<div class="container">
+			<a href="index.html" class="navbar-brand">Trang biên tập</a>
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item px-2">
+						<a href="index.html" class="nav-link active">Dashboard</a>
+					</li>
+					<li class="nav-item px-2">
+						<a href="posts.html" class="nav-link">Bài viết</a>
+					</li>
+					<li class="nav-item px-2">
+						<a href="categories.html" class="nav-link">Danh mục</a>
+					</li>
+					<!-- <li class="nav-item px-2">
+						<a href="users.html" class="nav-link">Users</a>
+					</li> -->
+				</ul>
+
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown mr-3">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-user"> Welcome Tú</i>
+						</a>
+						<div class="dropdown-menu">
+							<a href="profile.html" class="dropdown-item">
+								<i class="fa fa-user-circle"> Profile</i>
+							</a>
+							<a href="settings.html" class="dropdown-item">
+								<i class="fa fa-gear"> Settings</i>
+							</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a href="login.html" class="nav-link">
+							<i class="fa fa-user-times"></i> Đăng xuất
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<header id="main-header" class="py-2 bg-secondary text-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h1><i class="fa fa-gear"></i> Dashboard</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		
+
+		<section id="posts">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h4>Bài viết chờ duyệt</h4>
+							</div>
+							<table class="table table-striped">
+								<thead class="thead-inverse">
+									<tr>
+										<th>#</th>
+										<th>Tiêu đề</th>
+										<th>Tác giả</th>
+										<th>Ngày viết</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td scope="">1</td>
+										<td>Bê tông hóa Đà Lạt</td>
+										<td>Tú dz</td>
+										<td>16/04/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+									<tr>
+										<td scope="">2</td>
+										<td>Ajax - Nơi tôi luyện những cầu thủ can trường</td>
+										<td>Tín Huỳnh</td>
+										<td>17/04/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+
+									<tr>
+										<td scope="">3</td>
+										<td>Súng nổ giữa quốc lộ khi nhóm giang hồ chặn đầu xe khách </td>
+										<td>Trí</td>
+										<td>15/04/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+									<tr>
+										<td scope="">4</td>
+										<td>Luật sư: Phụ huynh mua điểm cho con có thể bị khởi tố đưa hối lộ </td>
+										<td>Không biết</td>
+										<td>18/04/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+									<tr>
+										<td scope="">5</td>
+										<td>Cái chết thảm chưa có lời giải của đôi vợ chồng </td>
+										<td>Óc chó</td>
+										<td>15/4/2019</td>
+										<td><a href="details.html" class="btn btn-secondary">
+												<i class="fa fa-angle-double-right"></i> Chi tiết
+											</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+		
+	</main>
+
+	<footer></footer>
+
+	<div class="modal fade" id="addPostModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header bg-primary text-white">
+					<h5 class="modal-title">Bài viết mới</h5>
+					<button class="close" data-dismiss="modal"><span>&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<lable for="title">Tiêu đề</lable>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<lable for="category">Chuyên mục</lable>
+							<select class="form-control">
+								<option value="">Kinh doanh</option>
+								<option value="">Công nghệ</option>
+								<option value="">Thể thao</option>
+								<option value="">Tài chính</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="file">Upload hình ảnh</label>
+							<input type="file" class="form-control-file">
+							<small class="form-text text-muted">Tối đa 3mb</small>
+						</div>
+						<div class="form-group">
+							<lable for="title">Body</lable>
+							<textarea name="editor1" class="form-control"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+					<button class="btn btn-primary" data-dismiss="modal">Lưu thay đổi</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- CATEGORY MODAL -->
+	<div class="modal fade" id="addCategoryModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header bg-success text-white">
+					<h5 class="modal-title">Add Category</h5>
+					<button class="close" data-dismiss="modal"><span>&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<lable for="title">Title</lable>
+							<input type="text" class="form-control">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button class="btn btn-success" data-dismiss="modal">Save Changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- USER MODAL -->
+	<div class="modal fade" id="addUserModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header bg-warning text-white">
+					<h5 class="modal-title">Add User</h5>
+					<button class="close" data-dismiss="modal"><span>&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<lable for="name">Name</lable>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<lable for="email">Email</lable>
+							<input type="email" class="form-control">
+						</div>
+						<div class="form-group">
+							<lable for="password">Password</lable>
+							<input type="password" class="form-control">
+						</div>
+						<div class="form-group">
+							<lable for="password">Confirm Password</lable>
+							<input type="password" class="form-control">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button class="btn btn-warning" data-dismiss="modal">Save Changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="js/jquery.min.js"></script>
+	<!-- <script src="js/popper.min.js"></script> -->
+	<!-- Path to Popper - it is for dropsdowns etc in bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+		integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+		crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace('editor1');
+	</script>
+
+</body>
+
+</html>

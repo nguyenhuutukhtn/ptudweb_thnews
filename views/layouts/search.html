@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Magz is a HTML5 & CSS3 magazine template is based on Bootstrap 3.">
+	<meta name="author" content="Kodinger">
+	<meta name="keyword" content="magz, html5, css3, template, magazine template">
+	<!-- Shareable -->
+	<meta property="og:title" content="HTML5 & CSS3 magazine template is based on Bootstrap 3" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http://github.com/nauvalazhar/Magz" />
+	<meta property="og:image" content="https://raw.githubusercontent.com/nauvalazhar/Magz/master/images/preview.png" />
+	<title>Magz &mdash; Responsive HTML5 &amp; CSS3 Magazine Template</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
+	<!-- IonIcons -->
+	<link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
+	<!-- Toast -->
+	<link rel="stylesheet" href="scripts/toast/jquery.toast.min.css">
+	<!-- OwlCarousel -->
+	<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="scripts/magnific-popup/dist/magnific-popup.css">
+	<link rel="stylesheet" href="scripts/sweetalert/dist/sweetalert.css">
+	<!-- iCheck -->
+	<link rel="stylesheet" href="scripts/icheck/skins/all.css">
+	<!-- Custom style -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/skins/all.css">
+	<link rel="stylesheet" href="css/demo.css">
+</head>
+
+<body>
+	<header class="primary">
+		<div class="firstbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-12">
+						<div class="brand">
+							<a href="index.html">
+								<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png" alt="TH-News Logo">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<form class="search" autocomplete="off">
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" name="search" class="form-control" placeholder="Tìm kiếm">
+									<div class="input-group-btn">
+										<button class="btn btn-primary"><i class="ion-search"></i></button>
+									</div>
+								</div>
+							</div>
+							<div class="help-block">
+								<div>Phổ biến:</div>
+								<ul>
+									<li><a href="#">Nông sản</a></li>
+									<li><a href="#">Thủy sản</a></li>
+									<li><a href="#">Kinh doanh</a></li>
+									<li><a href="#">Giá vàng</a></li>
+									<li><a href="#">Chứng khoán</a></li>
+								</ul>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-3 col-sm-12 text-right">
+						<ul class="nav-icons">
+							<li><a href="register.html"><i class="ion-person-add"></i>
+									<div>Đăng ký</div>
+								</a></li>
+							<li><a href="login.html"><i class="ion-person"></i>
+									<div>Đăng nhập</div>
+								</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Start nav -->
+		<nav class="menu">
+			<div class="container">
+				<div class="brand">
+					<a href="#">
+						<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png" alt="TH-News Logo">
+					</a>
+				</div>
+				<div class="mobile-toggle">
+					<a href="#" data-toggle="menu" data-target="#menu-list"><i class="ion-navicon-round"></i></a>
+				</div>
+				<div class="mobile-toggle">
+					<a href="#" data-toggle="sidebar" data-target="#sidebar"><i class="ion-ios-arrow-left"></i></a>
+				</div>
+				<div id="menu-list">
+					<ul class="nav-list">
+						<li class="for-tablet nav-title"><a>Menu</a></li>
+						<li class="for-tablet"><a href="login.html">Đăng nhập</a></li>
+						<li class="for-tablet"><a href="register.html">Đăng ký</a></li>
+						<!-- <li><a href="category.html">Thời sự</a></li> -->
+						<li class="dropdown magz-dropdown"><a href="#">Thời sự <i class="ion-ios-arrow-right"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="index.html">Chính trị</a></li>
+								<li><a href="category.html">Quốc tế</a></li>
+								<li><a href="single.html">Đô thị</a></li>
+							</ul>
+						</li>
+						<li class="dropdown magz-dropdown">
+							<a href="category.html">Kinh doanh <i class="ion-ios-arrow-right"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="index.html">Nông sản</a></li>
+								<li><a href="category.html">Thủy sản</a></li>
+								<li><a href="single.html">Nhà đất</a></li>
+							</ul>
+						</li>
+						<li class="dropdown magz-dropdown"><a href="#">Công nghệ <i class="ion-ios-arrow-right"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="category.html">Internet</a></li>
+								<li class="dropdown magz-dropdown"><a href="category.html">Mobile <i class="ion-ios-arrow-right"></i></a>
+									<ul class="dropdown-menu">
+										<li><a href="category.html">Điện thoại</a></li>
+										<li class="dropdown magz-dropdown"><a href="category.html">Ứng dụng <i class="ion-ios-arrow-right"></i></a>
+											<ul class="dropdown-menu">
+												<li><a href="category.html">Android</a></li>
+												<li><a href="category.html">IOS</a></li>
+												<li><a href="category.html">Công nghệ mới</a></li>
+											</ul>
+										</li>
+										<li><a href="category.html">Trí tuệ nhân tạo</a>
+									</ul>
+								</li>
+								<li><a href="category.html">Office</a></li>
+								<li class="dropdown magz-dropdown"><a href="#">Lập trình <i class="ion-ios-arrow-right"></i></a>
+									<ul class="dropdown-menu">
+										<li><a href="category.html">Web</a></li>
+										<li class="dropdown magz-dropdown"><a href="category.html">Android <i class="ion-ios-arrow-right"></i></a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown magz-dropdown magz-dropdown-megamenu"><a href="#"> Điểm báo <i class="ion-ios-arrow-right"></i>
+								<div class="badge">Hot</div>
+							</a>
+							<div class="dropdown-menu megamenu">
+								<div class="megamenu-inner">
+									<div class="row">
+										<div class="col-md-3">
+											<div class="row">
+												<div class="col-md-12">
+													<h2 class="megamenu-title">Trending</h2>
+												</div>
+											</div>
+											<ul class="vertical-menu">
+												<li><a href="#"><i class="ion-ios-circle-outline"></i> Link 4'47'' tại
+														đây</a></li>
+												<li><a href="#"><i class="ion-ios-circle-outline"></i> Chùa ba vàng</a>
+												</li>
+												<li><a href="#"><i class="ion-ios-circle-outline"></i> Tôi có thể thấy
+														sóng điện thoại</a></li>
+												<li><a href="#"><i class="ion-ios-circle-outline"></i> Phim 18+ </a>
+												</li>
+												<li><a href="#"><i class="ion-ios-circle-outline"></i> Game of
+														thrones</a></li>
+											</ul>
+										</div>
+										<div class="col-md-9">
+											<div class="row">
+												<div class="col-md-12">
+													<h2 class="megamenu-title">Featured Posts</h2>
+												</div>
+											</div>
+											<div class="row">
+												<article class="article col-md-4 mini">
+													<div class="inner">
+														<figure>
+															<a href="single.html">
+																<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img10_wfgxr2.jpg" alt="Sample Article">
+															</a>
+														</figure>
+														<div class="padding">
+															<div class="detail">
+																<div class="time">April 15, 2019</div>
+																<div class="category"><a href="category.html">Pet</a>
+																</div>
+															</div>
+															<h2><a href="single.html">Bạn đã chăm sóc cho chú mèo nhà
+																	bạn đúng cách chưa?</a></h2>
+														</div>
+													</div>
+												</article>
+												<article class="article col-md-4 mini">
+													<div class="inner">
+														<figure>
+															<a href="single.html">
+																<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img11_nxvm0l.jpg" alt="Sample Article">
+															</a>
+														</figure>
+														<div class="padding">
+															<div class="detail">
+																<div class="time">April 13, 2019</div>
+																<div class="category"><a href="category.html">Lifestyle</a></div>
+															</div>
+															<h2><a href="single.html"></a>Đạp xe mỗi ngày 10km làm cơ
+																thể săn chắc</h2>
+														</div>
+													</div>
+												</article>
+												<article class="article col-md-4 mini">
+													<div class="inner">
+														<figure>
+															<a href="single.html">
+																<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img14_xyrdv3.jpg" alt="Sample Article">
+															</a>
+														</figure>
+														<div class="padding">
+															<div class="detail">
+																<div class="time">April 10, 2019</div>
+																<div class="category"><a href="category.html">Travel</a>
+																</div>
+															</div>
+															<h2><a href="single.html">Đời người phải đi những điểm đến
+																	này ít nhất một lần </a></h2>
+														</div>
+													</div>
+												</article>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown magz-dropdown"><a href="#">Thể thao <i class="ion-ios-arrow-right"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="category.html">Thể thao Việt Nam</a></li>
+								<li class="dropdown magz-dropdown"><a href="category.html">Thể thao thế giới<i class="ion-ios-arrow-right"></i></a>
+									<ul class="dropdown-menu">
+										<li><a href="category.html">Ngoại hạng Anh</a></li>
+										<li><a href="category.html">Tây Ban Nha</a></li>
+										<li><a href="category.html">Ý</a></li>
+										<li><a href="category.html">Pháp</a></li>
+										<li><a href="category.html">Đức</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown magz-dropdown"><a href="#"> Giải trí <i class="ion-ios-arrow-right"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="category.html">Sao Việt </a></li>
+								<li><a href="category.html">Sao Châu Á </a></li>
+								<li><a href="category.html">Sao Hollywood </a></li>
+							</ul>
+						</li>
+						<li class="dropdown magz-dropdown"><a href="#"> Âm nhạc <i class="ion-ios-arrow-right"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="category.html"> Nhạc Việt </a></li>
+								<li><a href="category.html"> Nhạc Hàn </a></li>
+								<li><a href="category.html"> Nhạc Âu Mỹ </a></li>
+							</ul>
+						</li>
+						<li class="dropdown magz-dropdown"><a href="#"> Quản lý cá nhân <i class="ion-ios-arrow-right"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"><i class="icon ion-person"></i> My Account</a></li>
+								<li><a href="#"><i class="icon ion-heart"></i> Favorite</a></li>
+								<li><a href="#"><i class="icon ion-chatbox"></i> Comments</a></li>
+								<li><a href="#"><i class="icon ion-key"></i> Change Password</a></li>
+								<li><a href="#"><i class="icon ion-settings"></i> Settings</a></li>
+								<li class="divider"></li>
+								<li><a href="#"><i class="icon ion-log-out"></i> Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- End nav -->
+	</header>
+
+	<section class="search">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<aside>
+						<h2 class="aside-title">Tìm kiếm</h2>
+						<div class="aside-body">
+							<p>Tìm kiếm bằng từ khóa khác hoặc là sử dụng bộ lọc để chính xác nhất.</p>
+							<form>
+								<div class="form-group">
+									<div class="input-group">
+										<input type="text" name="q" class="form-control" placeholder="Tìm kiếm ...">
+										<div class="input-group-btn">
+											<button class="btn btn-primary">
+												<i class="ion-search"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</aside>
+					<aside>
+						<h2 class="aside-title">Bộ lọc</h2>
+						<div class="aside-body">
+							<form class="checkbox-group">
+								<div class="group-title">Date</div>
+								<div class="form-group">
+									<label><input type="radio" name="date" checked> Anytime</label>
+								</div>
+								<div class="form-group">
+									<label><input type="radio" name="date"> Today</label>
+								</div>
+								<div class="form-group">
+									<label><input type="radio" name="date"> Last Week</label>
+								</div>
+								<div class="form-group">
+									<label><input type="radio" name="date"> Last Month</label>
+								</div>
+								<br>
+								<div class="group-title">Danh mục</div>
+								<div class="form-group">
+									<label><input type="checkbox" name="category" checked> Danh mục</label>
+								</div>
+								<div class="form-group">
+									<label><input type="checkbox" name="category"> Đời sống</label>
+								</div>
+								<div class="form-group">
+									<label><input type="checkbox" name="category"> Du lịch</label>
+								</div>
+								<div class="form-group">
+									<label><input type="checkbox" name="category"> Công nghệ</label>
+								</div>
+								<div class="form-group">
+									<label><input type="checkbox" name="category"> Phim</label>
+								</div>
+								<div class="form-group">
+									<label><input type="checkbox" name="category"> Thể thao</label>
+								</div>
+							</form>
+						</div>
+					</aside>
+				</div>
+				<div class="col-md-9">
+					<div class="nav-tabs-group">
+						<ul class="nav-tabs-list">
+							<li class="active"><a href="#">All</a></li>
+							<li><a href="#">Latest</a></li>
+							<li><a href="#">Popular</a></li>
+							<li><a href="#">Trending</a></li>
+							<li><a href="#">Videos</a></li>
+						</ul>
+						<div class="nav-tabs-right">
+							<select class="form-control">
+								<option>Limit</option>
+								<option>10</option>
+								<option>20</option>
+								<option>50</option>
+								<option>100</option>
+							</select>
+						</div>
+					</div>
+					<div class="search-result">
+						Kết quả tìm kiếm cho từ khóa "hello" là 5200
+					</div>
+					<div class="row">
+						<article class="col-md-12 article-list">
+							<div class="inner">
+								<figure>
+									<a href="single.html">
+										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/son-la_qj03dg.jpg">
+									</a>
+								</figure>
+								<div class="details">
+									<div class="detail">
+										<div class="category">
+											<a href="#">Thời sự</a>
+										</div>
+										<time>18/4/2019</time>
+									</div>
+									<h1><a href="single.html">Phó bí thư Sơn La: Tỉnh đang nghiên cứu giải quyết vụ gian lận điểm</a></h1>
+									<p>
+										Phó bí thư Tỉnh ủy Sơn La cho biết mới nhận được thông tin về danh sách con em lãnh đạo tỉnh được nâng điểm qua kênh báo chí.
+									</p>
+									<footer>
+										<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
+											<div>501</div>
+										</a>
+										<a class="btn btn-primary more" href="single.html">
+											<div>Xem chi tiết</div>
+											<div><i class="ion-ios-arrow-thin-right"></i></div>
+										</a>
+									</footer>
+								</div>
+							</div>
+						</article>
+						<article class="col-md-12 article-list">
+							<div class="inner">
+								<div class="badge">
+									Sponsored by VietJet
+								</div>
+								<figure>
+									<a href="single.html">
+										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041060/TH-News/News/viet-jet_vml8h9.jpg">
+									</a>
+								</figure>
+								<div class="details">
+									<div class="detail">
+										<div class="category">
+											<a href="#">Du lịch</a>
+										</div>
+										<time>18/4/2019</time>
+									</div>
+									<h1><a href="single.html">VietJet tung vé tiết kiệm bay thẳng tới Bali</a></h1>
+									<p>
+										Đường bay khứ hồi trực tiếp từ TP HCM đến Bali rút ngắn còn 4 tiếng giúp du khách tiết kiệm thời gian và chi phí so với bay nối chuyến.
+									</p>
+									<footer>
+										<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
+											<div>4209</div>
+										</a>
+										<a class="btn btn-primary more" href="single.html">
+											<div>Xem chi tiết</div>
+											<div><i class="ion-ios-arrow-thin-right"></i></div>
+										</a>
+									</footer>
+								</div>
+							</div>
+						</article>
+						<article class="col-md-12 article-list">
+							<div class="inner">
+								<figure>
+									<a href="single.html">
+										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/phi-cong_rqcubi.jpg">
+									</a>
+								</figure>
+								<div class="details">
+									<div class="detail">
+										<div class="category">
+											<a href="#">Kinh doanh</a>
+										</div>
+										<time>18/4/2019</time>
+									</div>
+									<h1><a href="single.html">Lương phi công Vietnam Airlines bình quân hơn 132 triệu đồng</a></h1>
+									<p>
+										Lương bình quân của phi công Vietnam Airlines đã tăng gần 11 triệu đồng mỗi tháng nhưng vẫn thấp hơn các hãng trong nước khác.
+									</p>
+									<footer>
+										<a href="#" class="love active"><i class="ion-android-favorite"></i>
+											<div>8430</div>
+										</a>
+										<a class="btn btn-primary more" href="single.html">
+											<div>Xem chi tiết</div>
+											<div><i class="ion-ios-arrow-thin-right"></i></div>
+										</a>
+									</footer>
+								</div>
+							</div>
+						</article>
+						<article class="col-md-12 article-list">
+							<div class="inner">
+								<figure>
+									<a href="single.html">
+										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041047/TH-News/News/chuyen-ams_vxc5jt.jpg">
+									</a>
+								</figure>
+								<div class="details">
+									<div class="detail">
+										<div class="category">
+											<a href="#">Giáo dục</a>
+										</div>
+										<time>18/4/2019</time>
+									</div>
+									<h1><a href="single.html">Hà Nội muốn có nhiều trường học đẳng cấp khu vực</a></h1>
+									<p>
+										Lãnh đạo Sở Giáo dục và Đào tạo cho rằng, thủ đô có nhiều lợi thế để xây dựng những trường học chất lượng cao.
+									</p>
+									<footer>
+										<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
+											<div>783</div>
+										</a>
+										<a class="btn btn-primary more" href="single.html">
+											<div>Xem chi tiết</div>
+											<div><i class="ion-ios-arrow-thin-right"></i></div>
+										</a>
+									</footer>
+								</div>
+							</div>
+						</article>
+						<div class="col-md-12 text-center">
+							<ul class="pagination">
+								<li class="prev"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">...</a></li>
+								<li><a href="#">97</a></li>
+								<li class="next"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
+							</ul>
+							<div class="pagination-help-text">
+								Showing 8 results of 776 &mdash; Page 1
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Start footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="block">
+						<h1 class="block-title">Kênh tin tức</h1>
+						<div class="block-body">
+							<figure class="foot-logo">
+								<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png" class="img-responsive" alt="Logo">
+							</figure>
+							<p class="brand-description">
+								TH-News là kênh tin tức được phát triển bởi nhóm đẹp trai -HCMUS
+							</p>
+							<a href="page.html" class="btn btn-magz white">Giới thiệu <i class="ion-ios-arrow-thin-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="block">
+						<h1 class="block-title">Tìm kiếm nhiều <div class="right"><a href="#">See All <i class="ion-ios-arrow-thin-right"></i></a></div>
+						</h1>
+						<div class="block-body">
+							<ul class="tags">
+								<li><a href="#">Trâm Anh</a></li>
+								<li><a href="#">Chùa Ba Vàng</a></li>
+								<li><a href="#">Liverpool</a></li>
+								<li><a href="#">Link 4 phút</a></li>
+								<li><a href="#">Điểm thi</a></li>
+								<li><a href="#">Hố đen</a></li>
+								<li><a href="#">Giỗ tổ</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="line"></div>
+					<div class="block">
+						<h1 class="block-title">Tin tức qua email</h1>
+						<div class="block-body">
+							<p>Theo dõi để cập nhật tin mới qua email</p>
+							<form class="newsletter">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="ion-ios-email-outline"></i>
+									</div>
+									<input type="email" class="form-control email" placeholder="Nhập email">
+								</div>
+								<button class="btn btn-primary btn-block white">Theo dõi</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="block">
+						<h1 class="block-title">Tin mới</h1>
+						<div class="block-body">
+							<article class="article-mini">
+								<div class="inner">
+									<figure>
+										<a href="single.html">
+											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/ngu-dan-nghia-hiep_ta6qez.jpg" alt="Ngư dân nghĩa hiệp">
+										</a>
+									</figure>
+									<div class="padding">
+										<h1><a href="single.html">Anh ngư dân nghĩa hiệp</a></h1>
+									</div>
+								</div>
+							</article>
+							<article class="article-mini">
+								<div class="inner">
+									<figure>
+										<a href="single.html">
+											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/song-theo-tu-nhien_pfczh9.jpg" alt="Sống theo tự nhiên">
+										</a>
+									</figure>
+									<div class="padding">
+										<h1><a href="single.html">Về vườn để học sống thuận theo tự nhiên</a></h1>
+									</div>
+								</div>
+							</article>
+							<article class="article-mini">
+								<div class="inner">
+									<figure>
+										<a href="single.html">
+											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/kiatisuk_gjlpbq.jpg" alt="Kiatisuk">
+										</a>
+									</figure>
+									<div class="padding">
+										<h1><a href="single.html">Kiatisak bận rộn ra sao mà người Thái Lan không cầu cứu? </a></h1>
+									</div>
+								</div>
+							</article>
+							<article class="article-mini">
+								<div class="inner">
+									<figure>
+										<a href="single.html">
+											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/nu-sinh-tu-tu_vw6k0v.jpg" alt="Nu sinh tu tu">
+										</a>
+									</figure>
+									<div class="padding">
+										<h1><a href="single.html">Nữ sinh nhảy cầu tự tử, hai nam sinh xuống cứu nhưng bất thành </a></h1>
+									</div>
+								</div>
+							</article>
+							<a href="#" class="btn btn-magz white btn-block">Xem thêm <i class="ion-ios-arrow-thin-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-xs-12 col-sm-6">
+					<div class="block">
+						<h1 class="block-title">Follow</h1>
+						<div class="block-body">
+							<p>Theo dõi các trang mạng xã hội để cập nhật tin tức mới nhất</p>
+							<ul class="social trp">
+								<li>
+									<a href="#" class="facebook">
+										<svg>
+											<rect width="0" height="0" /></svg>
+										<i class="ion-social-facebook"></i>
+									</a>
+								</li>
+
+								<li>
+									<a href="#" class="youtube">
+										<svg>
+											<rect width="0" height="0" /></svg>
+										<i class="ion-social-youtube-outline"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="googleplus">
+										<svg>
+											<rect width="0" height="0" /></svg>
+										<i class="ion-social-googleplus"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="instagram">
+										<svg>
+											<rect width="0" height="0" /></svg>
+										<i class="ion-social-instagram-outline"></i>
+									</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="line"></div>
+					<div class="block">
+						<div class="block-body no-margin">
+							<ul class="footer-nav-horizontal">
+								<li><a href="index.html">Trang chủ</a></li>
+								<li><a href="#">Tin tức</a></li>
+								<li><a href="contact.html">Liên hệ</a></li>
+								<li><a href="page.html">Giới thiệu</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="copyright">
+						COPYRIGHT &copy; BY LE MINH TRI-HUYNH TRUNG-TIN-NGUYEN HUU TU
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->
+
+	<!-- JS -->
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.migrate.js"></script>
+	<script src="scripts/bootstrap/bootstrap.min.js"></script>
+	<script>var $target_end = $(".best-of-the-week");</script>
+	<script src="scripts/jquery-number/jquery.number.min.js"></script>
+	<script src="scripts/owlcarousel/dist/owl.carousel.min.js"></script>
+	<script src="scripts/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+	<script src="scripts/easescroll/jquery.easeScroll.js"></script>
+	<script src="scripts/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="scripts/icheck/icheck.min.js"></script>
+	<script src="scripts/toast/jquery.toast.min.js"></script>
+	<script src="js/demo.js"></script>
+	<script>$("input").iCheck({
+			checkboxClass: 'icheckbox_square-red',
+			radioClass: 'iradio_square-red',
+			cursor: true
+		});</script>
+	<script src="js/e-magz.js"></script>
+</body>
+
+</html>
