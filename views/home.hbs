@@ -355,45 +355,15 @@
 					<div>Tin mới</div>
 				</div>
 				<div class="row">
+					{{#grouped_each 2 lastesArticles}}
 					<div class="col-md-6 col-sm-6 col-xs-12">
 						<div class="row">
+							{{#each this}}
 							<article class="article col-md-12">
 								<div class="inner">
 									<figure>
 										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img10_wfgxr2.jpg"
-												alt="Sample Article">
-										</a>
-									</figure>
-									<div class="padding">
-										<div class="detail">
-											<div class="time">April 15, 2016</div>
-											<div class="category"><a href="category.html">Pet</a></div>
-										</div>
-										<h2><a href="single.html">Bạn đã chăm sóc cho chú mèo nhà
-												bạn đúng cách chưa?</a></h2>
-										<p>Việc nuôi thú cưng đã không còn quá xa lạ. Đặc biệt là
-											việc nhiều nhà có nuôi trong nhà một "hoàng thượng" cũng không
-											còn quá xa lạ. Nhưng bạn đã tìm được đúng cách để chăm sóc cho
-											"hoàng thượng" chưa? ...
-										</p>
-										<footer>
-											<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-												<div>1263</div>
-											</a>
-											<a class="btn btn-primary more" href="single.html">
-												<div>Chi tiết</div>
-												<div><i class="ion-ios-arrow-thin-right"></i></div>
-											</a>
-										</footer>
-									</div>
-								</div>
-							</article>
-							<article class="article col-md-12">
-								<div class="inner">
-									<figure>
-										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041047/TH-News/News/img06_vor6ey.jpg"
+											<img src="{{Thumbnail}}"
 												alt="Sample Article">
 										</a>
 									</figure>
@@ -402,15 +372,13 @@
 											<div class="time">April 7, 2019</div>
 											<div class="category"><a href="category.html">Healthy</a></div>
 										</div>
-										<h2><a href="single.html">Cách để có được một bữa trưa đầy đủ dinh dưỡng</a>
+										<h2><a href="single.html">{{Title}}</a>
 										</h2>
-										<p>Ăn trưa là điều bắt buộc mà ai cũng phải có. Nhưng để ăn trưa đầy đủ chất
-											dinh dưỡng
-											và tiết kiệm chi phí ...
+										<p>{{Sumary}}
 										</p>
 										<footer>
 											<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-												<div>327</div>
+												<div>{{Liked}}</div>
 											</a>
 											<a class="btn btn-primary more" href="single.html">
 												<div>Chi tiết</div>
@@ -420,8 +388,12 @@
 									</div>
 								</div>
 							</article>
+							{{/each}}
+							
 						</div>
 					</div>
+					{{/grouped_each}}
+					
 				</div>
 				<div class="line transparent little"></div>
 				<div class="row">
