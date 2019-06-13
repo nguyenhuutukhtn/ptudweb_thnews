@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/nguyenhuutukhtn/ptudweb_thnews#readme",
   "dependencies": {
+    "dateformat": "^3.0.3",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
+    "express-handlebars-sections": "^1.0.1",
     "handlebars": "^4.1.2",
     "handlebars-intl": "^1.1.2",
     "morgan": "^1.9.1",

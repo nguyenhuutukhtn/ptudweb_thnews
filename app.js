@@ -1,5 +1,6 @@
 var express=require('express');
 var exphbs=require('express-handlebars');
+var hbs_sections=require('express-handlebars-sections');
 const Handlebars = require('handlebars');
 const HandlebarsIntl = require('handlebars-intl');
 
@@ -29,7 +30,10 @@ Handlebars.registerHelper('customNumberFormat', function(value){
 
 app.engine('hbs',exphbs({
     defaultLayout:'main_public.hbs',
-    layoutsDir:'views/layouts'
+    layoutsDir:'views/layouts',
+    helpers:{
+        section:hbs_sections()
+    }
 }));
 
 
@@ -37,9 +41,20 @@ app.engine('hbs',exphbs({
 app.set('view engine','hbs');
 
 
-app.use(require('./middlewares/lastestNews.mdw'));
+app.use(require('./middlewares/FourLastestNews.mdw'));
+app.use(require('./middlewares/EightPopularNews.mdw'));
+app.use(require('./middlewares/TopEightHot.mdw'));
+app.use(require('./middlewares/TopThreeHot.mdw'));
 
 app.use('/',require('./routes/homepage.route'));
+
+app.use((req,res,next)=>{
+    res.render('404',{layout:false});
+})
+
+app.use((error,req,res,next)=>{
+    res.render('500',{layout:false});
+})
 
 Handlebars.registerHelper('grouped_each', function(every, context, options) {
     var out = "", subcontext = [], i;

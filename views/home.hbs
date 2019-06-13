@@ -1,10 +1,30 @@
+{{#section 'header'}}
+<title>TH-News</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
+	<!-- IonIcons -->
+	<link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
+	<!-- Toast -->
+	<link rel="stylesheet" href="scripts/toast/jquery.toast.min.css">
+	<!-- OwlCarousel -->
+	<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="scripts/magnific-popup/dist/magnific-popup.css">
+	<link rel="stylesheet" href="scripts/sweetalert/dist/sweetalert.css">
+	<!-- Custom style -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/skins/all.css">
+	<link rel="stylesheet" href="css/demo.css">
+{{/section}}
+
 <header class="primary">
 	<div class="firstbar">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 col-sm-12">
 					<div class="brand">
-						<a href="index.html">
+						<a href="/">
 							<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png"
 								alt="TH-News Logo">
 						</a>
@@ -145,63 +165,26 @@
 											</div>
 										</div>
 										<div class="row">
+											{{#each TopThreeHot}}
 											<article class="article col-md-4 mini">
 												<div class="inner">
 													<figure>
 														<a href="single.html">
-															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img10_wfgxr2.jpg"
+															<img src="{{Thumbnail}}"
 																alt="Sample Article">
 														</a>
 													</figure>
 													<div class="padding">
 														<div class="detail">
-															<div class="time">April 15, 2019</div>
+															<div class="time">{{PublishDate}}</div>
 															<div class="category"><a href="category.html">Pet</a>
 															</div>
 														</div>
-														<h2><a href="single.html">Bạn đã chăm sóc cho chú mèo nhà
-																bạn đúng cách chưa?</a></h2>
+														<h2><a href="single.html">{{Title}}</a></h2>
 													</div>
 												</div>
 											</article>
-											<article class="article col-md-4 mini">
-												<div class="inner">
-													<figure>
-														<a href="single.html">
-															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img11_nxvm0l.jpg"
-																alt="Sample Article">
-														</a>
-													</figure>
-													<div class="padding">
-														<div class="detail">
-															<div class="time">April 13, 2019</div>
-															<div class="category"><a href="category.html">Lifestyle</a>
-															</div>
-														</div>
-														<h2><a href="single.html"></a>Đạp xe mỗi ngày 10km làm cơ
-															thể săn chắc</h2>
-													</div>
-												</div>
-											</article>
-											<article class="article col-md-4 mini">
-												<div class="inner">
-													<figure>
-														<a href="single.html">
-															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img14_xyrdv3.jpg"
-																alt="Sample Article">
-														</a>
-													</figure>
-													<div class="padding">
-														<div class="detail">
-															<div class="time">April 10, 2019</div>
-															<div class="category"><a href="category.html">Travel</a>
-															</div>
-														</div>
-														<h2><a href="single.html">Đời người phải đi những điểm đến
-																này ít nhất một lần </a></h2>
-													</div>
-												</div>
-											</article>
+											{{/each}}
 										</div>
 									</div>
 								</div>
@@ -272,24 +255,14 @@
 						</a>
 					</div>
 					<div class="owl-carousel owl-theme" id="headline">
+						{{#each lastesArticles}}
 						<div class="item">
 							<a href="#">
 								<div class="badge">Tin mới!</div>
-								Sống ảo cùng 'nhà đẹp, xe sang' chỉ với 20.000 đồng ở Trung Quốc
+								{{Title}}
 							</a>
 						</div>
-						<div class="item">
-							<a href="#">
-								<div class="badge">Tin mới!</div>
-								Đâu mới là vật đắt giá nhất chìm cùng con tàu Titanic?
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
-								<div class="badge">Tin mới!</div>
-								11 năm hôn nhân đầy sóng gió của Bình Minh và Anh Thơ
-							</a>
-						</div>
+						{{/each}}
 					</div>
 				</div>
 				<div class="owl-carousel owl-theme slide" id="featured">
@@ -369,8 +342,8 @@
 									</figure>
 									<div class="padding">
 										<div class="detail">
-											<div class="time">April 7, 2019</div>
-											<div class="category"><a href="category.html">Healthy</a></div>
+											<div class="time">{{PublishDate}}</div>
+											<div class="category"><a href="category.html">{{CatName}}</a></div>
 										</div>
 										<h2><a href="single.html">{{Title}}</a>
 										</h2>
@@ -416,7 +389,7 @@
 					</div>
 					<div class="col-md-6 col-sm-6">
 						<h1 class="title-col">
-							Hot News
+							Tin nóng
 							<div class="carousel-nav" id="hot-news-nav">
 								<div class="prev">
 									<i class="ion-ios-arrow-left"></i>
@@ -427,111 +400,25 @@
 							</div>
 						</h1>
 						<div class="body-col vertical-slider" data-max="4" data-nav="#hot-news-nav" data-item="article">
+							{{#each TopEightHot}}
 							<article class="article-mini">
 								<div class="inner">
 									<figure>
 										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img09_qlypzd.jpg"
+											<img src="{{Thumbnail}}"
 												alt="Sample Article">
 										</a>
 									</figure>
 									<div class="padding">
-										<h1><a href="single.html">Các bước đơn giản để có điểm tâm ngon</a></h1>
+										<h1><a href="single.html">{{Title}}</a></h1>
 										<div class="detail">
-											<div class="category"><a href="category.html">Lifestyle</a></div>
-											<div class="time">April 8, 2019</div>
+											<div class="category"><a href="category.html">{{CatName}}</a></div>
+											<div class="time">{{PublishDate}}</div>
 										</div>
 									</div>
 								</div>
 							</article>
-							<article class="article-mini">
-								<div class="inner">
-									<figure>
-										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041047/TH-News/News/img01_hewppy.jpg"
-												alt="Sample Article">
-										</a>
-									</figure>
-									<div class="padding">
-										<h1><a href="single.html">Không phải hôm nay thời tiết thật đẹp để ra ngoài
-												sao?</a></h1>
-										<div class="detail">
-											<div class="category"><a href="category.html">Lifestyle</a></div>
-											<div class="time">April 5, 2019</div>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="article-mini">
-								<div class="inner">
-									<figure>
-										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img05_mxtutk.jpg"
-												alt="Sample Article">
-										</a>
-									</figure>
-									<div class="padding">
-										<h1><a href="single.html">Tại sao nên ra ngoài chơi thể thao nhiều hơn?</a>
-										</h1>
-										<div class="detail">
-											<div class="category"><a href="category.html">Lifestyle</a></div>
-											<div class="time">April 9, 2019</div>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="article-mini">
-								<div class="inner">
-									<figure>
-										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041047/TH-News/News/img02_dmg9ym.jpg"
-												alt="Sample Article">
-										</a>
-									</figure>
-									<div class="padding">
-										<h1><a href="single.html"> Tuôi trẻ là phải phượt?</a></h1>
-										<div class="detail">
-											<div class="category"><a href="category.html">Travel</a></div>
-											<div class="time">April 12, 2019</div>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="article-mini">
-								<div class="inner">
-									<figure>
-										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img13_l84wfg.jpg"
-												alt="Sample Article">
-										</a>
-									</figure>
-									<div class="padding">
-										<h1><a href="single.html">Rừng NaUy: Lời tâm sự của kẽ không còn gì</a></h1>
-										<div class="detail">
-											<div class="category"><a href="category.html">Art</a></div>
-											<div class="time">April 8, 2019</div>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="article-mini">
-								<div class="inner">
-									<figure>
-										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img08_iqdgzz.jpg"
-												alt="Sample Article">
-										</a>
-									</figure>
-									<div class="padding">
-										<h1><a href="single.html">Những quán cafe phù hợp nhất để làm việc ở Sài
-												Gòn</a></h1>
-										<div class="detail">
-											<div class="category"><a href="category.html">LifeStyle</a></div>
-											<div class="time">April 11, 2019</div>
-										</div>
-									</div>
-								</div>
-							</article>
+							{{/each}}
 						</div>
 					</div>
 				</div>
@@ -770,86 +657,25 @@
 					<h1 class="aside-title">Popular <a href="#" class="all">See All <i
 								class="ion-ios-arrow-right"></i></a></h1>
 					<div class="aside-body">
+
+						{{#each TopEightPopular}}
 						<article class="article-mini">
 							<div class="inner">
 								<figure>
 									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img07_bqxmw3.jpg"
+										<img src="{{Thumbnail}}"
 											alt="Sample Article">
 									</a>
 								</figure>
 								<div class="padding">
-									<h1><a href="single.html">Chạy bộ giúp tăng tuổi thọ</a>
+									<h1><a href="single.html">{{Title}}</a>
 									</h1>
 								</div>
 							</div>
 						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img14_xyrdv3.jpg"
-											alt="Sample Article">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Đời người phải đi đến những điểm đến này ít nhất một
-											lần</a></h1>
-								</div>
-							</div>
-						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img09_qlypzd.jpg"
-											alt="Sample Article">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Cách để nấu điểm tâm ngon</a></h1>
-								</div>
-							</div>
-						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img11_nxvm0l.jpg"
-											alt="Sample Article">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Đạp xe mỗi ngày 10km làm cơ thể săn chắc</a></h1>
-								</div>
-							</div>
-						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041047/TH-News/News/img06_vor6ey.jpg"
-											alt="Sample Article">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Cách để có một bữa trưa đầy đủ dinh dưỡng</a></h1>
-								</div>
-							</div>
-						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041047/TH-News/News/img03_alis7m.jpg"
-											alt="Sample Article">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Còn chờ gì nữa mà không sách balo lên?</a></h1>
-								</div>
-							</div>
-						</article>
+						{{/each}}
+						
+						
 					</div>
 				</aside>
 				<aside>
@@ -1217,60 +1043,22 @@
 				<div class="block">
 					<h1 class="block-title">Tin mới</h1>
 					<div class="block-body">
+						{{#each lastesArticles}}
 						<article class="article-mini">
 							<div class="inner">
 								<figure>
 									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/ngu-dan-nghia-hiep_ta6qez.jpg"
-											alt="Ngư dân nghĩa hiệp">
+										<img src="{{Thumbnail}}"
+											alt="Thumbnail">
 									</a>
 								</figure>
 								<div class="padding">
-									<h1><a href="single.html">Anh ngư dân nghĩa hiệp</a></h1>
+									<h1><a href="single.html">{{Title}}</a></h1>
 								</div>
 							</div>
 						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/song-theo-tu-nhien_pfczh9.jpg"
-											alt="Sống theo tự nhiên">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Về vườn để học sống thuận theo tự nhiên</a></h1>
-								</div>
-							</div>
-						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/kiatisuk_gjlpbq.jpg"
-											alt="Kiatisuk">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Kiatisak bận rộn ra sao mà người Thái Lan không cầu cứu?
-										</a></h1>
-								</div>
-							</div>
-						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/nu-sinh-tu-tu_vw6k0v.jpg"
-											alt="Nu sinh tu tu">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Nữ sinh nhảy cầu tự tử, hai nam sinh xuống cứu nhưng bất
-											thành </a></h1>
-								</div>
-							</div>
-						</article>
+						{{/each}}
+						
 						<a href="#" class="btn btn-magz white btn-block">Xem thêm <i
 								class="ion-ios-arrow-thin-right"></i></a>
 					</div>
