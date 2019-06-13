@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser())
-// parse application/json
 router.use(bodyParser.json());
 
 router.get('/', (req, res) => {
@@ -46,6 +45,21 @@ router.post('/register', async (req, res) => {
         res.cookie('Authorization', res.token, { maxAge: 900000, httpOnly: true });
         res.status(200).send({
             token: res.token
+        })
+    }
+})
+
+router.post('/log_out', async (req, res) => {
+    var token = req.cookies['Authorization'];
+    await tokenHandler.verify(req, res, token);
+    if (res.err != null){
+        res.status(401).send({
+            message: "Unauthorized"
+        })
+    } else {
+        res.clearCookie('Authorization');
+        res.status(200).send({
+            message: "Ok"
         })
     }
 })
