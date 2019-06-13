@@ -21,7 +21,17 @@ module.exports={
     TopThreeHot:()=>{
         return db.load(
             'select *,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article ORDER BY article.HotPoint desc LIMIT 3');
+    },
+    MostRecommend:()=>{
+        return db.load(
+            'select *,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate from article,category where article.CatId=category.id and article.PriorityPoint in (select max(article.PriorityPoint) from article)');
+    },
+    TopFourRecommend:()=>{
+        return db.load(
+            'select *,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article ORDER BY article.PriorityPoint desc LIMIT 4');
+    },
+    AnotherNews:()=>{
+        return db.load(
+            'SELECT *,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id ORDER BY RAND() LIMIT 4;');
     }
-
-    
 };
