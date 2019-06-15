@@ -1,8 +1,11 @@
 var articleModel=require('../models/article.model');
 
+
 module.exports=(req,res,next)=>{
-    articleModel.FourLastestNew().then(rows=>{
-        res.locals.lastesArticles=rows;
+
+
+    articleModel.LastestPost().then(rows=>{
+        res.locals.LastestPost=rows;
         next();
     })
 }

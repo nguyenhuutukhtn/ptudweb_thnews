@@ -9,6 +9,18 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser())
 router.use(bodyParser.json());
 
+router.use(require('../middlewares/FourLastestNews.mdw'));
+router.use(require('../middlewares/EightPopularNews.mdw'));
+router.use(require('../middlewares/TopEightHot.mdw'));
+router.use(require('../middlewares/TopThreeHot.mdw'));
+router.use(require('../middlewares/MostRecommend.mdw'));
+router.use(require('../middlewares/TopFourRecommend.mdw'));
+router.use(require('../middlewares/AnotherNews.mdw'))
+router.use(require('../middlewares/HotInWeek.mdw'))
+router.use(require('../middlewares/TopFiveCommonKeywords.mdw'))
+router.use(require('../middlewares/feadturedWritter.mdw'))
+
+
 router.get('/', (req, res) => {
     var p = articleModel.all();
     p.then(rows => {

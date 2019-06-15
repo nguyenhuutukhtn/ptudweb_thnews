@@ -40,17 +40,6 @@ app.engine('hbs',exphbs({
 
 app.set('view engine','hbs');
 
-
-app.use(require('./middlewares/FourLastestNews.mdw'));
-app.use(require('./middlewares/EightPopularNews.mdw'));
-app.use(require('./middlewares/TopEightHot.mdw'));
-app.use(require('./middlewares/TopThreeHot.mdw'));
-app.use(require('./middlewares/MostRecommend.mdw'));
-app.use(require('./middlewares/TopFourRecommend.mdw'));
-app.use(require('./middlewares/AnotherNews.mdw'))
-app.use(require('./middlewares/HotInWeek.mdw'))
-app.use(require('./middlewares/TopFiveCommonKeywords.mdw'))
-app.use(require('./middlewares/feadturedWritter.mdw'))
 app.use('/',require('./routes/homepage.route'));
 app.use('/article',require('./routes/article.route'));
 
