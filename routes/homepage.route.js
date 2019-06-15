@@ -4,6 +4,18 @@ var cookieParser = require('cookie-parser')
 var authentication = require('../controllers/authentication.controller')
 var router = express.Router();
 var bodyParser = require('body-parser');
+var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
+
+
+var fs = require("fs");
+var privateKey = fs.readFileSync('private.key');
+
+router.use(session({secret: privateKey}));
+router.use(passport.initialize());
+router.use(passport.session()); // persistent login sessions
+router.use(flash()); // use connect-flash for flash messages stored in session
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser())
@@ -39,6 +51,7 @@ router.get('/verify', async (req, res) => {
             message: "Unauthorized"
         })
     } else {
+        await authentication.getPayLoadToken(token, res);
         res.status(200).send({
             message: "Ok"
         })
@@ -93,5 +106,15 @@ router.post('/log_out', async (req, res) => {
         })
     }
 })
+
+router.post('/authentication/facebook', 
+passport.authenticate('facebook', {scope: ['email']}));
+// xử lý sau khi user cho phép xác thực với facebook
+router.post('/authentication/facebook/callback',
+passport.authenticate('facebook', {
+    successRedirect: '/profile',
+    failureRedirect: '/'
+})
+);
 
 module.exports = router;

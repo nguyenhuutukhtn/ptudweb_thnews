@@ -67,7 +67,7 @@ module.exports = {
                 .then((result) => {
                     bcrypt.compare(password, result[0].password)
                         .then(res => {
-                            tokenHandler.issue(email, result.id, 'guest')
+                            tokenHandler.issue(email, result[0].id, 'guest')
                                 .then(token => {
                                     resolve(token);
                                 })
@@ -93,7 +93,11 @@ module.exports = {
 
     verify: async (token, res) => {
         await tokenHandler.verify(token, res);
-    }
+    },
+
+    getPayLoadToken: async (token, res) => {
+        await tokenHandler.getPayload(token, res);
+    },
 
     // logOut: async () => {
 
