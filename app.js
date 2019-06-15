@@ -50,6 +50,7 @@ app.use(require('./middlewares/TopFourRecommend.mdw'));
 app.use(require('./middlewares/AnotherNews.mdw'))
 app.use(require('./middlewares/HotInWeek.mdw'))
 app.use(require('./middlewares/TopFiveCommonKeywords.mdw'))
+app.use(require('./middlewares/feadturedWritter.mdw'))
 app.use('/',require('./routes/homepage.route'));
 app.use('/article',require('./routes/article.route'));
 

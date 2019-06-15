@@ -422,6 +422,7 @@
 				<div class="sidebar-title for-tablet">Sidebar</div>
 				<aside>
 					<div class="aside-body">
+						{{#each feadturedWritter}}
 						<div class="featured-author">
 							<div class="featured-author-inner">
 								<div class="featured-author-cover"
@@ -431,12 +432,12 @@
 									</div>
 									<div class="featured-author-center">
 										<figure class="featured-author-picture">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/default-writer_sglwso.jpg"
+											<img src="{{avatar}}"
 												alt="Sample Article">
 										</figure>
 										<div class="featured-author-info">
-											<h2 class="name">Tin Huynh</h2>
-											<div class="desc">@TinHuynh</div>
+											<h2 class="name">{{name}}</h2>
+											<div class="desc">@{{pseudonym}}</div>
 										</div>
 									</div>
 								</div>
@@ -445,21 +446,13 @@
 										<div class="item">
 											<a href="#">
 												<div class="name">Posts</div>
-												<div class="value">208</div>
+												<div class="value">{{PostNum}}</div>
 											</a>
 										</div>
 										<div class="item">
 											<a href="#">
 												<div class="name">Stars</div>
-												<div class="value">3,729</div>
-											</a>
-										</div>
-										<div class="item">
-											<a href="#">
-												<div class="icon">
-													<div>Chi tiết</div>
-													<i class="ion-chevron-right"></i>
-												</div>
+												<div class="value">{{stars}}</div>
 											</a>
 										</div>
 									</div>
@@ -503,12 +496,10 @@
 											</ul>
 										</div>
 									</div>
-									<div class="featured-author-footer">
-										<a href="#">See All Authors</a>
-									</div>
 								</div>
 							</div>
 						</div>
+						{{/each}}
 					</div>
 				</aside>
 				<aside>
