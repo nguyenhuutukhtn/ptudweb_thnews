@@ -79,6 +79,31 @@ LOCK TABLES `category` WRITE;
 INSERT INTO `category` VALUES (1,'Du lịch',NULL),(2,'Thời sự',NULL),(3,'Giáo dục',NULL);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `keyword`
+--
+
+DROP TABLE IF EXISTS `keyword`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `keyword` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Keyword` varchar(500) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `keyword`
+--
+
+LOCK TABLES `keyword` WRITE;
+/*!40000 ALTER TABLE `keyword` DISABLE KEYS */;
+INSERT INTO `keyword` VALUES (1,'Trâm ','2019-06-10 12:00:00'),(2,'HongKong','2019-06-10 12:00:00'),(3,'Trâm Anh','2019-06-10 12:00:00'),(4,'Chung kết C1','2019-06-10 12:00:00'),(5,'Quang Hải','2019-06-10 12:00:00'),(6,'Quang Hải','2019-06-10 12:00:00'),(7,'Công Phượng','2019-06-10 12:00:00'),(8,'Trâm Anh','2019-06-10 12:00:00'),(9,'Công Phượng','2019-06-10 12:00:00'),(10,'Giá Vàng','2019-06-10 12:00:00'),(11,'Mưa','2019-06-10 12:00:00'),(12,'Chung kết C1','2019-06-10 12:00:00');
+/*!40000 ALTER TABLE `keyword` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -89,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-13 17:09:09
+-- Dump completed on 2019-06-15 12:22:41

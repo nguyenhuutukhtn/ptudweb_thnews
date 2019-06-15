@@ -43,11 +43,9 @@
 						<div class="help-block">
 							<div>Phổ biến:</div>
 							<ul>
-								<li><a href="#">Nông sản</a></li>
-								<li><a href="#">Thủy sản</a></li>
-								<li><a href="#">Kinh doanh</a></li>
-								<li><a href="#">Giá vàng</a></li>
-								<li><a href="#">Chứng khoán</a></li>
+								{{#each TopFiveCommonKeywords}}
+								<li><a href="#">{{Keyword}}</a></li>
+								{{/each}}
 							</ul>
 						</div>
 					</form>
@@ -750,13 +748,9 @@
 					</h1>
 					<div class="block-body">
 						<ul class="tags">
-							<li><a href="#">Trâm Anh</a></li>
-							<li><a href="#">Chùa Ba Vàng</a></li>
-							<li><a href="#">Liverpool</a></li>
-							<li><a href="#">Link 4 phút</a></li>
-							<li><a href="#">Điểm thi</a></li>
-							<li><a href="#">Hố đen</a></li>
-							<li><a href="#">Giỗ tổ</a></li>
+							{{#each TopFiveCommonKeywords}}
+							<li><a href="#">{{Keyword}}</a></li>
+							{{/each}}
 						</ul>
 					</div>
 				</div>
