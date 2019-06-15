@@ -1,11 +1,22 @@
-var db=require('../utils/db');
+var db = require('../utils/db');
 
-module.exports={
-    all:()=>{
+module.exports = {
+    all: () => {
         return db.load('select * from users');
     },
-    create : async (email, password, role) =>{
-        await db.create('insert into users (email, password) values ($1, $2)', email, password);
-        //await db.create('insert into permissions (name, user_id) values )
-    }   
+    add: (entity) => {
+        return db.add(`users`, entity);
+    },
+    update: (entity) => {
+        return db.update('users', 'id', entity);
+    },
+    delete: (id) => {
+        return db.delete('users', 'id', id);
+    },
+    single: (id) => {
+        return db.load(`select * from users where id = ${id}`);
+    },
+    getbyEmail: (email) => {
+        return db.load(`select * from users where email = '${email}'`);
+    }
 };
