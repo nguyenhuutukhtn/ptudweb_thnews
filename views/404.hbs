@@ -13,7 +13,7 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="http://github.com/nauvalazhar/Magz" />
 	<meta property="og:image" content="https://raw.githubusercontent.com/nauvalazhar/Magz/master/images/preview.png" />
-	<title>Magz &mdash; Responsive HTML5 &amp; CSS3 Magazine Template</title>
+	<title>Không tìm thấy trang</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
 	<!-- IonIcons -->
@@ -40,7 +40,8 @@
 					<div class="col-md-3 col-sm-12">
 						<div class="brand">
 							<a href="/">
-								<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png" alt="TH-News Logo">
+								<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png"
+									alt="TH-News Logo">
 							</a>
 						</div>
 					</div>
@@ -85,7 +86,8 @@
 			<div class="container">
 				<div class="brand">
 					<a href="#">
-						<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png" alt="TH-News Logo">
+						<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png"
+							alt="TH-News Logo">
 					</a>
 				</div>
 				<div class="mobile-toggle">
@@ -118,10 +120,12 @@
 						<li class="dropdown magz-dropdown"><a href="#">Công nghệ <i class="ion-ios-arrow-right"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="category.html">Internet</a></li>
-								<li class="dropdown magz-dropdown"><a href="category.html">Mobile <i class="ion-ios-arrow-right"></i></a>
+								<li class="dropdown magz-dropdown"><a href="category.html">Mobile <i
+											class="ion-ios-arrow-right"></i></a>
 									<ul class="dropdown-menu">
 										<li><a href="category.html">Điện thoại</a></li>
-										<li class="dropdown magz-dropdown"><a href="category.html">Ứng dụng <i class="ion-ios-arrow-right"></i></a>
+										<li class="dropdown magz-dropdown"><a href="category.html">Ứng dụng <i
+													class="ion-ios-arrow-right"></i></a>
 											<ul class="dropdown-menu">
 												<li><a href="category.html">Android</a></li>
 												<li><a href="category.html">IOS</a></li>
@@ -132,16 +136,19 @@
 									</ul>
 								</li>
 								<li><a href="category.html">Office</a></li>
-								<li class="dropdown magz-dropdown"><a href="#">Lập trình <i class="ion-ios-arrow-right"></i></a>
+								<li class="dropdown magz-dropdown"><a href="#">Lập trình <i
+											class="ion-ios-arrow-right"></i></a>
 									<ul class="dropdown-menu">
 										<li><a href="category.html">Web</a></li>
-										<li class="dropdown magz-dropdown"><a href="category.html">Android <i class="ion-ios-arrow-right"></i></a>
+										<li class="dropdown magz-dropdown"><a href="category.html">Android <i
+													class="ion-ios-arrow-right"></i></a>
 										</li>
 									</ul>
 								</li>
 							</ul>
 						</li>
-						<li class="dropdown magz-dropdown magz-dropdown-megamenu"><a href="#"> Điểm báo <i class="ion-ios-arrow-right"></i>
+						<li class="dropdown magz-dropdown magz-dropdown-megamenu"><a href="#"> Điểm báo <i
+									class="ion-ios-arrow-right"></i>
 								<div class="badge">Hot</div>
 							</a>
 							<div class="dropdown-menu megamenu">
@@ -173,59 +180,25 @@
 												</div>
 											</div>
 											<div class="row">
+												{{#each TopThreeHot}}
 												<article class="article col-md-4 mini">
 													<div class="inner">
 														<figure>
 															<a href="single.html">
-																<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img10_wfgxr2.jpg" alt="Sample Article">
+																<img src="{{Thumbnail}}" alt="Sample Article">
 															</a>
 														</figure>
 														<div class="padding">
 															<div class="detail">
-																<div class="time">April 15, 2019</div>
+																<div class="time">{{PublishDate}}</div>
 																<div class="category"><a href="category.html">Pet</a>
 																</div>
 															</div>
-															<h2><a href="single.html">Bạn đã chăm sóc cho chú mèo nhà
-																	bạn đúng cách chưa?</a></h2>
+															<h2><a href="single.html">{{Title}}</a></h2>
 														</div>
 													</div>
 												</article>
-												<article class="article col-md-4 mini">
-													<div class="inner">
-														<figure>
-															<a href="single.html">
-																<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img11_nxvm0l.jpg" alt="Sample Article">
-															</a>
-														</figure>
-														<div class="padding">
-															<div class="detail">
-																<div class="time">April 13, 2019</div>
-																<div class="category"><a href="category.html">Lifestyle</a></div>
-															</div>
-															<h2><a href="single.html"></a>Đạp xe mỗi ngày 10km làm cơ
-																thể săn chắc</h2>
-														</div>
-													</div>
-												</article>
-												<article class="article col-md-4 mini">
-													<div class="inner">
-														<figure>
-															<a href="single.html">
-																<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img14_xyrdv3.jpg" alt="Sample Article">
-															</a>
-														</figure>
-														<div class="padding">
-															<div class="detail">
-																<div class="time">April 10, 2019</div>
-																<div class="category"><a href="category.html">Travel</a>
-																</div>
-															</div>
-															<h2><a href="single.html">Đời người phải đi những điểm đến
-																	này ít nhất một lần </a></h2>
-														</div>
-													</div>
-												</article>
+												{{/each}}
 											</div>
 										</div>
 									</div>
@@ -235,7 +208,8 @@
 						<li class="dropdown magz-dropdown"><a href="#">Thể thao <i class="ion-ios-arrow-right"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="category.html">Thể thao Việt Nam</a></li>
-								<li class="dropdown magz-dropdown"><a href="category.html">Thể thao thế giới<i class="ion-ios-arrow-right"></i></a>
+								<li class="dropdown magz-dropdown"><a href="category.html">Thể thao thế giới<i
+											class="ion-ios-arrow-right"></i></a>
 									<ul class="dropdown-menu">
 										<li><a href="category.html">Ngoại hạng Anh</a></li>
 										<li><a href="category.html">Tây Ban Nha</a></li>
@@ -260,7 +234,8 @@
 								<li><a href="category.html"> Nhạc Âu Mỹ </a></li>
 							</ul>
 						</li>
-						<li class="dropdown magz-dropdown"><a href="#"> Quản lý cá nhân <i class="ion-ios-arrow-right"></i></a>
+						<li class="dropdown magz-dropdown"><a href="#"> Quản lý cá nhân <i
+									class="ion-ios-arrow-right"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#"><i class="icon ion-person"></i> My Account</a></li>
 								<li><a href="#"><i class="icon ion-heart"></i> Favorite</a></li>
@@ -286,7 +261,8 @@
 						404
 					</div>
 					<h1>Page could not be found</h1>
-					<p class="lead">The page you are looking for is not available please check the url you are going to.</p>
+					<p class="lead">The page you are looking for is not available please check the url you are going to.
+					</p>
 					<div class="search-form">
 						<form>
 							<div class="form-group">
@@ -316,18 +292,21 @@
 						<h1 class="block-title">Kênh tin tức</h1>
 						<div class="block-body">
 							<figure class="foot-logo">
-								<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png" class="img-responsive" alt="Logo">
+								<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png"
+									class="img-responsive" alt="Logo">
 							</figure>
 							<p class="brand-description">
 								TH-News là kênh tin tức được phát triển bởi nhóm đẹp trai -HCMUS
 							</p>
-							<a href="page.html" class="btn btn-magz white">Giới thiệu <i class="ion-ios-arrow-thin-right"></i></a>
+							<a href="page.html" class="btn btn-magz white">Giới thiệu <i
+									class="ion-ios-arrow-thin-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="block">
-						<h1 class="block-title">Tìm kiếm nhiều <div class="right"><a href="#">See All <i class="ion-ios-arrow-thin-right"></i></a></div>
+						<h1 class="block-title">Tìm kiếm nhiều <div class="right"><a href="#">See All <i
+										class="ion-ios-arrow-thin-right"></i></a></div>
 						</h1>
 						<div class="block-body">
 							<ul class="tags">
@@ -366,7 +345,8 @@
 								<div class="inner">
 									<figure>
 										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/ngu-dan-nghia-hiep_ta6qez.jpg" alt="Ngư dân nghĩa hiệp">
+											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/ngu-dan-nghia-hiep_ta6qez.jpg"
+												alt="Ngư dân nghĩa hiệp">
 										</a>
 									</figure>
 									<div class="padding">
@@ -378,7 +358,8 @@
 								<div class="inner">
 									<figure>
 										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/song-theo-tu-nhien_pfczh9.jpg" alt="Sống theo tự nhiên">
+											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/song-theo-tu-nhien_pfczh9.jpg"
+												alt="Sống theo tự nhiên">
 										</a>
 									</figure>
 									<div class="padding">
@@ -390,11 +371,13 @@
 								<div class="inner">
 									<figure>
 										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/kiatisuk_gjlpbq.jpg" alt="Kiatisuk">
+											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/kiatisuk_gjlpbq.jpg"
+												alt="Kiatisuk">
 										</a>
 									</figure>
 									<div class="padding">
-										<h1><a href="single.html">Kiatisak bận rộn ra sao mà người Thái Lan không cầu cứu? </a></h1>
+										<h1><a href="single.html">Kiatisak bận rộn ra sao mà người Thái Lan không cầu
+												cứu? </a></h1>
 									</div>
 								</div>
 							</article>
@@ -402,15 +385,18 @@
 								<div class="inner">
 									<figure>
 										<a href="single.html">
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/nu-sinh-tu-tu_vw6k0v.jpg" alt="Nu sinh tu tu">
+											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/nu-sinh-tu-tu_vw6k0v.jpg"
+												alt="Nu sinh tu tu">
 										</a>
 									</figure>
 									<div class="padding">
-										<h1><a href="single.html">Nữ sinh nhảy cầu tự tử, hai nam sinh xuống cứu nhưng bất thành </a></h1>
+										<h1><a href="single.html">Nữ sinh nhảy cầu tự tử, hai nam sinh xuống cứu nhưng
+												bất thành </a></h1>
 									</div>
 								</div>
 							</article>
-							<a href="#" class="btn btn-magz white btn-block">Xem thêm <i class="ion-ios-arrow-thin-right"></i></a>
+							<a href="#" class="btn btn-magz white btn-block">Xem thêm <i
+									class="ion-ios-arrow-thin-right"></i></a>
 						</div>
 					</div>
 				</div>

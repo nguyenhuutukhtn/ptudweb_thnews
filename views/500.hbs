@@ -174,59 +174,26 @@
 												</div>
 											</div>
 											<div class="row">
-												<article class="article col-md-4 mini">
-													<div class="inner">
-														<figure>
-															<a href="single.html">
-																<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img10_wfgxr2.jpg" alt="Sample Article">
-															</a>
-														</figure>
-														<div class="padding">
-															<div class="detail">
-																<div class="time">April 15, 2019</div>
-																<div class="category"><a href="category.html">Pet</a>
-																</div>
+												{{#each TopThreeHot}}
+											<article class="article col-md-4 mini">
+												<div class="inner">
+													<figure>
+														<a href="single.html">
+															<img src="{{Thumbnail}}"
+																alt="Sample Article">
+														</a>
+													</figure>
+													<div class="padding">
+														<div class="detail">
+															<div class="time">{{PublishDate}}</div>
+															<div class="category"><a href="category.html">Pet</a>
 															</div>
-															<h2><a href="single.html">Bạn đã chăm sóc cho chú mèo nhà
-																	bạn đúng cách chưa?</a></h2>
 														</div>
+														<h2><a href="single.html">{{Title}}</a></h2>
 													</div>
-												</article>
-												<article class="article col-md-4 mini">
-													<div class="inner">
-														<figure>
-															<a href="single.html">
-																<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img11_nxvm0l.jpg" alt="Sample Article">
-															</a>
-														</figure>
-														<div class="padding">
-															<div class="detail">
-																<div class="time">April 13, 2019</div>
-																<div class="category"><a href="category.html">Lifestyle</a></div>
-															</div>
-															<h2><a href="single.html"></a>Đạp xe mỗi ngày 10km làm cơ
-																thể săn chắc</h2>
-														</div>
-													</div>
-												</article>
-												<article class="article col-md-4 mini">
-													<div class="inner">
-														<figure>
-															<a href="single.html">
-																<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img14_xyrdv3.jpg" alt="Sample Article">
-															</a>
-														</figure>
-														<div class="padding">
-															<div class="detail">
-																<div class="time">April 10, 2019</div>
-																<div class="category"><a href="category.html">Travel</a>
-																</div>
-															</div>
-															<h2><a href="single.html">Đời người phải đi những điểm đến
-																	này ít nhất một lần </a></h2>
-														</div>
-													</div>
-												</article>
+												</div>
+											</article>
+											{{/each}}
 											</div>
 										</div>
 									</div>

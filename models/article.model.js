@@ -33,5 +33,9 @@ module.exports={
     AnotherNews:()=>{
         return db.load(
             'SELECT *,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id ORDER BY RAND() LIMIT 4;');
+    },
+    HotInWeek:()=>{
+        return db.load(
+            'SELECT *,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id AND DATEDIFF(NOW(),article.PublishDay) < 7 order by(article.Views) desc limit 7;');
     }
 };
