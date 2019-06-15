@@ -1,6 +1,5 @@
 var express = require('express');
 var articleModel = require('../models/article.model');
-var tokenHandler = require('../middlewares/tokenHandler');
 var cookieParser = require('cookie-parser')
 
 var router = express.Router();
