@@ -51,6 +51,7 @@ app.use(require('./middlewares/AnotherNews.mdw'))
 app.use(require('./middlewares/HotInWeek.mdw'))
 app.use(require('./middlewares/TopFiveCommonKeywords.mdw'))
 app.use('/',require('./routes/homepage.route'));
+app.use('/article',require('./routes/article.route'));
 
 app.use((req,res,next)=>{
     res.render('404',{layout:false});
