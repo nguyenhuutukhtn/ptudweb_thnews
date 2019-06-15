@@ -12,7 +12,6 @@ module.exports = {
                 exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24),
                 iat: Math.floor(Date.now() / 1000) + (60 * 60 * 24)
             }, privateKey);
-            console.log("Token 0: ", token);
             if (token != null){
                 resolve(token);
             } else{
@@ -29,5 +28,12 @@ module.exports = {
                 res.err = 'Error';
             }
         });
+    },
+    getPayload: (token, res) => {
+        var decoded = jwt.decode(token);
+        console.log("decoded.id: ", decoded.id);
+        console.log("decoded.role: ", decoded.role);
+        res.id = decoded.id;
+        res.role = decoded.role;
     }
 }
