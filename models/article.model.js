@@ -32,7 +32,7 @@ module.exports={
     },
     AnotherNews:()=>{
         return db.load(
-            'SELECT *,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id ORDER BY RAND() LIMIT 4;');
+            'SELECT article.Id,article.Title,article.Thumbnail,article.Summary,article.Views,article.Liked,category.CatName,category.id as CatId,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id ORDER BY RAND() LIMIT 4;');
     },
     HotInWeek:()=>{
         return db.load(
