@@ -43,24 +43,28 @@ router.get('/', (req, res) => {
     });
 })
 
-router.get('/verify', async (req, res) => {
+router.get('/verify', (req, res) => {
     var token = req.cookies['Authorization'];
-    await authentication.verify(token, res);
-    if (res.err != null) {
-        res.status(401).send({
-            message: "Unauthorized"
+    authentication.verify(token, res)
+    .then(temp => {
+        authentication.getPayLoadToken(token, res)
+        .then(temp => {
+            res.render('home');
         })
-    } else {
-        await authentication.getPayLoadToken(token, res);
-        res.status(200).send({
-            message: "Ok"
+        .catch(err => {
+            res.render('500');
         })
-    }
+    })
+    .catch(err =>{
+        res.render('401');
+    })
 })
 
 router.post('/login', (req, res) => {
     var email = req.body.email
     var password = req.body.password
+    console.log("email:", email);
+    console.log("password: ", password);
     authentication.login(email, password)
         .then(token => {
             res.cookie('Authorization', token, { maxAge: 900000, httpOnly: true });
@@ -104,19 +108,18 @@ router.post('/register', (req, res) => {
         })
 })
 
-router.post('/logout', async (req, res) => {
+router.post('/logout', (req, res) => {
     var token = req.cookies['Authorization'];
-    await authentication.verify(token, res)
-    if (res.err != null) {
-        res.status(401).send({
-            message: "Unauthorized"
-        })
-    } else {
+    authentication.verify(token, res)
+    .then(temp => {
         res.clearCookie('Authorization');
         res.status(200).send({
             "message": "Success"
         })
-    }
+    })
+    .catch(err => {
+        res.render('401');
+    })
 })
 
 router.post('/authentication/facebook', 
@@ -131,11 +134,24 @@ passport.authenticate('facebook', {
 
 router.post('register/subscriber', async (req, res) => {
     var token = req.cookies['Authorization'];
-    await authentication.verify(token, res)
-    await authentication.getPayLoadToken(token, res);
-    subscriber.register(id);
-    res.status(200).send({
-        "message": "Success"
+    authentication.verify(token, res)
+    .then(temp => {
+        authentication.getPayLoadToken(token, res)
+        .then(temp => {
+            subscriber.register(res.id)
+            .then(temp => {
+                res.render('home');
+            })
+            .catch(err => {
+                res.render('500');
+            })
+        })
+        .catch(err => {
+            res.render('500');    
+        })
+    })
+    .catch(err => {
+        res.render('401');
     })
 })
 

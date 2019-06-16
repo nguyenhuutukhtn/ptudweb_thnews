@@ -67,9 +67,9 @@ module.exports = {
 
     login: (email, password) => {
         return new Promise((resolve, reject) => {
-            if (userInfo.password.length < 6) {
-                var err = "Password is invalid"
-                console.log(err)
+            if (password.length < 6) {
+                var err = "Password is invalid";
+                console.log("Password is invalid");
                 reject(err);
             }
             userModel.getbyEmail(email)
@@ -77,7 +77,7 @@ module.exports = {
                     bcrypt.compare(password, result[0].password, function (err, res) {
                         if (res == false) {
                             err = "Wrong password";
-                            console.log(err);
+                            console.log("Wrong password");
                             reject(err);
                         } else {
                             tokenHandler.issue(email, result[0].id, 'guest')
@@ -92,19 +92,19 @@ module.exports = {
                     })
                 })
                 .catch(err => {
-                    console.log(err);
+                    console.log("User has not registered yet");
                     err = "User has not registered yet";
                     reject(err);
                 })
         });
     },
 
-    verify: async (token, res) => {
-        await tokenHandler.verify(token, res);
+    verify: (token, res) => {
+        return tokenHandler.verify(token, res);
     },
 
-    getPayLoadToken: async (token, res) => {
-        await tokenHandler.getPayload(token, res);
+    getPayLoadToken: (token, res) => {
+        return tokenHandler.getPayload(token, res);
     },
 
     // logOut: async () => {
