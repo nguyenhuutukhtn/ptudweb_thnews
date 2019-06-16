@@ -6,19 +6,23 @@ var permissionModel = require('../models/permissions.model')
 var userPermissionModel = require('../models/user_permissions.model')
 
 module.exports = {
-    register: (email, password, role, res) => {
+    register: (userInfo, role, res) => {
         return new Promise((resolve, reject) => {
-            verifier.verify(email, function (err, info) {
+            verifier.verify(userInfo.email, function (err, info) {
                 if (err) return false;
                 else {
-                    if (password.length < 6) {
+                    if (userInfo.password.length < 6) {
                         return false;
                     }
 
-                    var hashedPassword = bcrypt.hashSync(password, 8);
+                    var hashedPassword = bcrypt.hashSync(userInfo.password, 8);
                     var user = {
-                        email: email,
+                        email: userInfo.email,
                         password: hashedPassword,
+                        first_name: userInfo.first_name,
+                        last_name: userInfo.last_name,
+                        birth_date: userInfo.birth_date,
+                        pseudonym: userInfo.pseudonym,
                     };
 
                     userModel.add(user).then(id => {
@@ -63,10 +67,19 @@ module.exports = {
 
     login: (email, password) => {
         return new Promise((resolve, reject) => {
+            if (userInfo.password.length < 6) {
+                var err = "Password is invalid"
+                console.log(err)
+                reject(err);
+            }
             userModel.getbyEmail(email)
                 .then((result) => {
-                    bcrypt.compare(password, result[0].password)
-                        .then(res => {
+                    bcrypt.compare(password, result[0].password, function (err, res) {
+                        if (res == false) {
+                            err = "Wrong password";
+                            console.log(err);
+                            reject(err);
+                        } else {
                             tokenHandler.issue(email, result[0].id, 'guest')
                                 .then(token => {
                                     resolve(token);
@@ -76,12 +89,7 @@ module.exports = {
                                     reject(err);
                                 });
                         }
-                        )
-                        .catch(err => {
-                            console.log(err);
-                            err = "Wrong password";
-                            reject(err);
-                        })
+                    })
                 })
                 .catch(err => {
                     console.log(err);
