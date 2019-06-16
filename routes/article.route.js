@@ -9,6 +9,10 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser())
 router.use(bodyParser.json());
 
+router.use(require('../middlewares/LastestPost.mdw'))
+router.use(require('../middlewares/FourLastestNews.mdw'))
+router.use(require('../middlewares/TopThreeHot.mdw'))
+
 router.get('/:id', (req, res) => {
     var id=req.params.id;
     var p = articleModel.articleDetail(id);

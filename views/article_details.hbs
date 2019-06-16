@@ -165,63 +165,26 @@
 											</div>
 										</div>
 										<div class="row">
+											{{#each TopThreeHot}}
 											<article class="article col-md-4 mini">
 												<div class="inner">
 													<figure>
-														<a href="single.html">
-															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img10_wfgxr2.jpg"
+														<a href="/article/{{Id}}">
+															<img src="{{Thumbnail}}"
 																alt="Sample Article">
 														</a>
 													</figure>
 													<div class="padding">
 														<div class="detail">
-															<div class="time">April 15, 2019</div>
-															<div class="category"><a href="category.html">Pet</a>
+															<div class="time">{{PublishDate}}</div>
+															<div class="category"><a href="category.html">{{CatName}}</a>
 															</div>
 														</div>
-														<h2><a href="single.html">Bạn đã chăm sóc cho chú mèo nhà
-																bạn đúng cách chưa?</a></h2>
+														<h2><a href="/article/{{Id}}">{{Title}}</a></h2>
 													</div>
 												</div>
 											</article>
-											<article class="article col-md-4 mini">
-												<div class="inner">
-													<figure>
-														<a href="single.html">
-															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img11_nxvm0l.jpg"
-																alt="Sample Article">
-														</a>
-													</figure>
-													<div class="padding">
-														<div class="detail">
-															<div class="time">April 13, 2019</div>
-															<div class="category"><a href="category.html">Lifestyle</a>
-															</div>
-														</div>
-														<h2><a href="single.html"></a>Đạp xe mỗi ngày 10km làm cơ
-															thể săn chắc</h2>
-													</div>
-												</div>
-											</article>
-											<article class="article col-md-4 mini">
-												<div class="inner">
-													<figure>
-														<a href="single.html">
-															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img14_xyrdv3.jpg"
-																alt="Sample Article">
-														</a>
-													</figure>
-													<div class="padding">
-														<div class="detail">
-															<div class="time">April 10, 2019</div>
-															<div class="category"><a href="category.html">Travel</a>
-															</div>
-														</div>
-														<h2><a href="single.html">Đời người phải đi những điểm đến
-																này ít nhất một lần </a></h2>
-													</div>
-												</div>
-											</article>
+											{{/each}} 
 										</div>
 									</div>
 								</div>
@@ -291,82 +254,51 @@
 				<aside>
 					<h1 class="aside-title">Bài mới</h1>
 					<div class="aside-body">
+						{{#each LastestPost}}
 						<article class="article-fw">
 							<div class="inner">
 								<figure>
-									<a href="single.html">
+									<a href="/article/{{Id}}">
 										<img
-											src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041047/TH-News/News/example_bauimx.jpg">
+											src="{{Thumbnail}}">
 									</a>
 								</figure>
 								<div class="details">
-									<h1><a href="single.html">Dưa hấu Quảng Nam nhưng dán tem chữ Trung Quốc</a>
+									<h1><a href="/article/{{Id}}">{{Title}}</a>
 									</h1>
 									<p>
-										Gần đây trên những cánh đồng dưa hấu ở huyện Phú Ninh (Quảng Nam), thương
-										lái thu mua dưa đã đưa những cuộn tem có ghi chữ Trung Quốc để nông dân dán
-										vào rồi mới chất lên xe tải.
+										{{Summary}}
 									</p>
 									<div class="detail">
-										<div class="time">April 13, 2019</div>
-										<div class="category"><a href="category.html">Thời sự</a></div>
+										<div class="time">{{PublishDate}}</div>
+										<div class="category"><a href="category.html">{{CatName}}</a></div>
 									</div>
 								</div>
 							</div>
 						</article>
+						{{/each}}
 						<div class="line"></div>
+						{{#each lastesArticles}}
 						<article class="article-mini">
 							<div class="inner">
 								<figure>
-									<a href="single.html">
+									<a href="/article/{{Id}}">
 										<img
-											src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/song-theo-tu-nhien_pfczh9.jpg">
+											src="{{Thumbnail}}">
 									</a>
 								</figure>
 								<div class="padding">
-									<h1><a href="single.html">Về vườn để học sống thuận theo tự nhiên</a></h1>
-									<div class="detail">
-										<div class="category"><a href="category.html">Nông nghiệp</a></div>
-										<div class="time">April 11, 2019</div>
-									</div>
-								</div>
-							</div>
-						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img
-											src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/ngu-dan-nghia-hiep_ta6qez.jpg">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Anh ngư dân nghĩa hiệp</a></h1>
-									<div class="detail">
-										<div class="category"><a href="category.html">Thời sự</a></div>
-										<div class="time">April 10, 2018</div>
-									</div>
-								</div>
-							</div>
-						</article>
-						<article class="article-mini">
-							<div class="inner">
-								<figure>
-									<a href="single.html">
-										<img
-											src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041046/TH-News/News/hoc-sinh-chet-duoi_kumejw.jpg">
-									</a>
-								</figure>
-								<div class="padding">
-									<h1><a href="single.html">Gia Lai: 3 học sinh tiểu học chết đuối thương tâm</a>
+									<h1><a href="single.html">{{Title}}</a>
 									</h1>
 									<div class="detail">
-										<div class="category"><a href="category.html">Giáo dục</a></div>
-										<div class="time">April 9, 2019</div>
+										<div class="category"><a href="category.html">{{CatName}}</a></div>
+										<div class="time">{{PublishDate}}</div>
 									</div>
 								</div>
 							</div>
 						</article>
+						{{/each}}
+						
 					</div>
 				</aside>
 				<aside>
@@ -452,7 +384,7 @@
 							</a>
 						</li>
 						<li class="count">
-							20
+							{{Shared}}
 							<div>Chia sẻ</div>
 						</li>
 					</ul>
