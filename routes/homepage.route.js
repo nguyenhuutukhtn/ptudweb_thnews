@@ -12,7 +12,7 @@ var flash = require('connect-flash');
 var fs = require("fs");
 var privateKey = fs.readFileSync('private.key');
 
-router.use(session({secret: privateKey}));
+//router.use(session({secret: privateKey}));
 router.use(passport.initialize());
 router.use(passport.session()); // persistent login sessions
 router.use(flash()); // use connect-flash for flash messages stored in session
@@ -104,5 +104,10 @@ passport.authenticate('facebook', {
     failureRedirect: '/'
 })
 );
+
+router.post('register/subscriber', async (req, res) => {
+    var token = req.cookies['Authorization'];
+    await authentication.verify(token, res)
+})
 
 module.exports = router;
