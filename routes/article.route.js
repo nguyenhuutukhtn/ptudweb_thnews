@@ -16,10 +16,15 @@ router.use(require('../middlewares/TopThreeHot.mdw'))
 router.get('/:id', (req, res) => {
     var id=req.params.id;
     var p = articleModel.articleDetail(id);
-    p.then(rows => {
-        res.render('article_details',{
-            articleDetail:rows
+    p.then(articleDetail => {
+        var q=articleModel.RelateNews(id);
+        q.then(RelateNews=>{
+            res.render('article_details',{
+                relateNews:RelateNews,
+                articleDetail:articleDetail
+            });
         })
+        
         //console.log(rows);
     }).catch(err => {
         console.log(err);
