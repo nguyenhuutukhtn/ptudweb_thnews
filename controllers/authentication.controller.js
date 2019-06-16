@@ -82,29 +82,29 @@ module.exports = {
                         } else {
                             var user_id = result[0].id;
                             userPermissionModel.getByUserID(result[0].id)
-                            .then(result => {
-                                console.log("user permission: ",result[0]);
-                                permissionModel.single(result[0].permission_id)
                                 .then(result => {
-                                    console.log("user permission: ",result[0]);
-                                    tokenHandler.issue(email, user_id, result[0].name)
-                                .then(token => {
-                                    resolve(token);
+                                    console.log("user permission: ", result[0]);
+                                    permissionModel.single(result[0].permission_id)
+                                        .then(result => {
+                                            console.log("user permission: ", result[0]);
+                                            tokenHandler.issue(email, user_id, result[0].name)
+                                                .then(token => {
+                                                    resolve(token);
+                                                })
+                                                .catch(err => {
+                                                    console.log(err);
+                                                    reject(err);
+                                                });
+                                        })
+                                        .catch(err => {
+                                            console.log(err);
+                                            reject(err);
+                                        })
                                 })
                                 .catch(err => {
                                     console.log(err);
                                     reject(err);
-                                });      
                                 })
-                                .catch(err => {
-                                    console.log(err);
-                                    reject(err);    
-                                })
-                            })
-                            .catch(err => {
-                                console.log(err);
-                                reject(err);
-                            })
                         }
                     })
                 })
@@ -123,6 +123,35 @@ module.exports = {
     getPayLoadToken: (token, res) => {
         return tokenHandler.getPayload(token, res);
     },
+
+    issueTokenWithUser: (user, res) => {
+        return new Promise((resolve, reject) => {
+            userPermissionModel.getByUserID(user.id)
+            .then(result => {
+                console.log("user permission: ", result[0]);
+                permissionModel.single(result[0].permission_id)
+                    .then(result => {
+                        console.log("user permission: ", result[0]);
+                        tokenHandler.issue(email, user_id, result[0].name)
+                            .then(token => {
+                                resolve(token);
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                reject(err);
+                            });
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        reject(err);
+                    })
+            })
+            .catch(err => {
+                console.log(err);
+                reject(err);
+            })
+        })
+    }
 
     // logOut: async () => {
 

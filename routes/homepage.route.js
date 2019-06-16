@@ -10,6 +10,12 @@ var flash = require('connect-flash');
 var subscriber = require('../controllers/subscriber.controller');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var guestRole = require('../middlewares/guestRole.mdw');
+var editorRole = require('../middlewares/editorRole.mdw');
+var bcrypt = require('bcryptjs');
+var userModel = require('../models/users.model');
+
+const NodeCache = require("node-cache");
+const myCache = new NodeCache();
 
 var configAuth = require('../config/auth');
 var tokenHandler = require('../utils/tokenHandler');
@@ -36,7 +42,18 @@ router.use(require('../middlewares/HotInWeek.mdw'))
 router.use(require('../middlewares/TopFiveCommonKeywords.mdw'))
 router.use(require('../middlewares/feadturedWritter.mdw'))
 
+
 //Trash. Just!... I don't know maybe it's just another stressful day
+
+// Passport session setup.
+passport.serializeUser(function(user, done) {
+    done(null, user);
+  });
+  
+  passport.deserializeUser(function(obj, done) {
+    done(null, obj);
+  });
+
 passport.use(new FacebookStrategy({
     // điền thông tin để xác thực với Facebook.
     // những thông tin này đã được điền ở file auth.js
@@ -46,34 +63,59 @@ passport.use(new FacebookStrategy({
     profileFields: ['id', 'displayName', 'email', 'first_name', 'last_name', 'middle_name']
 },
     // Facebook sẽ gửi lại chuối token và thông tin profile của user
-    function (token, refreshToken, profile) {
+    function (token, refreshToken, profile, done) {
         // asynchronous
+        console.log(1);
         process.nextTick(function () {
             // tìm trong db xem có user nào đã sử dụng facebook id này chưa
-            userModel.getByFacebookID({ 'facebook_id': profile.id }, function (err, user) {
-                if (err)
-                    console.log("errr");
-                // Nếu tìm thấy user, cho họ đăng nhập
-                if (user) {
-                    tokenHandler.issue(user.email, user.id)
-                    console.log("Have itttttttttttttttt");
-                    //return done(null, user); // user found, return that user
-                } else {
-                    // nếu chưa có, tạo mới user
-                    console.log(profile);
-                    var newUser = {
-                        facebook_id: profile.id,
-                        email: profile.emails[0].value,
-                        first_name: profile.name.givenName,
-                        last_name: profile.name.familyName
+            console.log(2);
+            console.log("profile: ", profile);
+            userModel.getByFacebookID(profile.id)
+                .then(user => {
+                    console.log(user);
+                    if (user.length !== 0) {
+                        var temp;
+                        authentication.issueTokenWithUser(user, temp)
+                            .then(token => {
+                                success = myCache.set("token", token, 10000);
+                                return done(null, user);
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                return done(err);
+                            })
+                        console.log("Have itttttttttttttttt");
+                    } else {
+                        var hashedPassword = bcrypt.hashSync('123', 8);
+                        console.log(profile);
+                        var newUser = {
+                            facebook_id: profile.id,
+                            email: profile.emails[0].value,
+                            password: hashedPassword,
+                            first_name: profile.name.givenName,
+                            last_name: profile.name.familyName
+                        }
+                        // // lưu các thông tin cho user
+                        // lưu vào db
+                        var temp;
+                        authentication.register(newUser, 'guests', temp)
+                            .then(token => {
+                                console.log("Start cache");
+                                success = myCache.set("token", token, 10000);
+                                console.log("End cache");
+                                return done(null, newUser);
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                return done(err);
+                            })
                     }
-                    // // lưu các thông tin cho user
-                    // lưu vào db
-                    userModel.add(newUser)
-                        .then()
-                        .catch()
-                }
-            });
+                })
+                .catch(err => {
+                    console.log("errr");
+                    console.log(err);
+                    return done(err);
+                })
         });
     })
 );
@@ -81,6 +123,7 @@ passport.use(new FacebookStrategy({
 //-----------------------------------------------
 
 router.use('/guest', guestRole);
+//router.use('/editor', editorRole);
 
 router.get('/', (req, res) => {
     var p = articleModel.all();
@@ -119,6 +162,7 @@ router.post('/login', (req, res) => {
             res.cookie('Authorization', token, { maxAge: 900000, httpOnly: true });
             console.log("Success: ", token);
             res.render('home');
+            res.redirect('/');
         })
         .catch(err => {
             res.render('401');
@@ -151,6 +195,7 @@ router.post('/register', (req, res) => {
             res.cookie('Authorization', token, { maxAge: 900000, httpOnly: true });
             console.log("Success: ", token);
             res.render('home');
+            res.redirect('/');
         })
         .catch(err => {
             res.render('401');
@@ -167,6 +212,7 @@ router.post('/admin/login', (req, res) => {
             res.cookie('Authorization', token, { maxAge: 900000, httpOnly: true });
             console.log("Success: ", token);
             res.render('home');
+            res.redirect('/');
         })
         .catch(err => {
             res.render('401');
@@ -188,6 +234,7 @@ router.post('/admin/register', (req, res) => {
             res.cookie('Authorization', token, { maxAge: 900000, httpOnly: true });
             console.log("Success: ", token);
             res.render('home');
+            res.redirect('/');
         })
         .catch(err => {
             res.render('401');
@@ -199,25 +246,29 @@ router.post('/logout', (req, res) => {
     authentication.verify(token, res)
         .then(temp => {
             res.clearCookie('Authorization');
-            res.status(200).send({
-                "message": "Success"
-            })
+            res.redirect('/');
+            res.render('home');
         })
         .catch(err => {
             res.render('401');
         })
 })
 
-router.post('/authentication/facebook',
-    //     passport.authenticate('facebook', { scope: ['email'] }));
-    // // xử lý sau khi user cho phép xác thực với facebook
-    // router.post('/authentication/facebook/callback',
-    //     passport.authenticate('facebook', {
-    //         successRedirect: '/profile',
-    //         failureRedirect: '/'
-    //     })
+router.get('/authentication/facebook/callback',
+    passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }),
+    function (req, res) {
+        value = myCache.get("token");
+        if (value == undefined) {
+            // handle miss!
+            console.log("Empty cache");
+        }
+        res.cookie('Authorization', value, { maxAge: 900000, httpOnly: true });
+        res.redirect('/');
+    });
+
+router.get('/authentication/facebook',
     passport.authenticate('facebook', {
-        scope: ['publish_actions', 'manage_pages', 'email']
+        scope: ['email']
     })
 );
 
@@ -230,6 +281,7 @@ router.post('register/subscriber', (req, res) => {
                     subscriber.register(res.id)
                         .then(temp => {
                             res.render('home');
+                            res.redirect('/');
                         })
                         .catch(err => {
                             res.render('500');
