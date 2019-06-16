@@ -437,40 +437,25 @@
 					<div>Bài viết liên quan</div>
 				</div>
 				<div class="row">
+					{{#each ../relateNews}}
 					<article class="article related col-md-6 col-sm-6 col-xs-12">
 						<div class="inner">
 							<figure>
 								<a href="#">
 									<img
-										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/kiatisuk_gjlpbq.jpg">
+										src="{{Thumbnail}}">
 								</a>
 							</figure>
 							<div class="padding">
-								<h2><a href="#">Kiatisak bận rộn ra sao mà người Thái Lan không cầu cứu?</a></h2>
+								<h2><a href="/article/{{Id}}">{{Title}}</a></h2>
 								<div class="detail">
-									<div class="category"><a href="category.html">Thể thao</a></div>
-									<div class="time">April 15, 2019</div>
+									<div class="category"><a href="category.html">{{CatName}}</a></div>
+									<div class="time">{{PublishDate}}</div>
 								</div>
 							</div>
 						</div>
 					</article>
-					<article class="article related col-md-6 col-sm-6 col-xs-12">
-						<div class="inner">
-							<figure>
-								<a href="#">
-									<img
-										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img08_iqdgzz.jpg">
-								</a>
-							</figure>
-							<div class="padding">
-								<h2><a href="#">Ngày mới tốt lành với một ly cà phê sữa nóng</a></h2>
-								<div class="detail">
-									<div class="category"><a href="category.html">Chia sẻ</a></div>
-									<div class="time">April 26, 2019</div>
-								</div>
-							</div>
-						</div>
-					</article>
+					{{/each}}
 				</div>
 				<div class="line thin"></div>
 				<div class="comments">
