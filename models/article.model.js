@@ -46,4 +46,8 @@ module.exports={
         return db.load(
             'SELECT article.Id,article.Title,article.Thumbnail,article.Summary,article.Views,article.Liked,category.CatName,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id AND article.PublishDay in (select MAX(article.PublishDay) from article) limit 1;');
     },
+    RelatesArticle: CatId=>{
+        return db.load(
+            `SELECT article.Id,article.Title,article.Thumbnail,article.Summary,article.Views,article.Liked,category.CatName,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id AND category.id=${CatId} and datediff(now(),article.PublishDay)<10 order by rand() limit 2;`);
+    }
 };
