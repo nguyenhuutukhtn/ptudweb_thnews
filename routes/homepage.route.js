@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 //var session = require('express-session');
 var flash = require('connect-flash');
-
+var subscriber = require('../controllers/subscriber.controller');
 
 var fs = require("fs");
 var privateKey = fs.readFileSync('private.key');
@@ -43,68 +43,83 @@ router.get('/', (req, res) => {
     });
 })
 
-router.get('/verify', async (req, res) => {
+router.get('/verify', (req, res) => {
     var token = req.cookies['Authorization'];
-    await authentication.verify(token, res);
-    if (res.err != null) {
-        res.status(401).send({
-            message: "Unauthorized"
+    authentication.verify(token, res)
+    .then(temp => {
+        authentication.getPayLoadToken(token, res)
+        .then(temp => {
+            res.render('home');
         })
-    } else {
-        await authentication.getPayLoadToken(token, res);
-        res.status(200).send({
-            message: "Ok"
+        .catch(err => {
+            res.render('500');
         })
-    }
+    })
+    .catch(err =>{
+        res.render('401');
+    })
 })
 
-router.post('/log_in', (req, res) => {
+router.post('/login', (req, res) => {
     var email = req.body.email
     var password = req.body.password
+    console.log("email:", email);
+    console.log("password: ", password);
     authentication.login(email, password)
         .then(token => {
             res.cookie('Authorization', token, { maxAge: 900000, httpOnly: true });
-            res.status(200).send({
-                "message": "Success"
-            })
+            console.log("Success: ", token);
+            res.render('home');
         })
         .catch(err => {
-            res.status(401).send({
-                message: "Unauthorized"
-            })
+            res.render('401');
         })
+})
+
+router.get('/login', (req, res) => {
+    res.render('login');
+})
+
+router.get('/register', (req, res) => {
+    res.render('register');
+})
+
+router.get('/forgot', (req, res) => {
+    res.render('forgot');
 })
 
 router.post('/register', (req, res) => {
-    var email = req.body.email
-    var password = req.body.password
-    authentication.register(email, password, 'guests', res)
+    user = {
+        email: req.body.email,
+        password: req.body.password,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        birth_date: req.body.birth_date,
+        pseudonym: req.body.pseudonym,
+    }
+    authentication.register(user, 'guests', res)
         .then(token => {
             res.cookie('Authorization', token, { maxAge: 900000, httpOnly: true });
-            res.status(200).send({
-                "message": "Success"
-            })
+            console.log("Success: ", token);
+            res.render('home');
         })
         .catch(err => {
-            res.status(401).send({
-                message: "Unauthorized"
-            })
+            res.render('401');
         })
 })
 
-router.post('/log_out', async (req, res) => {
+router.post('/logout', (req, res) => {
     var token = req.cookies['Authorization'];
-    await authentication.verify(token, res)
-    if (res.err != null) {
-        res.status(401).send({
-            message: "Unauthorized"
-        })
-    } else {
+    authentication.verify(token, res)
+    .then(temp => {
         res.clearCookie('Authorization');
         res.status(200).send({
             "message": "Success"
         })
-    }
+    })
+    .catch(err => {
+        res.render('401');
+    })
 })
 
 router.post('/authentication/facebook', 
@@ -116,5 +131,28 @@ passport.authenticate('facebook', {
     failureRedirect: '/'
 })
 );
+
+router.post('register/subscriber', async (req, res) => {
+    var token = req.cookies['Authorization'];
+    authentication.verify(token, res)
+    .then(temp => {
+        authentication.getPayLoadToken(token, res)
+        .then(temp => {
+            subscriber.register(res.id)
+            .then(temp => {
+                res.render('home');
+            })
+            .catch(err => {
+                res.render('500');
+            })
+        })
+        .catch(err => {
+            res.render('500');    
+        })
+    })
+    .catch(err => {
+        res.render('401');
+    })
+})
 
 module.exports = router;
