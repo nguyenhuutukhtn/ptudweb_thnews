@@ -80,14 +80,31 @@ module.exports = {
                             console.log("Wrong password");
                             reject(err);
                         } else {
-                            tokenHandler.issue(email, result[0].id, 'guest')
+                            var user_id = result[0].id;
+                            userPermissionModel.getByUserID(result[0].id)
+                            .then(result => {
+                                console.log("user permission: ",result[0]);
+                                permissionModel.single(result[0].permission_id)
+                                .then(result => {
+                                    console.log("user permission: ",result[0]);
+                                    tokenHandler.issue(email, user_id, result[0].name)
                                 .then(token => {
                                     resolve(token);
                                 })
                                 .catch(err => {
                                     console.log(err);
                                     reject(err);
-                                });
+                                });      
+                                })
+                                .catch(err => {
+                                    console.log(err);
+                                    reject(err);    
+                                })
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                reject(err);
+                            })
                         }
                     })
                 })
