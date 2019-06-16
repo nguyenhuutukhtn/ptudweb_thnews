@@ -1,9 +1,5 @@
 {{#section 'header'}}
-<<<<<<< HEAD
-<title>Đăng ký</title>
-=======
 <title>Magz &mdash; Responsive HTML5 &amp; CSS3 Magazine Template</title>
->>>>>>> 564630c770f53d4355780a1ba4cc386af9d060d9
 <!-- Bootstrap -->
 <link rel="stylesheet" href="/scripts/bootstrap/bootstrap.min.css">
 <!-- IonIcons -->
@@ -22,13 +18,15 @@
 <link rel="stylesheet" href="/css/demo.css">
 {{/section}}
 
+
+
 <header class="primary">
 	<div class="firstbar">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 col-sm-12">
 					<div class="brand">
-						<a href="/">
+						<a href="index.html">
 							<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png"
 								alt="TH-News Logo">
 						</a>
@@ -58,10 +56,10 @@
 				</div>
 				<div class="col-md-3 col-sm-12 text-right">
 					<ul class="nav-icons">
-						<li><a href="/register"><i class="ion-person-add"></i>
+						<li><a href="register.html"><i class="ion-person-add"></i>
 								<div>Đăng ký</div>
 							</a></li>
-						<li><a href="/login"><i class="ion-person"></i>
+						<li><a href="login.html"><i class="ion-person"></i>
 								<div>Đăng nhập</div>
 							</a></li>
 					</ul>
@@ -88,8 +86,8 @@
 			<div id="menu-list">
 				<ul class="nav-list">
 					<li class="for-tablet nav-title"><a>Menu</a></li>
-					<li class="for-tablet"><a href="/login">Đăng nhập</a></li>
-					<li class="for-tablet"><a href="/register">Đăng ký</a></li>
+					<li class="for-tablet"><a href="login.html">Đăng nhập</a></li>
+					<li class="for-tablet"><a href="register.html">Đăng ký</a></li>
 					<!-- <li><a href="category.html">Thời sự</a></li> -->
 					<li class="dropdown magz-dropdown"><a href="#">Thời sự <i class="ion-ios-arrow-right"></i></a>
 						<ul class="dropdown-menu">
@@ -285,29 +283,19 @@
 		<div class="box-wrapper">
 			<div class="box box-border">
 				<div class="box-body">
-					<h4>Đăng nhập</h4>
-					<form method="POST" action="/login">
+					<h4>Reset Password</h4>
+					<form>
 						<div class="form-group">
 							<label>Email</label>
-							<input type="text" name="email" class="form-control">
+							<input type="email" name="email" class="form-control">
 						</div>
 						<div class="form-group">
-							<label class="fw">Mật khẩu
-								<a href="/forgot" class="pull-right">Quên mật khẩu</a>
-							</label>
+							<label>New Password</label>
 							<input type="password" name="password" class="form-control">
 						</div>
 						<div class="form-group text-right">
-							<button class="btn btn-primary btn-block">Đăng nhập</button>
+							<button class="btn btn-primary btn-block">Reset Password</button>
 						</div>
-						<div class="form-group text-center">
-							<a href="/register">Tạo mới</a>
-						</div>
-						<div class="title-line">
-							hoặc
-						</div>
-						<a href="#" class="btn btn-social btn-block facebook"><i class="ion-social-facebook"></i> Đăng
-							nhập với Facebook</a>
 					</form>
 				</div>
 			</div>
@@ -494,3 +482,17 @@
 	</div>
 </footer>
 <!-- End Footer -->
+
+<!-- JS -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.migrate.js"></script>
+<script src="scripts/bootstrap/bootstrap.min.js"></script>
+<script>var $target_end = $(".best-of-the-week");</script>
+<script src="scripts/jquery-number/jquery.number.min.js"></script>
+<script src="scripts/owlcarousel/dist/owl.carousel.min.js"></script>
+<script src="scripts/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<script src="scripts/easescroll/jquery.easeScroll.js"></script>
+<script src="scripts/sweetalert/dist/sweetalert.min.js"></script>
+<script src="scripts/toast/jquery.toast.min.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/e-magz.js"></script>

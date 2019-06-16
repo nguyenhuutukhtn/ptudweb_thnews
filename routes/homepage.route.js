@@ -5,7 +5,7 @@ var authentication = require('../controllers/authentication.controller')
 var router = express.Router();
 var bodyParser = require('body-parser');
 var passport = require('passport');
-var session = require('express-session');
+//var session = require('express-session');
 var flash = require('connect-flash');
 var subscriber = require('../controllers/subscriber.controller');
 

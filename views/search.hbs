@@ -1,9 +1,5 @@
 {{#section 'header'}}
-<<<<<<< HEAD
-<title>Đăng ký</title>
-=======
 <title>Magz &mdash; Responsive HTML5 &amp; CSS3 Magazine Template</title>
->>>>>>> 564630c770f53d4355780a1ba4cc386af9d060d9
 <!-- Bootstrap -->
 <link rel="stylesheet" href="/scripts/bootstrap/bootstrap.min.css">
 <!-- IonIcons -->
@@ -22,13 +18,14 @@
 <link rel="stylesheet" href="/css/demo.css">
 {{/section}}
 
+
 <header class="primary">
 	<div class="firstbar">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 col-sm-12">
 					<div class="brand">
-						<a href="/">
+						<a href="index.html">
 							<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png"
 								alt="TH-News Logo">
 						</a>
@@ -58,10 +55,10 @@
 				</div>
 				<div class="col-md-3 col-sm-12 text-right">
 					<ul class="nav-icons">
-						<li><a href="/register"><i class="ion-person-add"></i>
+						<li><a href="register.html"><i class="ion-person-add"></i>
 								<div>Đăng ký</div>
 							</a></li>
-						<li><a href="/login"><i class="ion-person"></i>
+						<li><a href="login.html"><i class="ion-person"></i>
 								<div>Đăng nhập</div>
 							</a></li>
 					</ul>
@@ -88,8 +85,8 @@
 			<div id="menu-list">
 				<ul class="nav-list">
 					<li class="for-tablet nav-title"><a>Menu</a></li>
-					<li class="for-tablet"><a href="/login">Đăng nhập</a></li>
-					<li class="for-tablet"><a href="/register">Đăng ký</a></li>
+					<li class="for-tablet"><a href="login.html">Đăng nhập</a></li>
+					<li class="for-tablet"><a href="register.html">Đăng ký</a></li>
 					<!-- <li><a href="category.html">Thời sự</a></li> -->
 					<li class="dropdown magz-dropdown"><a href="#">Thời sự <i class="ion-ios-arrow-right"></i></a>
 						<ul class="dropdown-menu">
@@ -280,35 +277,239 @@
 	<!-- End nav -->
 </header>
 
-<section class="login first grey">
+<section class="search">
 	<div class="container">
-		<div class="box-wrapper">
-			<div class="box box-border">
-				<div class="box-body">
-					<h4>Đăng nhập</h4>
-					<form method="POST" action="/login">
-						<div class="form-group">
-							<label>Email</label>
-							<input type="text" name="email" class="form-control">
+		<div class="row">
+			<div class="col-md-3">
+				<aside>
+					<h2 class="aside-title">Tìm kiếm</h2>
+					<div class="aside-body">
+						<p>Tìm kiếm bằng từ khóa khác hoặc là sử dụng bộ lọc để chính xác nhất.</p>
+						<form>
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" name="q" class="form-control" placeholder="Tìm kiếm ...">
+									<div class="input-group-btn">
+										<button class="btn btn-primary">
+											<i class="ion-search"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</aside>
+				<aside>
+					<h2 class="aside-title">Bộ lọc</h2>
+					<div class="aside-body">
+						<form class="checkbox-group">
+							<div class="group-title">Date</div>
+							<div class="form-group">
+								<label><input type="radio" name="date" checked> Anytime</label>
+							</div>
+							<div class="form-group">
+								<label><input type="radio" name="date"> Today</label>
+							</div>
+							<div class="form-group">
+								<label><input type="radio" name="date"> Last Week</label>
+							</div>
+							<div class="form-group">
+								<label><input type="radio" name="date"> Last Month</label>
+							</div>
+							<br>
+							<div class="group-title">Danh mục</div>
+							<div class="form-group">
+								<label><input type="checkbox" name="category" checked> Danh mục</label>
+							</div>
+							<div class="form-group">
+								<label><input type="checkbox" name="category"> Đời sống</label>
+							</div>
+							<div class="form-group">
+								<label><input type="checkbox" name="category"> Du lịch</label>
+							</div>
+							<div class="form-group">
+								<label><input type="checkbox" name="category"> Công nghệ</label>
+							</div>
+							<div class="form-group">
+								<label><input type="checkbox" name="category"> Phim</label>
+							</div>
+							<div class="form-group">
+								<label><input type="checkbox" name="category"> Thể thao</label>
+							</div>
+						</form>
+					</div>
+				</aside>
+			</div>
+			<div class="col-md-9">
+				<div class="nav-tabs-group">
+					<ul class="nav-tabs-list">
+						<li class="active"><a href="#">All</a></li>
+						<li><a href="#">Latest</a></li>
+						<li><a href="#">Popular</a></li>
+						<li><a href="#">Trending</a></li>
+						<li><a href="#">Videos</a></li>
+					</ul>
+					<div class="nav-tabs-right">
+						<select class="form-control">
+							<option>Limit</option>
+							<option>10</option>
+							<option>20</option>
+							<option>50</option>
+							<option>100</option>
+						</select>
+					</div>
+				</div>
+				<div class="search-result">
+					Kết quả tìm kiếm cho từ khóa "hello" là 5200
+				</div>
+				<div class="row">
+					<article class="col-md-12 article-list">
+						<div class="inner">
+							<figure>
+								<a href="single.html">
+									<img
+										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/son-la_qj03dg.jpg">
+								</a>
+							</figure>
+							<div class="details">
+								<div class="detail">
+									<div class="category">
+										<a href="#">Thời sự</a>
+									</div>
+									<time>18/4/2019</time>
+								</div>
+								<h1><a href="single.html">Phó bí thư Sơn La: Tỉnh đang nghiên cứu giải quyết vụ gian lận
+										điểm</a></h1>
+								<p>
+									Phó bí thư Tỉnh ủy Sơn La cho biết mới nhận được thông tin về danh sách con em lãnh
+									đạo tỉnh được nâng điểm qua kênh báo chí.
+								</p>
+								<footer>
+									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
+										<div>501</div>
+									</a>
+									<a class="btn btn-primary more" href="single.html">
+										<div>Xem chi tiết</div>
+										<div><i class="ion-ios-arrow-thin-right"></i></div>
+									</a>
+								</footer>
+							</div>
 						</div>
-						<div class="form-group">
-							<label class="fw">Mật khẩu
-								<a href="/forgot" class="pull-right">Quên mật khẩu</a>
-							</label>
-							<input type="password" name="password" class="form-control">
+					</article>
+					<article class="col-md-12 article-list">
+						<div class="inner">
+							<div class="badge">
+								Sponsored by VietJet
+							</div>
+							<figure>
+								<a href="single.html">
+									<img
+										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041060/TH-News/News/viet-jet_vml8h9.jpg">
+								</a>
+							</figure>
+							<div class="details">
+								<div class="detail">
+									<div class="category">
+										<a href="#">Du lịch</a>
+									</div>
+									<time>18/4/2019</time>
+								</div>
+								<h1><a href="single.html">VietJet tung vé tiết kiệm bay thẳng tới Bali</a></h1>
+								<p>
+									Đường bay khứ hồi trực tiếp từ TP HCM đến Bali rút ngắn còn 4 tiếng giúp du khách
+									tiết kiệm thời gian và chi phí so với bay nối chuyến.
+								</p>
+								<footer>
+									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
+										<div>4209</div>
+									</a>
+									<a class="btn btn-primary more" href="single.html">
+										<div>Xem chi tiết</div>
+										<div><i class="ion-ios-arrow-thin-right"></i></div>
+									</a>
+								</footer>
+							</div>
 						</div>
-						<div class="form-group text-right">
-							<button class="btn btn-primary btn-block">Đăng nhập</button>
+					</article>
+					<article class="col-md-12 article-list">
+						<div class="inner">
+							<figure>
+								<a href="single.html">
+									<img
+										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/phi-cong_rqcubi.jpg">
+								</a>
+							</figure>
+							<div class="details">
+								<div class="detail">
+									<div class="category">
+										<a href="#">Kinh doanh</a>
+									</div>
+									<time>18/4/2019</time>
+								</div>
+								<h1><a href="single.html">Lương phi công Vietnam Airlines bình quân hơn 132 triệu
+										đồng</a></h1>
+								<p>
+									Lương bình quân của phi công Vietnam Airlines đã tăng gần 11 triệu đồng mỗi tháng
+									nhưng vẫn thấp hơn các hãng trong nước khác.
+								</p>
+								<footer>
+									<a href="#" class="love active"><i class="ion-android-favorite"></i>
+										<div>8430</div>
+									</a>
+									<a class="btn btn-primary more" href="single.html">
+										<div>Xem chi tiết</div>
+										<div><i class="ion-ios-arrow-thin-right"></i></div>
+									</a>
+								</footer>
+							</div>
 						</div>
-						<div class="form-group text-center">
-							<a href="/register">Tạo mới</a>
+					</article>
+					<article class="col-md-12 article-list">
+						<div class="inner">
+							<figure>
+								<a href="single.html">
+									<img
+										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041047/TH-News/News/chuyen-ams_vxc5jt.jpg">
+								</a>
+							</figure>
+							<div class="details">
+								<div class="detail">
+									<div class="category">
+										<a href="#">Giáo dục</a>
+									</div>
+									<time>18/4/2019</time>
+								</div>
+								<h1><a href="single.html">Hà Nội muốn có nhiều trường học đẳng cấp khu vực</a></h1>
+								<p>
+									Lãnh đạo Sở Giáo dục và Đào tạo cho rằng, thủ đô có nhiều lợi thế để xây dựng những
+									trường học chất lượng cao.
+								</p>
+								<footer>
+									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
+										<div>783</div>
+									</a>
+									<a class="btn btn-primary more" href="single.html">
+										<div>Xem chi tiết</div>
+										<div><i class="ion-ios-arrow-thin-right"></i></div>
+									</a>
+								</footer>
+							</div>
 						</div>
-						<div class="title-line">
-							hoặc
+					</article>
+					<div class="col-md-12 text-center">
+						<ul class="pagination">
+							<li class="prev"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">...</a></li>
+							<li><a href="#">97</a></li>
+							<li class="next"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
+						</ul>
+						<div class="pagination-help-text">
+							Showing 8 results of 776 &mdash; Page 1
 						</div>
-						<a href="#" class="btn btn-social btn-block facebook"><i class="ion-social-facebook"></i> Đăng
-							nhập với Facebook</a>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -494,3 +695,23 @@
 	</div>
 </footer>
 <!-- End Footer -->
+
+<!-- JS -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.migrate.js"></script>
+<script src="scripts/bootstrap/bootstrap.min.js"></script>
+<script>var $target_end = $(".best-of-the-week");</script>
+<script src="scripts/jquery-number/jquery.number.min.js"></script>
+<script src="scripts/owlcarousel/dist/owl.carousel.min.js"></script>
+<script src="scripts/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<script src="scripts/easescroll/jquery.easeScroll.js"></script>
+<script src="scripts/sweetalert/dist/sweetalert.min.js"></script>
+<script src="scripts/icheck/icheck.min.js"></script>
+<script src="scripts/toast/jquery.toast.min.js"></script>
+<script src="js/demo.js"></script>
+<script>$("input").iCheck({
+		checkboxClass: 'icheckbox_square-red',
+		radioClass: 'iradio_square-red',
+		cursor: true
+	});</script>
+<script src="js/e-magz.js"></script>
