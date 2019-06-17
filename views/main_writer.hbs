@@ -12,18 +12,18 @@
 		visibility: hidden;
 	}
 </style>
-<script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/config.js?t=H8DA"></script>
+<script type="text/javascript" src="https://cdn.ckeditor.com/4.11.4/standard/config.js?t=H8DA"></script>
 <link rel="stylesheet" type="text/css"
-	href="https://cdn.ckeditor.com/4.7.3/standard/skins/moono-lisa/editor_gecko.css?t=H8DA">
-<script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/lang/en.js?t=H8DA"></script>
-<script type="text/javascript" src="https://cdn.ckeditor.com/4.7.3/standard/styles.js?t=H8DA"></script>
+	href="https://cdn.ckeditor.com/4.11.4/standard/skins/moono-lisa/editor_gecko.css?t=H8DA">
+<script type="text/javascript" src="https://cdn.ckeditor.com/4.11.4/standard/lang/en.js?t=H8DA"></script>
+<script type="text/javascript" src="https://cdn.ckeditor.com/4.11.4/standard/styles.js?t=H8DA"></script>
 <link rel="stylesheet" type="text/css"
-	href="https://cdn.ckeditor.com/4.7.3/standard/plugins/scayt/skins/moono-lisa/scayt.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.ckeditor.com/4.7.3/standard/plugins/scayt/dialogs/dialog.css">
+	href="https://cdn.ckeditor.com/4.11.4/standard/plugins/scayt/skins/moono-lisa/scayt.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.ckeditor.com/4.11.4/standard/plugins/scayt/dialogs/dialog.css">
 <link rel="stylesheet" type="text/css"
-	href="https://cdn.ckeditor.com/4.7.3/standard/plugins/tableselection/styles/tableselection.css">
+	href="https://cdn.ckeditor.com/4.11.4/standard/plugins/tableselection/styles/tableselection.css">
 <link rel="stylesheet" type="text/css"
-	href="https://cdn.ckeditor.com/4.7.3/standard/plugins/wsc/skins/moono-lisa/wsc.css">
+	href="https://cdn.ckeditor.com/4.11.4/standard/plugins/wsc/skins/moono-lisa/wsc.css">
 {{/section}}
 {{#section 'footer'}}
 <script src="/writer/js/jquery.min.js"></script>
@@ -41,7 +41,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
-<script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
 <script>
 	CKEDITOR.replace('editor1');
 </script>
@@ -438,14 +438,14 @@
 				<button class="close" data-dismiss="modal"><span>&times;</span></button>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form method="POST" action="/writer/new_post" enctype="multipart/form-data">
 					<div class="form-group">
 						<lable for="title">Tiêu đề</lable>
-						<input type="text" class="form-control" required>
+						<input type="text" name="title" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<lable for="category">Chuyên mục</lable>
-						<select class="form-control" required>
+						<select class="form-control" name="category" required>
 							<option value="">Kinh doanh</option>
 							<option value="">Công nghệ</option>
 							<option value="">Thể thao</option>
@@ -454,27 +454,24 @@
 					</div>
 					<div class="form-group">
 						<lable for="summary">Tóm tắt</lable>
-						<textarea class="form-control" rows="5" required></textarea>
+						<textarea class="form-control" rows="5" name="summary" required></textarea>
 					</div>
 					<div class="form-group">
 						<label for="file">Upload ảnh thumbnail</label>
-						<input type="file" class="form-control-file">
+						<input type="file" class="form-control-file" id="file" onchange="uploadFile()">
 						<small class="form-text text-muted">Tối đa 3mb</small>
+						<img id="uploaded" src="" class="img-thumbnail">
+						<div id="results"></div>
 					</div>
 					<div class="form-group">
 						<lable for="title">Nội dung</lable>
-						<textarea name="editor1" class="form-control"></textarea>
-						<script>
-       CKEDITOR.replace( 'editor1',{
-          height:['800px']
-       });
-</script>
+						<textarea name="editor1" rows="80" id="editor1" class="form-control"></textarea>
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-				<button class="btn btn-primary" data-dismiss="modal">Lưu thay đổi</button>
+				<button class="btn btn-primary" type="submit">Lưu thay đổi</button>
 			</div>
 		</div>
 	</div>
@@ -540,3 +537,32 @@
 		</div>
 	</div>
 </div>
+<script>
+	function uploadFile() {
+  var formData = new FormData(),
+    file = document.getElementById("file").files[0],
+    xhr = new XMLHttpRequest(),
+    cloudName = "dsqfchskj";
+
+  formData.append("file", file);
+  formData.append("upload_preset", "vxihc6tv"); // REQUIRED
+  xhr.open("POST", "https://api.cloudinary.com/v1_1/" +
+    cloudName +
+    "/image/upload");
+
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      // Success! You probably want to save the URL somewhere
+      var response = JSON.parse(xhr.response);
+	  alert("Upload thumbnail thành công");
+      response.secure_url // https address of uploaded file
+	  document.getElementById("uploaded").src=response.secure_url;
+	  document.getElementById("results").innerHTML=response.secure_url;
+
+    } else {
+      alert("Upload failed. Please try agian.");
+    }
+  }
+  xhr.send(formData);
+}
+</script>
