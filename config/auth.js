@@ -4,9 +4,9 @@ module.exports = {
         'app_secret': '3e120d8ef1ac46a78b8f380935e21837',
         'call_back': 'http://localhost:3000/authentication/facebook/callback'
     },
-    'googleAuth': {
-        'clientID': 'your-secret-clientID-here',
-        'clientSecret': 'your-client-secret-here',
-        'callbackURL': 'http://localhost:3000/authentication/google/callback'
+    'google': {
+        'app_id': 'your-secret-clientID-here',
+        'app_secret': 'your-client-secret-here',
+        'call_back': 'http://localhost:3000/authentication/google/callback'
     }
 }

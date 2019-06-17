@@ -9,6 +9,7 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var subscriber = require('../controllers/subscriber.controller');
 var FacebookStrategy = require('passport-facebook').Strategy;
+//var GoogleStategy = require('passport-google-auth').OAuth2Strategy;
 var guestRole = require('../middlewares/guestRole.mdw');
 var editorRole = require('../middlewares/editorRole.mdw');
 var bcrypt = require('bcryptjs');
@@ -120,6 +121,72 @@ passport.use(new FacebookStrategy({
         });
     })
 );
+
+// passport.use(new GoogleStategy({
+//     // điền thông tin để xác thực với Facebook.
+//     // những thông tin này đã được điền ở file auth.js
+//     clientID: configAuth.google.app_id,
+//     clientSecret: configAuth.google.app_secret,
+//     callbackURL: configAuth.google.call_back,
+// },
+//     // Facebook sẽ gửi lại chuối token và thông tin profile của user
+//     function (token, refreshToken, profile, done) {
+//         // asynchronous
+//         console.log(1);
+//         process.nextTick(function () {
+//             // tìm trong db xem có user nào đã sử dụng facebook id này chưa
+//             console.log(2);
+//             console.log("profile: ", profile);
+//             userModel.getByGoogleID(profile.id)
+//                 .then(user => {
+//                     console.log(user);
+//                     if (user.length !== 0) {
+//                         var temp;
+//                         authentication.issueTokenWithUser(user, temp)
+//                             .then(token => {
+//                                 success = myCache.set("token", token, 10000);
+//                                 return done(null, user);
+//                             })
+//                             .catch(err => {
+//                                 console.log(err);
+//                                 return done(err);
+//                             })
+//                         console.log("Have itttttttttttttttt");
+//                     } else {
+//                         var hashedPassword = bcrypt.hashSync('123', 8);
+//                         console.log(profile);
+//                         var newUser = {
+//                             facebook_id: profile.id,
+//                             email: profile.emails[0].value,
+//                             password: hashedPassword,
+//                             first_name: profile.name.givenName,
+//                             last_name: profile.name.familyName
+//                         }
+//                         // // lưu các thông tin cho user
+//                         // lưu vào db
+//                         var temp;
+//                         authentication.register(newUser, 'guests', temp)
+//                             .then(token => {
+//                                 console.log("Start cache");
+//                                 success = myCache.set("token", token, 10000);
+//                                 console.log("End cache");
+//                                 return done(null, newUser);
+//                             })
+//                             .catch(err => {
+//                                 console.log(err);
+//                                 return done(err);
+//                             })
+//                     }
+//                 })
+//                 .catch(err => {
+//                     console.log("errr");
+//                     console.log(err);
+//                     return done(err);
+//                 })
+//         });
+//     })
+// );
+
 
 //-----------------------------------------------
 

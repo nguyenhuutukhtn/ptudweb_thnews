@@ -21,8 +21,14 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser())
 router.use(bodyParser.json());
 
+router.use(require('../../middlewares/GetAllCategory.mdw'))
+
 router.get('/', (req, res) => {
     res.render('main_writer')
+})
+router.post('/new_post',(req,res)=>{
+    console.log(123);
+    console.log(req.body);
 })
 
 module.exports = router;
