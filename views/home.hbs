@@ -345,16 +345,7 @@
 						<h1 class="title-col">Trending Tags</h1>
 						<div class="body-col">
 							<ol class="tags-list">
-								<li><a href="#">Link 4'47" tại đây</a></li>
-								<li><a href="#">Chùa ba vàng</a></li>
-								<li><a href="#">Tôi có thể thấy sóng điện thoại</a></li>
-								<li><a href="#">Phim 18+</a></li>
-								<li><a href="#">Game of thrones</a></li>
-								<li><a href="#">Tân Ỷ Thiên Đồ Long Ký 2019</a></li>
-								<li><a href="#">Liv - Chel</a></li>
-								<li><a href="#">Red Velvet</a></li>
-								<li><a href="#">Jun Vũ</a></li>
-								<li><a href="#">Champion Leagues</a></li>
+								{{#each TenTrendingTags}}<li><a href="#">{{content}}</a></li>{{/each}}
 							</ol>
 						</div>
 					</div>
@@ -623,7 +614,7 @@
 								<div class="item">
 									<div class="user">
 										<figure>
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/default-writer_sglwso.jpg"
+											<img src="{{avatar}}"
 												alt="User Picture">
 										</figure>
 										<div class="details">

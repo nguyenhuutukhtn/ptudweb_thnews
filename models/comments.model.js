@@ -8,6 +8,6 @@ module.exports = {
     },
 
     FiveLastestComment: () => {
-        return db.load(`SELECT users.last_name, comment.content, timestampdiff(DAY, comment.commentDate, now()) as Times from comment, users where comment.userId = users.id order by(comment.commentDate) desc limit 5;`)
+        return db.load(`SELECT users.last_name,users.avatar, comment.content, timestampdiff(DAY, comment.commentDate, now()) as Times from comment, users where comment.userId = users.id order by(comment.commentDate) desc limit 5;`)
     },
 };
