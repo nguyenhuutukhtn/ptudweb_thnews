@@ -12,14 +12,13 @@ var flash = require('connect-flash');
 const NodeCache = require("node-cache");
 const myCache = new NodeCache();
 
+var router = express.Router();
+var bodyParser = require('body-parser');
 
 router.use(session({ secret: "_____secret_key______" }));
 router.use(passport.initialize());
 router.use(passport.session()); // persistent login sessions
 router.use(flash()); // use connect-flash for flash messages stored in session
-
-var router = express.Router();
-var bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser())
