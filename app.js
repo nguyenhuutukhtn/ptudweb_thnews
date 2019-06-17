@@ -41,6 +41,14 @@ app.engine('hbs',exphbs({
 app.set('view engine','hbs');
 
 app.use('/',require('./routes/homepage.route'));
+app.use('/category',require('./routes/category.route'));
+app.use('/contact',require('./routes/contact.route'));
+app.use('/forgot',require('./routes/forgot.route'));
+app.use('/login',require('./routes/login.route'));
+app.use('/register',require('./routes/register.route'));
+app.use('/reset',require('./routes/reset.route'));
+app.use('/search',require('./routes/search.route'));
+app.use('/starter',require('./routes/starter.route'));
 app.use('/article',require('./routes/article.route'));
 app.use('/writer',require('./routes/writer/dashboard.route'));
 
