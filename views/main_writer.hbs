@@ -438,7 +438,7 @@
 				<button class="close" data-dismiss="modal"><span>&times;</span></button>
 			</div>
 			<div class="modal-body">
-				<form method="POST" action="/writer/new_post" enctype="multipart/form-data">
+				<form method="POST" action="/writer/new_post">
 					<div class="form-group">
 						<lable for="title">Tiêu đề</lable>
 						<input type="text" name="title" class="form-control" required>
@@ -446,10 +446,9 @@
 					<div class="form-group">
 						<lable for="category">Chuyên mục</lable>
 						<select class="form-control" name="category" required>
-							<option value="">Kinh doanh</option>
-							<option value="">Công nghệ</option>
-							<option value="">Thể thao</option>
-							<option value="">Tài chính</option>
+							{{#each allCat}}
+							<option value="">{{CatName}}</option>
+							{{/each}}
 						</select>
 					</div>
 					<div class="form-group">
@@ -471,7 +470,7 @@
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-				<button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+				<button class="btn btn-primary">Lưu thay đổi</button>
 			</div>
 		</div>
 	</div>
