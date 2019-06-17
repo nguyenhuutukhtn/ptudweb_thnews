@@ -205,7 +205,7 @@ CREATE TABLE `tag` (
   PRIMARY KEY (`id`),
   KEY `fk_tag_article_idx` (`articleId`),
   CONSTRAINT `fk_tag_article` FOREIGN KEY (`articleId`) REFERENCES `article` (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,6 +214,7 @@ CREATE TABLE `tag` (
 
 LOCK TABLES `tag` WRITE;
 /*!40000 ALTER TABLE `tag` DISABLE KEYS */;
+INSERT INTO `tag` VALUES (1,1,'nữ sinh','2019-06-10'),(2,1,'nhảy cầu','2019-06-10'),(3,1,'tự tử','2019-06-10'),(4,2,'thí sinh','2019-06-10'),(5,2,'dưới trung bình','2019-06-10'),(6,2,'môn Toán','2019-06-10'),(7,3,'Nam Sài Gòn','2019-06-10'),(8,3,'mùi hôi','2019-06-10'),(9,3,'bãi rác','2019-06-10'),(10,4,'Trung Quốc','2019-06-10'),(11,4,'công nghệ','2019-06-10'),(12,4,'lừa đảo','2019-06-10'),(13,5,'cô gái Việt','2019-06-10'),(14,5,'lưỡi quỷ','2019-06-10'),(15,5,'Na Uy','2019-06-10'),(16,6,'chợ phiên','2019-06-10'),(17,6,'gia đình','2019-06-10'),(18,6,'rừng sâu','2019-06-10'),(19,7,'WHO','2019-06-10'),(20,7,'Ebola','2019-06-10'),(21,7,'nguy cơ','2019-06-10'),(22,8,'Mỹ','2019-06-10'),(23,8,'xuất nhập khẩu','2019-06-10'),(24,8,'Trung Quốc','2019-06-10'),(25,9,'Hong Kong','2019-06-10'),(26,9,'tài sản','2019-06-10'),(27,9,'dẫn độ','2019-06-10'),(28,10,'Philippines','2019-06-10'),(29,10,'tuần tra biển','2019-06-10'),(30,10,'Trung Quốc','2019-06-10'),(31,11,'đổi xe','2019-06-10'),(32,11,'sang tên','2019-06-10'),(33,11,'dễ','2019-06-10'),(34,12,'bán hàng','2019-06-10'),(35,12,'ông Trump','2019-06-10'),(36,12,'kiểu','2019-06-10'),(37,13,'thế giới','2019-06-10'),(38,13,'bãi Cỏ rong','2019-06-10'),(39,13,'Philippines','2019-06-10'),(40,14,'quẹt thẻ','2019-06-10'),(41,14,'ví điện tử','2019-06-10'),(42,14,'giảm tiền','2019-06-10'),(43,15,'tiền mặt','2019-06-10'),(44,15,'mua sắm','2019-06-10'),(45,15,'ưu đãi','2019-06-10'),(46,16,'thủ tướng','2019-06-10'),(47,16,'báo cáo','2019-06-10'),(48,16,'hàng không','2019-06-10'),(49,17,'sân Thống Nhất','2019-06-10'),(50,17,'dậy sóng','2019-06-10'),(51,17,'trọng tài','2019-06-10'),(52,18,'smartphone','2019-06-10'),(53,18,'nắp gập','2019-06-10'),(54,18,'ngàn đô','2019-06-10'),(55,19,'phí chia tay','2019-06-10'),(56,19,'thời điểm','2019-06-10'),(57,19,'thích hợp','2019-06-10'),(58,20,'Hoàng Công Lương','2019-06-10'),(59,20,'chuộc lỗi','2019-06-10'),(60,20,'chữa bệnh','2019-06-10'),(61,21,'Phương Trang','2019-06-10'),(62,21,'sàm sỡ','2019-06-10'),(63,21,'khách nữ','2019-06-10');
 /*!40000 ALTER TABLE `tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -289,4 +290,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-17 13:42:43
+-- Dump completed on 2019-06-17 14:03:43
