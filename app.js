@@ -50,6 +50,7 @@ app.use('/reset',require('./routes/reset.route'));
 app.use('/search',require('./routes/search.route'));
 app.use('/starter',require('./routes/starter.route'));
 app.use('/article',require('./routes/article.route'));
+app.use('/profile',require('./routes/profile.route'));
 app.use('/writer',require('./routes/writer/dashboard.route'));
 
 app.use((req,res,next)=>{
