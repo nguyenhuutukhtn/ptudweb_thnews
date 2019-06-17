@@ -1,10 +1,10 @@
 {{#section 'header'}}
-<title>Trang biên tập</title>
+<title>Trang phóng viên</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
 	integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
 <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/writer/css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
@@ -26,7 +26,7 @@
 	href="https://cdn.ckeditor.com/4.7.3/standard/plugins/wsc/skins/moono-lisa/wsc.css">
 {{/section}}
 {{#section 'footer'}}
-<script src="js/jquery.min.js"></script>
+<script src="/writer/js/jquery.min.js"></script>
 <!-- <script src="js/popper.min.js"></script> -->
 <!-- Path to Popper - it is for dropsdowns etc in bootstrap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
@@ -441,11 +441,11 @@
 				<form>
 					<div class="form-group">
 						<lable for="title">Tiêu đề</lable>
-						<input type="text" class="form-control">
+						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<lable for="category">Chuyên mục</lable>
-						<select class="form-control">
+						<select class="form-control" required>
 							<option value="">Kinh doanh</option>
 							<option value="">Công nghệ</option>
 							<option value="">Thể thao</option>
@@ -453,13 +453,22 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="file">Upload hình ảnh</label>
+						<lable for="summary">Tóm tắt</lable>
+						<textarea class="form-control" rows="5" required></textarea>
+					</div>
+					<div class="form-group">
+						<label for="file">Upload ảnh thumbnail</label>
 						<input type="file" class="form-control-file">
 						<small class="form-text text-muted">Tối đa 3mb</small>
 					</div>
 					<div class="form-group">
-						<lable for="title">Body</lable>
+						<lable for="title">Nội dung</lable>
 						<textarea name="editor1" class="form-control"></textarea>
+						<script>
+       CKEDITOR.replace( 'editor1',{
+          height:['800px']
+       });
+</script>
 					</div>
 				</form>
 			</div>
