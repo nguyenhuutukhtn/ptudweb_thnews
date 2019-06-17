@@ -619,6 +619,7 @@
 						</div>
 						<div class="tab-pane comments" id="comments">
 							<div class="comment-list sm">
+								{{#each FiveLastestComment }}
 								<div class="item">
 									<div class="user">
 										<figure>
@@ -626,44 +627,17 @@
 												alt="User Picture">
 										</figure>
 										<div class="details">
-											<h5 class="name">Tín Huỳnh</h5>
-											<div class="time">24 Hours</div>
+											<h5 class="name">{{last_name}}</h5>
+											<div class="time">{{Times}} Hours</div>
 											<div class="description">
-												Wow! Such a good writer
+												{{content}}
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="item">
-									<div class="user">
-										<figure>
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/default-writer_sglwso.jpg"
-												alt="User Picture">
-										</figure>
-										<div class="details">
-											<h5 class="name">Tin Huynh</h5>
-											<div class="time">36 Hours</div>
-											<div class="description">
-												I beleive in your point of view
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="user">
-										<figure>
-											<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/default-writer_sglwso.jpg"
-												alt="User avatar">
-										</figure>
-										<div class="details">
-											<h5 class="name">Tin Huynh</h5>
-											<div class="time">40 Hours</div>
-											<div class="description">
-												I see what you are talking about
-											</div>
-										</div>
-									</div>
-								</div>
+								{{/each}}
+								
+								
 							</div>
 						</div>
 					</div>
