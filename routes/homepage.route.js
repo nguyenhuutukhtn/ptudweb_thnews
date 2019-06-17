@@ -35,6 +35,7 @@ router.use(bodyParser.json());
 router.use(require('../middlewares/FourLastestNews.mdw'));
 router.use(require('../middlewares/EightPopularNews.mdw'));
 router.use(require('../middlewares/TenTrendingTags.mdw'));
+router.use(require('../middlewares/FiveTrendingTags.mdw'));
 router.use(require('../middlewares/FiveLastestComment.mdw'));
 router.use(require('../middlewares/TopEightHot.mdw'));
 router.use(require('../middlewares/TopThreeHot.mdw'));
