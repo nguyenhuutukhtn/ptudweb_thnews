@@ -446,6 +446,7 @@
 					<div class="form-group">
 						<lable for="category">Chuyên mục</lable>
 						<select class="form-control" name="category" required>
+							<option value="" disabled selected>Chọn chuyên mục</option>
 							{{#each allCat}}
 							<option value="">{{CatName}}</option>
 							{{/each}}
