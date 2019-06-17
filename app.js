@@ -42,6 +42,7 @@ app.set('view engine','hbs');
 
 app.use('/',require('./routes/homepage.route'));
 app.use('/article',require('./routes/article.route'));
+app.use('/writer',require('./routes/writer/dashboard.route'));
 
 app.use((req,res,next)=>{
     res.render('404',{layout:false});

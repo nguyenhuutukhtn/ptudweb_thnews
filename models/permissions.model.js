@@ -15,5 +15,8 @@ module.exports = {
     },
     getByName: (name) => {
         return db.load(`select * from permissions where name = '${name}'`);
+    },
+    single: (id) => {
+        return db.load(`select * from permissions where id = ${id}`);
     }
 };
