@@ -51,7 +51,7 @@ app.use('/search',require('./routes/search.route'));
 app.use('/starter',require('./routes/starter.route'));
 app.use('/article',require('./routes/article.route'));
 app.use('/writer',require('./routes/writer/dashboard.route'));
-
+app.use('/authentication', require('./routes/authentication.route'));
 app.use((req,res,next)=>{
     res.render('404',{layout:false});
 })
