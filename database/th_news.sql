@@ -127,7 +127,7 @@ CREATE TABLE `keyword` (
   `Keyword` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `Time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +136,7 @@ CREATE TABLE `keyword` (
 
 LOCK TABLES `keyword` WRITE;
 /*!40000 ALTER TABLE `keyword` DISABLE KEYS */;
-INSERT INTO `keyword` VALUES (1,'Trâm ','2019-06-10 12:00:00'),(2,'HongKong','2019-06-10 12:00:00'),(3,'Trâm Anh','2019-06-10 12:00:00'),(4,'Chung kết C1','2019-06-10 12:00:00'),(5,'Quang Hải','2019-06-10 12:00:00'),(6,'Quang Hải','2019-06-10 12:00:00'),(7,'Công Phượng','2019-06-10 12:00:00'),(8,'Trâm Anh','2019-06-10 12:00:00'),(9,'Công Phượng','2019-06-10 12:00:00'),(10,'Giá Vàng','2019-06-10 12:00:00'),(11,'Mưa','2019-06-10 12:00:00'),(12,'Chung kết C1','2019-06-10 12:00:00');
+INSERT INTO `keyword` VALUES (1,'Trâm ','2019-06-10 12:00:00'),(2,'HongKong','2019-06-10 12:00:00'),(3,'Trâm Anh','2019-06-10 12:00:00'),(4,'Chung kết C1','2019-06-10 12:00:00'),(5,'Quang Hải','2019-06-10 12:00:00'),(6,'Quang Hải','2019-06-10 12:00:00'),(7,'Công Phượng','2019-06-10 12:00:00'),(8,'Trâm Anh','2019-06-10 12:00:00'),(9,'Công Phượng','2019-06-10 12:00:00'),(10,'Giá Vàng','2019-06-10 12:00:00'),(11,'Mưa','2019-06-10 12:00:00'),(12,'Chung kết C1','2019-06-10 12:00:00'),(13,'TPHCM','2019-06-10 12:00:00'),(14,'Học sinh nữ','2019-06-10 12:00:00'),(15,'Nữ sinh','2019-06-10 12:00:00'),(16,'Nam sinh','2019-06-10 12:00:00'),(17,'Nữ sinh','2019-06-10 12:00:00'),(18,'Toán','2019-06-10 12:00:00'),(19,'Toán','2019-06-10 12:00:00'),(20,'Sài Gòn','2019-06-10 12:00:00'),(21,'Không khí ô nhiễm','2019-06-10 12:00:00'),(22,'Philippine','2019-06-10 12:00:00'),(23,'Mỹ','2019-06-10 12:00:00'),(24,'Sân Thống nhất','2019-06-10 12:00:00'),(25,'Trung Quốc','2019-06-10 12:00:00'),(26,'Hoàng Công Lương','2019-06-10 12:00:00'),(27,'Hoàng Công Lương','2019-06-10 12:00:00'),(28,'Phương Trang','2019-06-10 12:00:00'),(29,'Phương Trang','2019-06-10 12:00:00'),(30,'Phương Trang','2019-06-10 12:00:00'),(31,'Thủ tướng','2019-06-10 12:00:00'),(32,'Thủ tướng','2019-06-10 12:00:00'),(33,'Phi công','2019-06-10 12:00:00'),(34,'Phi công','2019-06-10 12:00:00'),(35,'bãi Cỏ Rong','2019-06-10 12:00:00'),(36,'Ví điện tử','2019-06-10 12:00:00'),(37,'Ví điện tử','2019-06-10 12:00:00'),(38,'Ví điện tử','2019-06-10 12:00:00'),(39,'Ví điện tử','2019-06-10 12:00:00'),(40,'Ví điện tử','2019-06-10 12:00:00');
 /*!40000 ALTER TABLE `keyword` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -289,4 +289,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-17 13:27:32
+-- Dump completed on 2019-06-17 13:42:43
