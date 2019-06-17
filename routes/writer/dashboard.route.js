@@ -27,6 +27,7 @@ router.get('/', (req, res) => {
     res.render('main_writer')
 })
 router.post('/new_post',(req,res)=>{
+    console.log(123);
     console.log(req.body);
 })
 
