@@ -12,5 +12,11 @@ module.exports = {
     },
     delete: (id) => {
         return db.delete('user_permissions', 'id', id);
+    },
+    single: (id) => {
+        return db.load(`select * from user_permissions where id = ${id}`);
+    },
+    getByUserID: (user_id) => {
+        return db.load(`select * from user_permissions where user_id = ${user_id}`);
     }
 };

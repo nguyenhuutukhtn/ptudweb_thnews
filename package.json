@@ -36,9 +36,12 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.9.1",
     "mysql": "^2.17.1",
+    "node-cache": "^4.2.0",
     "npm": "^6.9.0",
     "passport": "^0.4.0",
     "passport-facebook": "^3.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   }
 }
