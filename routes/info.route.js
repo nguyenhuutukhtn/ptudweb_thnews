@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
     }
     profileController.updateInfo(res.id, newInfo)
     .then(result => {
-        res.redirect('/profile');
+        res.redirect('/');
     })
     .catch(err => {
         res.redirect('/500');

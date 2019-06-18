@@ -21,6 +21,9 @@ module.exports = {
                     newInfo.password = result[0].password
                     newInfo.email = result[0].email
                     newInfo.id = result[0].id
+                    if (newInfo.avatar == null){
+                        newInfo.avatar = result[0].avatar;
+                    }
                     userModel.update(newInfo)
                     .then(result => {
                         resolve(result);
