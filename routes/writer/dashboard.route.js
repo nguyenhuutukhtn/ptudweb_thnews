@@ -28,8 +28,12 @@ router.get('/', (req, res) => {
 })
 router.post('/new_post',(req,res)=>{
     console.log(req.body);
-    console.log('Success');
-    res.redirect('/writer');
+    var title=req.body.title;
+    var category=req.body.category;
+    var summary=req.body.summary;
+    var thumbnail=req.body.thumbnail;
+    var content=req.body.editor1;
+    var tags=req.body.tags;
 })
 
 module.exports = router;
