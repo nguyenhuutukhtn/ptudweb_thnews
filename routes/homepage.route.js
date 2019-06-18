@@ -28,6 +28,8 @@ router.use(require('../middlewares/AnotherNews.mdw'))
 router.use(require('../middlewares/HotInWeek.mdw'))
 router.use(require('../middlewares/TopFiveCommonKeywords.mdw'))
 router.use(require('../middlewares/feadturedWritter.mdw'))
+router.use(require('../middlewares/ChildrenOfNews.mdw'))
+router.use(require('../middlewares/ChildrenOfReader.mdw'))
 
 router.use('/guest', guestRole);
 

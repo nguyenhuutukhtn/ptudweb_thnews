@@ -31,25 +31,7 @@ var guestRole = require('../../middlewares/guestRole.mdw')
 router.use('/', guestRole);
 
 router.get('/', (req, res) => {
-    res.render('main_writer')
-})
-router.post('/new_post',(req,res)=>{
-    console.log(req.body);
-    var title=req.body.title;
-    var catId=req.body.catId;
-    var summary=req.body.summary;
-    var thumbnail=req.body.thumbnail;
-    var content=req.body.editor1;
-    var tags=req.body.tags.split(',');
-    var articleId;
-    articleModel.AddNewArticle(title,catId,summary,thumbnail,content,res.id)
-    .then(result=>{
-        articleId=result.insertId;
-        tags.forEach(element => {
-            tagModel.AddNewTag(articleId,element);
-        });
-    });
-    res.redirect('/auth/writer');
+    res.render('main_editor')
 })
 
 
