@@ -45,7 +45,7 @@ app.use('/contact',require('./routes/contact.route'));
 app.use('/forgot',require('./routes/forgot.route'));
 app.use('/login',require('./routes/login.route'));
 app.use('/register',require('./routes/register.route'));
-app.use('/reset',require('./routes/reset.route'));
+app.use('/page',require('./routes/page.route'));
 app.use('/search',require('./routes/search.route'));
 app.use('/starter',require('./routes/starter.route'));
 app.use('/article',require('./routes/article.route'));
