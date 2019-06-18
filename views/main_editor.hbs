@@ -1,21 +1,51 @@
 {{#section 'header'}}
-<title>Trang biên tập</title>
-<!-- Bootstrap -->
-<link rel="stylesheet" href="/scripts/bootstrap/bootstrap.min.css">
-<!-- IonIcons -->
-<link rel="stylesheet" href="/scripts/ionicons/css/ionicons.min.css">
-<!-- Toast -->
-<link rel="stylesheet" href="/scripts/toast/jquery.toast.min.css">
-<!-- OwlCarousel -->
-<link rel="stylesheet" href="/scripts/owlcarousel/dist/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="/scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
-<!-- Magnific Popup -->
-<link rel="stylesheet" href="/scripts/magnific-popup/dist/magnific-popup.css">
-<link rel="stylesheet" href="/scripts/sweetalert/dist/sweetalert.css">
-<!-- Custom style -->
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/skins/all.css">
-<link rel="stylesheet" href="/css/demo.css">
+<title>Trang phóng viên</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+<link rel="stylesheet" href="/writer/css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+	.cke {
+		visibility: hidden;
+	}
+</style>
+<script type="text/javascript" src="https://cdn.ckeditor.com/4.11.4/standard/config.js?t=H8DA"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.ckeditor.com/4.11.4/standard/skins/moono-lisa/editor_gecko.css?t=H8DA">
+<script type="text/javascript" src="https://cdn.ckeditor.com/4.11.4/standard/lang/en.js?t=H8DA"></script>
+<script type="text/javascript" src="https://cdn.ckeditor.com/4.11.4/standard/styles.js?t=H8DA"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.ckeditor.com/4.11.4/standard/plugins/scayt/skins/moono-lisa/scayt.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.ckeditor.com/4.11.4/standard/plugins/scayt/dialogs/dialog.css">
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.ckeditor.com/4.11.4/standard/plugins/tableselection/styles/tableselection.css">
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.ckeditor.com/4.11.4/standard/plugins/wsc/skins/moono-lisa/wsc.css">
+{{/section}}
+{{#section 'footer'}}
+<script src="/writer/js/jquery.min.js"></script>
+<!-- <script src="js/popper.min.js"></script> -->
+<!-- Path to Popper - it is for dropsdowns etc in bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+	integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+<script>
+	CKEDITOR.replace('editor1');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
 {{/section}}
 
 
@@ -260,23 +290,3 @@
 </div>
 
 
-
-<script src="js/jquery.min.js"></script>
-<!-- <script src="js/popper.min.js"></script> -->
-<!-- Path to Popper - it is for dropsdowns etc in bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-	integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-	crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-	crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-	crossorigin="anonymous"></script>
-<script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
-<script>
-	CKEDITOR.replace('editor1');
-</script>

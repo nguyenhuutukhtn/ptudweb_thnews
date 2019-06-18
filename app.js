@@ -4,6 +4,7 @@ var hbs_sections=require('express-handlebars-sections');
 const Handlebars = require('handlebars');
 const HandlebarsIntl = require('handlebars-intl');
 var guestRole = require('./middlewares/guestRole.mdw');
+var paginate = require('handlebars-paginate');
 
 var app=express();
 
@@ -51,6 +52,8 @@ app.use('/starter',require('./routes/starter.route'));
 app.use('/article',require('./routes/article.route'));
 app.use('/auth/profile',require('./routes/profile.route'));
 app.use('/auth/writer',require('./routes/writer/dashboard.route'));
+app.use('/auth/editor',require('./routes/editor/dashboard.route'));
+app.use('/auth/admin',require('./routes/admin/dashboard.route'));
 app.use('/authentication', require('./routes/authentication.route'));
 app.use('/auth/info', require('./routes/info.route'));
 app.use('/auth/register/subscriber', require('./routes/register_subscriber.route'))
@@ -78,6 +81,8 @@ Handlebars.registerHelper('grouped_each', function(every, context, options) {
     }
     return out;
 });
+
+
 
 app.listen(3000,()=>{
     console.log('server is running at http://localhost:3000');
