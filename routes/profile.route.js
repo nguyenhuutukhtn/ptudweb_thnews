@@ -12,7 +12,12 @@ router.use(bodyParser.json());
 router.use(require('../middlewares/LastestPost.mdw'))
 router.use(require('../middlewares/FourLastestNews.mdw'))
 router.use(require('../middlewares/TopThreeHot.mdw'))
+
+var guestRole = require('../middlewares/guestRole.mdw');
+router.use('/', guestRole);
+
 router.get('/', (req, res) => {
         res.render('profile')
 })
+
 module.exports = router;

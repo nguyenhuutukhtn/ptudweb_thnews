@@ -26,12 +26,15 @@ router.post('/admin', (req, res) => {
         .then(token => {
             res.cookie('Authorization', token, { maxAge: 900000, httpOnly: true });
             console.log("Success: ", token);
-            res.render('home');
             res.redirect('/');
         })
         .catch(err => {
-            res.render('401');
+            res.redirect('/401');
         })
 })
+
+router.post('/', (req, res) =>{
+
+});
 
 module.exports = router;

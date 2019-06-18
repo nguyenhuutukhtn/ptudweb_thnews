@@ -11,9 +11,6 @@ var guestRole = require('../middlewares/guestRole.mdw');
 const NodeCache = require("node-cache");
 const myCache = new NodeCache();
 
-// var fs = require("fs");
-// var privateKey = fs.readFileSync('private.key');
-
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser())
 router.use(bodyParser.json());
@@ -53,17 +50,36 @@ router.get('/', (req, res) => {
     });
 })
 
+router.get('/500', (req, res) => {
+    res.render('500')
+})
+
+router.get('/401', (req, res) => {
+    res.render('401')
+})
+
+router.get('/404', (req, res) => {
+    res.render('404')
+})
+
+router.get('/403', (req, res) => {
+    res.render('403')
+})
+
+router.get('/503', (req, res) => {
+    res.render('503')
+})
+
 router.post('/logout', (req, res) => {
     var token = req.cookies['Authorization'];
     authentication.verify(token, res)
         .then(temp => {
             res.clearCookie('Authorization');
             value = myCache.del("token");
-            res.render('home');
             res.redirect('/');
         })
         .catch(err => {
-            res.render('401');
+            res.redirect('/401');
         })
 })
 

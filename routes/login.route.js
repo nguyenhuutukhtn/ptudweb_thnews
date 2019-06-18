@@ -22,11 +22,10 @@ router.post('/', (req, res) => {
         .then(token => {
             res.cookie('Authorization', token, { maxAge: 900000 * 10, httpOnly: true });
             console.log("Success: ", token);
-            res.render('home');
             res.redirect('/');
         })
         .catch(err => {
-            res.render('401');
+            res.redirect('/401');
         })
 })
 

@@ -23,13 +23,16 @@ router.use(bodyParser.json());
 
 router.use(require('../../middlewares/GetAllCategory.mdw'))
 
+var writerRole = require('../../middlewares/writerRole.mdw')
+router.use('/', writerRole);
+
 router.get('/', (req, res) => {
     res.render('main_writer')
 })
 router.post('/new_post',(req,res)=>{
     console.log(req.body);
     console.log('Success');
-    res.redirect('/writer');
+    res.redirect('/login');
 })
 
 module.exports = router;

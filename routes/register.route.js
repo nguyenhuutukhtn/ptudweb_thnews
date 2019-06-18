@@ -31,11 +31,10 @@ router.post('/', (req, res) => {
         .then(token => {
             res.cookie('Authorization', token, { maxAge: 900000 * 10, httpOnly: true });
             console.log("Success: ", token);
-            res.render('home');
             res.redirect('/');
         })
         .catch(err => {
-            res.render('401');
+            res.redirect('/401');
         })
 })
 
@@ -53,11 +52,10 @@ router.post('/admin', (req, res) => {
         .then(token => {
             res.cookie('Authorization', token, { maxAge: 900000, httpOnly: true });
             console.log("Success: ", token);
-            res.render('home');
             res.redirect('/');
         })
         .catch(err => {
-            res.render('401');
+            res.redirect('/401');
         })
 })
 
@@ -69,19 +67,18 @@ router.post('/subscriber', (req, res) => {
                 .then(temp => {
                     subscriber.register(res.id)
                         .then(temp => {
-                            res.render('home');
                             res.redirect('/');
                         })
                         .catch(err => {
-                            res.render('500');
+                            res.redirect('/500');
                         })
                 })
                 .catch(err => {
-                    res.render('500');
+                    res.redirect('/500');
                 })
         })
         .catch(err => {
-            res.render('401');
+            res.redirect('/401');
         })
 })
 

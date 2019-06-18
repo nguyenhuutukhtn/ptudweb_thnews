@@ -3,6 +3,7 @@ var exphbs=require('express-handlebars');
 var hbs_sections=require('express-handlebars-sections');
 const Handlebars = require('handlebars');
 const HandlebarsIntl = require('handlebars-intl');
+var guestRole = require('./middlewares/guestRole.mdw');
 
 var app=express();
 
@@ -36,8 +37,6 @@ app.engine('hbs',exphbs({
     }
 }));
 
-
-
 app.set('view engine','hbs');
 
 app.use('/',require('./routes/homepage.route'));
@@ -50,9 +49,10 @@ app.use('/reset',require('./routes/reset.route'));
 app.use('/search',require('./routes/search.route'));
 app.use('/starter',require('./routes/starter.route'));
 app.use('/article',require('./routes/article.route'));
-app.use('/profile',require('./routes/profile.route'));
-app.use('/writer',require('./routes/writer/dashboard.route'));
+app.use('/auth/profile',require('./routes/profile.route'));
+app.use('/auth/writer',require('./routes/writer/dashboard.route'));
 app.use('/authentication', require('./routes/authentication.route'));
+app.use('/auth/info', require('./routes/info.route'));
 app.use((req,res,next)=>{
     res.render('404',{layout:false});
 })
