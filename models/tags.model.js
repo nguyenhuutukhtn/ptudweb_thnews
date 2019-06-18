@@ -12,4 +12,7 @@ module.exports={
     FiveTrendingTags: () => {
         return db.load(`select tag.content ,count(*) as Times from tag group by(tag.content) order by(Times) desc limit 5;`)
     },
+    AddNewTag:(articleId,content)=>{
+        return db.load(`insert into tag(id,articleId,content,dateCreate) value(0,${articleId},'${content}',now());`);
+    }
 };
