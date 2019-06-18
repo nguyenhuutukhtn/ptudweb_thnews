@@ -1,5 +1,8 @@
 var express = require('express');
 var articleModel = require('../models/article.model');
+var usersModel = require('../models/users.model');
+var commentModel = require('../models/comments.model');
+var tagModel = require('../models/tags.model');
 var cookieParser = require('cookie-parser')
 
 var router = express.Router();
@@ -19,10 +22,23 @@ router.get('/:id', (req, res) => {
     p.then(articleDetail => {
         var q=articleModel.RelateNews(id);
         q.then(RelateNews=>{
-            res.render('article_details',{
-                relateNews:RelateNews,
-                articleDetail:articleDetail
-            });
+            var r=tagModel.AllTags(id);
+            r.then(AllTags=>{
+                var t=usersModel.Writer(id);
+                t.then(Writer=>{
+                    var x=commentModel.AllComments(id);
+                    x.then(AllComments=>{
+                        res.render('article_details',{
+                            relateNews:RelateNews,
+                            articleDetail:articleDetail,
+                            AllTags:AllTags,
+                            Writer:Writer,
+                            AllComments:AllComments
+                        });
+                    })
+                })
+            })    
+            
         })
         
         //console.log(rows);

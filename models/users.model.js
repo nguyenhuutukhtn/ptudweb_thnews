@@ -27,5 +27,11 @@ module.exports = {
     },
     feadturedWritter:()=>{
         return db.load(`Select users.avatar,users.pseudonym,users.last_name,users.stars,count(article.Id) as PostNum from users,article where users.stars in (select MAX(users.stars) from users) and users.id=article.WriterId group by(users.id)`);
+    },
+
+    Writer: id => {
+        var Writer= db.load(
+            `SELECT users.last_name,users.avatar FROM users,article where article.WriterId=users.id and article.Id=${id}`);
+            return Writer
     }
 };

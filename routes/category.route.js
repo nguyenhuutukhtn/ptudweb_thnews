@@ -13,7 +13,9 @@ router.use(require('../middlewares/LastestPost.mdw'))
 router.use(require('../middlewares/FourLastestNews.mdw'))
 router.use(require('../middlewares/TopThreeHot.mdw'))
 
-
+router.get('/', (req, res) => {
+    res.render('category')
+})
 
 
 module.exports = router;

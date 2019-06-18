@@ -291,7 +291,7 @@
 									</a>
 								</figure>
 								<div class="padding">
-									<h1><a href="single.html">{{Title}}</a>
+									<h1><a href="/article/{{Id}}">{{Title}}</a>
 									</h1>
 									<div class="detail">
 										<div class="category"><a href="category.html">{{CatName}}</a></div>
@@ -343,12 +343,8 @@
 					<footer>
 						<div class="col">
 							<ul class="tags">
-								<li><a href="#">Chết đuối</a></li>
-								<li><a href="#">Nữ sinh</a></li>
-								<li><a href="#">Tự tử</a></li>
-								<li><a href="#">Thời sự</a></li>
-								<li><a href="#">Tin tức</a></li>
-								<li><a href="#">Bắc Ninh</a></li>
+								{{#each ../AllTags}}<li><a href="#">{{content}}</a></li>{{/each}}
+								
 							</ul>
 						</div>
 						<div class="col">
@@ -395,14 +391,14 @@
 				<div class="line">
 					<div>Tác giả</div>
 				</div>
-				<div class="author">
+				{{#each ../Writer}}<div class="author">
 					<figure>
 						<img
-							src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041012/TH-News/tu-dep-trai_srpltm.jpg">
+							src="{{avatar}}">
 					</figure>
 					<div class="details">
 						<div class="job">Phóng viên</div>
-						<h3 class="name">Tú đẹp trai</h3>
+						<h3 class="name">{{last_name}}</h3>
 						<p></p>
 						<ul class="social trp sm">
 							<li>
@@ -435,7 +431,8 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div>{{/each}}
+				
 				<div class="line">
 					<div>Bài viết liên quan</div>
 				</div>
@@ -464,80 +461,25 @@
 				<div class="comments">
 					<h2 class="title">3 bình luận <a href="#">Viết bình luận</a></h2>
 					<div class="comment-list">
-						<div class="item">
+						{{#each ../AllComments}}<div class="item">
 							<div class="user">
 								<figure>
 									<img
-										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/em-gai-mua_w8eqtv.png">
+										src="{{avatar}}">
 								</figure>
 								<div class="details">
-									<h5 class="name">Em gái mưa</h5>
-									<div class="time">5 giờ trước</div>
+									<h5 class="name">{{last_name}}</h5>
+									<div class="time">{{Times}} ngày trước</div>
 									<div class="description">
-										Mình hợp nhau đến như vậy thế nhưng không phải là yêu
+										{{content}}
 									</div>
 									<footer>
 										<a href="#">Trả lời</a>
 									</footer>
 								</div>
 							</div>
-						</div>
-						<div class="item">
-							<div class="user">
-								<figure>
-									<img
-										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041012/TH-News/tu-dep-trai_srpltm.jpg">
-								</figure>
-								<div class="details">
-									<h5 class="name">Tú đẹp trai</h5>
-									<div class="time">4 giờ trước</div>
-									<div class="description">
-										Tín Huỳnh óc chó vkl
-									</div>
-									<footer>
-										<a href="#">Trả lời</a>
-									</footer>
-								</div>
-							</div>
-							<div class="reply-list">
-								<div class="item">
-									<div class="user">
-										<figure>
-											<img
-												src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/le-minh-tri_qg0apd.jpg">
-										</figure>
-										<div class="details">
-											<h5 class="name">Lê Minh Trí</h5>
-											<div class="time">3 giờ trước</div>
-											<div class="description">
-												Chuẩn cmnr
-											</div>
-											<footer>
-												<a href="#">Trả lời</a>
-											</footer>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="user">
-								<figure>
-									<img
-										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041011/TH-News/tin-huynh_xuv9kw.jpg">
-								</figure>
-								<div class="details">
-									<h5 class="name">Tín Huỳnh</h5>
-									<div class="time">8 giờ trước</div>
-									<div class="description">
-										Website đẹp vãi
-									</div>
-									<footer>
-										<a href="#">Trả lời</a>
-									</footer>
-								</div>
-							</div>
-						</div>
+						</div>{{/each}}
+						
 					</div>
 					<form class="row">
 						<div class="col-md-12">
