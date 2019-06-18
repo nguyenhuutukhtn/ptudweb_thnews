@@ -11,6 +11,8 @@ module.exports = (req, res, next) => {
                 authentication.getPayLoadToken(token, res)
                     .then(temp => {
                         if (res.role === "writers") {
+                            res.locals.role="writers";
+                            console.log("writer role");
                             next();
                         } else {
                             console.log("You don't have this permission");

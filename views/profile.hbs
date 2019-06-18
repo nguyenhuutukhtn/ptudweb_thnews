@@ -1,0 +1,839 @@
+{{#section 'header'}}
+<title>Đăng nhập</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="/scripts/bootstrap/bootstrap.min.css">
+<!-- IonIcons -->
+<link rel="stylesheet" href="/scripts/ionicons/css/ionicons.min.css">
+<!-- Toast -->
+<link rel="stylesheet" href="/scripts/toast/jquery.toast.min.css">
+<!-- OwlCarousel -->
+<link rel="stylesheet" href="/scripts/owlcarousel/dist/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="/scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="/scripts/magnific-popup/dist/magnific-popup.css">
+<link rel="stylesheet" href="/scripts/sweetalert/dist/sweetalert.css">
+<!-- Custom style -->
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/skins/all.css">
+<link rel="stylesheet" href="/css/demo.css">
+{{/section}}
+{{#section 'footer'}}
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.migrate.js"></script>
+<script src="/scripts/bootstrap/bootstrap.min.js"></script>
+<script>var $target_end = $(".best-of-the-week");</script>
+<script src="/scripts/jquery-number/jquery.number.min.js"></script>
+<script src="/scripts/owlcarousel/dist/owl.carousel.min.js"></script>
+<script src="/scripts/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<script src="/scripts/easescroll/jquery.easeScroll.js"></script>
+<script src="/scripts/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/scripts/toast/jquery.toast.min.js"></script>
+<script src="/js/demo.js"></script>
+<script src="/js/e-magz.js"></script>
+<script>
+	$(document).ready(function () {
+
+
+		var readURL = function (input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload = function (e) {
+					$('.avatar').attr('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+
+
+		$(".file-upload").on('change', function () {
+			readURL(this);
+		});
+	});
+</script>
+{{/section}}
+
+<header class="primary">
+	<div class="firstbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-12">
+					<div class="brand">
+						<a href="/">
+							<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png"
+								alt="TH-News Logo">
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-12">
+					<form class="search" autocomplete="off">
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" name="search" class="form-control" placeholder="Tìm kiếm">
+								<div class="input-group-btn">
+									<button class="btn btn-primary"><i class="ion-search"></i></button>
+								</div>
+							</div>
+						</div>
+						<div class="help-block">
+							<div>Phổ biến:</div>
+							<ul>
+								<li><a href="#">Nông sản</a></li>
+								<li><a href="#">Thủy sản</a></li>
+								<li><a href="#">Kinh doanh</a></li>
+								<li><a href="#">Giá vàng</a></li>
+								<li><a href="#">Chứng khoán</a></li>
+							</ul>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-3 col-sm-12 text-right">
+					<ul class="nav-icons">
+						<li><a href="/register"><i class="ion-person-add"></i>
+								<div>Đăng ký</div>
+							</a></li>
+						<li><a href="/login"><i class="ion-person"></i>
+								<div>Đăng nhập</div>
+							</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Start nav -->
+	<nav class="menu">
+		<div class="container">
+			<div class="brand">
+				<a href="#">
+					<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png"
+						alt="TH-News Logo">
+				</a>
+			</div>
+			<div class="mobile-toggle">
+				<a href="#" data-toggle="menu" data-target="#menu-list"><i class="ion-navicon-round"></i></a>
+			</div>
+			<div class="mobile-toggle">
+				<a href="#" data-toggle="sidebar" data-target="#sidebar"><i class="ion-ios-arrow-left"></i></a>
+			</div>
+			<div id="menu-list">
+				<ul class="nav-list">
+					<li class="for-tablet nav-title"><a>Menu</a></li>
+					<li class="for-tablet"><a href="/login">Đăng nhập</a></li>
+					<li class="for-tablet"><a href="/register">Đăng ký</a></li>
+					<!-- <li><a href="category.html">Thời sự</a></li> -->
+					<li class="dropdown magz-dropdown"><a href="#">Thời sự <i class="ion-ios-arrow-right"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="index.html">Chính trị</a></li>
+							<li><a href="category.html">Quốc tế</a></li>
+							<li><a href="single.html">Đô thị</a></li>
+						</ul>
+					</li>
+					<li class="dropdown magz-dropdown">
+						<a href="category.html">Kinh doanh <i class="ion-ios-arrow-right"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="index.html">Nông sản</a></li>
+							<li><a href="category.html">Thủy sản</a></li>
+							<li><a href="single.html">Nhà đất</a></li>
+						</ul>
+					</li>
+					<li class="dropdown magz-dropdown"><a href="#">Công nghệ <i class="ion-ios-arrow-right"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="category.html">Internet</a></li>
+							<li class="dropdown magz-dropdown"><a href="category.html">Mobile <i
+										class="ion-ios-arrow-right"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="category.html">Điện thoại</a></li>
+									<li class="dropdown magz-dropdown"><a href="category.html">Ứng dụng <i
+												class="ion-ios-arrow-right"></i></a>
+										<ul class="dropdown-menu">
+											<li><a href="category.html">Android</a></li>
+											<li><a href="category.html">IOS</a></li>
+											<li><a href="category.html">Công nghệ mới</a></li>
+										</ul>
+									</li>
+									<li><a href="category.html">Trí tuệ nhân tạo</a>
+								</ul>
+							</li>
+							<li><a href="category.html">Office</a></li>
+							<li class="dropdown magz-dropdown"><a href="#">Lập trình <i
+										class="ion-ios-arrow-right"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="category.html">Web</a></li>
+									<li class="dropdown magz-dropdown"><a href="category.html">Android <i
+												class="ion-ios-arrow-right"></i></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown magz-dropdown magz-dropdown-megamenu"><a href="#"> Điểm báo <i
+								class="ion-ios-arrow-right"></i>
+							<div class="badge">Hot</div>
+						</a>
+						<div class="dropdown-menu megamenu">
+							<div class="megamenu-inner">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col-md-12">
+												<h2 class="megamenu-title">Trending</h2>
+											</div>
+										</div>
+										<ul class="vertical-menu">
+											<li><a href="#"><i class="ion-ios-circle-outline"></i> Link 4'47'' tại
+													đây</a></li>
+											<li><a href="#"><i class="ion-ios-circle-outline"></i> Chùa ba vàng</a>
+											</li>
+											<li><a href="#"><i class="ion-ios-circle-outline"></i> Tôi có thể thấy
+													sóng điện thoại</a></li>
+											<li><a href="#"><i class="ion-ios-circle-outline"></i> Phim 18+ </a>
+											</li>
+											<li><a href="#"><i class="ion-ios-circle-outline"></i> Game of
+													thrones</a></li>
+										</ul>
+									</div>
+									<div class="col-md-9">
+										<div class="row">
+											<div class="col-md-12">
+												<h2 class="megamenu-title">Featured Posts</h2>
+											</div>
+										</div>
+										<div class="row">
+											<article class="article col-md-4 mini">
+												<div class="inner">
+													<figure>
+														<a href="single.html">
+															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img10_wfgxr2.jpg"
+																alt="Sample Article">
+														</a>
+													</figure>
+													<div class="padding">
+														<div class="detail">
+															<div class="time">April 15, 2019</div>
+															<div class="category"><a href="category.html">Pet</a>
+															</div>
+														</div>
+														<h2><a href="single.html">Bạn đã chăm sóc cho chú mèo nhà
+																bạn đúng cách chưa?</a></h2>
+													</div>
+												</div>
+											</article>
+											<article class="article col-md-4 mini">
+												<div class="inner">
+													<figure>
+														<a href="single.html">
+															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img11_nxvm0l.jpg"
+																alt="Sample Article">
+														</a>
+													</figure>
+													<div class="padding">
+														<div class="detail">
+															<div class="time">April 13, 2019</div>
+															<div class="category"><a href="category.html">Lifestyle</a>
+															</div>
+														</div>
+														<h2><a href="single.html"></a>Đạp xe mỗi ngày 10km làm cơ
+															thể săn chắc</h2>
+													</div>
+												</div>
+											</article>
+											<article class="article col-md-4 mini">
+												<div class="inner">
+													<figure>
+														<a href="single.html">
+															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img14_xyrdv3.jpg"
+																alt="Sample Article">
+														</a>
+													</figure>
+													<div class="padding">
+														<div class="detail">
+															<div class="time">April 10, 2019</div>
+															<div class="category"><a href="category.html">Travel</a>
+															</div>
+														</div>
+														<h2><a href="single.html">Đời người phải đi những điểm đến
+																này ít nhất một lần </a></h2>
+													</div>
+												</div>
+											</article>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown magz-dropdown"><a href="#">Thể thao <i class="ion-ios-arrow-right"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="category.html">Thể thao Việt Nam</a></li>
+							<li class="dropdown magz-dropdown"><a href="category.html">Thể thao thế giới<i
+										class="ion-ios-arrow-right"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="category.html">Ngoại hạng Anh</a></li>
+									<li><a href="category.html">Tây Ban Nha</a></li>
+									<li><a href="category.html">Ý</a></li>
+									<li><a href="category.html">Pháp</a></li>
+									<li><a href="category.html">Đức</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown magz-dropdown"><a href="#"> Giải trí <i class="ion-ios-arrow-right"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="category.html">Sao Việt </a></li>
+							<li><a href="category.html">Sao Châu Á </a></li>
+							<li><a href="category.html">Sao Hollywood </a></li>
+						</ul>
+					</li>
+					<li class="dropdown magz-dropdown"><a href="#"> Âm nhạc <i class="ion-ios-arrow-right"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="category.html"> Nhạc Việt </a></li>
+							<li><a href="category.html"> Nhạc Hàn </a></li>
+							<li><a href="category.html"> Nhạc Âu Mỹ </a></li>
+						</ul>
+					</li>
+					<li class="dropdown magz-dropdown"><a href="#"> Quản lý cá nhân <i
+								class="ion-ios-arrow-right"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><i class="icon ion-person"></i> My Account</a></li>
+							<li><a href="#"><i class="icon ion-heart"></i> Favorite</a></li>
+							<li><a href="#"><i class="icon ion-chatbox"></i> Comments</a></li>
+							<li><a href="#"><i class="icon ion-key"></i> Change Password</a></li>
+							<li><a href="#"><i class="icon ion-settings"></i> Settings</a></li>
+							<li class="divider"></li>
+							<li><a href="#"><i class="icon ion-log-out"></i> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- End nav -->
+</header>
+
+<section class="single">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-3">
+				<!--left col-->
+
+
+				<div class="text-center">
+					<img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail"
+						alt="avatar">
+					<h6>Upload a different photo...</h6>
+					<input type="file" class="text-center center-block file-upload">
+				</div>
+				</hr><br>
+
+
+				<div class="panel panel-default">
+					<div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+					<div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+				</div>
+
+
+				<ul class="list-group">
+					<li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+					<li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125
+					</li>
+					<li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+					<li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+					<li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78
+					</li>
+				</ul>
+
+
+
+			</div>
+			<!--/col-3-->
+			<div class="col-sm-9">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#home">Thông tin cá nhân</a></li>
+				</ul>
+
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="home">
+						<hr>
+						<form class="form" action="##" method="post" id="registrationForm">
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="first_name">
+										<h4>First name</h4>
+									</label>
+									<input type="text" class="form-control" name="first_name" id="first_name"
+										placeholder="first name" title="enter your first name if any.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="last_name">
+										<h4>Last name</h4>
+									</label>
+									<input type="text" class="form-control" name="last_name" id="last_name"
+										placeholder="last name" title="enter your last name if any.">
+								</div>
+							</div>
+
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="phone">
+										<h4>Phone</h4>
+									</label>
+									<input type="text" class="form-control" name="phone" id="phone"
+										placeholder="enter phone" title="enter your phone number if any.">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-xs-6">
+									<label for="mobile">
+										<h4>Mobile</h4>
+									</label>
+									<input type="text" class="form-control" name="mobile" id="mobile"
+										placeholder="enter mobile number" title="enter your mobile number if any.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="email">
+										<h4>Email</h4>
+									</label>
+									<input type="email" class="form-control" name="email" id="email"
+										placeholder="you@email.com" title="enter your email.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="email">
+										<h4>Location</h4>
+									</label>
+									<input type="email" class="form-control" id="location" placeholder="somewhere"
+										title="enter a location">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="password">
+										<h4>Password</h4>
+									</label>
+									<input type="password" class="form-control" name="password" id="password"
+										placeholder="password" title="enter your password.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="password2">
+										<h4>Verify</h4>
+									</label>
+									<input type="password" class="form-control" name="password2" id="password2"
+										placeholder="password2" title="enter your password2.">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-12">
+									<br>
+									<button class="btn btn-lg btn-success" type="submit"> Save</button>
+									<button class="btn btn-lg" type="reset"> Reset</button>
+								</div>
+							</div>
+						</form>
+
+						<hr>
+
+					</div>
+					<!--/tab-pane-->
+					<div class="tab-pane" id="messages">
+
+						<h2></h2>
+
+						<hr>
+						<form class="form" action="##" method="post" id="registrationForm">
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="first_name">
+										<h4>First name</h4>
+									</label>
+									<input type="text" class="form-control" name="first_name" id="first_name"
+										placeholder="first name" title="enter your first name if any.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="last_name">
+										<h4>Last name</h4>
+									</label>
+									<input type="text" class="form-control" name="last_name" id="last_name"
+										placeholder="last name" title="enter your last name if any.">
+								</div>
+							</div>
+
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="phone">
+										<h4>Phone</h4>
+									</label>
+									<input type="text" class="form-control" name="phone" id="phone"
+										placeholder="enter phone" title="enter your phone number if any.">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-xs-6">
+									<label for="mobile">
+										<h4>Mobile</h4>
+									</label>
+									<input type="text" class="form-control" name="mobile" id="mobile"
+										placeholder="enter mobile number" title="enter your mobile number if any.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="email">
+										<h4>Email</h4>
+									</label>
+									<input type="email" class="form-control" name="email" id="email"
+										placeholder="you@email.com" title="enter your email.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="email">
+										<h4>Location</h4>
+									</label>
+									<input type="email" class="form-control" id="location" placeholder="somewhere"
+										title="enter a location">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="password">
+										<h4>Password</h4>
+									</label>
+									<input type="password" class="form-control" name="password" id="password"
+										placeholder="password" title="enter your password.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="password2">
+										<h4>Verify</h4>
+									</label>
+									<input type="password" class="form-control" name="password2" id="password2"
+										placeholder="password2" title="enter your password2.">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-12">
+									<br>
+									<button class="btn btn-lg btn-success" type="submit"> Save</button>
+									<button class="btn btn-lg" type="reset"> Reset</button>
+								</div>
+							</div>
+						</form>
+
+					</div>
+					<!--/tab-pane-->
+					<div class="tab-pane" id="settings">
+
+
+						<hr>
+						<form class="form" action="##" method="post" id="registrationForm">
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="first_name">
+										<h4>First name</h4>
+									</label>
+									<input type="text" class="form-control" name="first_name" id="first_name"
+										placeholder="first name" title="enter your first name if any.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="last_name">
+										<h4>Last name</h4>
+									</label>
+									<input type="text" class="form-control" name="last_name" id="last_name"
+										placeholder="last name" title="enter your last name if any.">
+								</div>
+							</div>
+
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="phone">
+										<h4>Phone</h4>
+									</label>
+									<input type="text" class="form-control" name="phone" id="phone"
+										placeholder="enter phone" title="enter your phone number if any.">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-xs-6">
+									<label for="mobile">
+										<h4>Mobile</h4>
+									</label>
+									<input type="text" class="form-control" name="mobile" id="mobile"
+										placeholder="enter mobile number" title="enter your mobile number if any.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="email">
+										<h4>Email</h4>
+									</label>
+									<input type="email" class="form-control" name="email" id="email"
+										placeholder="you@email.com" title="enter your email.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="email">
+										<h4>Location</h4>
+									</label>
+									<input type="email" class="form-control" id="location" placeholder="somewhere"
+										title="enter a location">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="password">
+										<h4>Password</h4>
+									</label>
+									<input type="password" class="form-control" name="password" id="password"
+										placeholder="password" title="enter your password.">
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-6">
+									<label for="password2">
+										<h4>Verify</h4>
+									</label>
+									<input type="password" class="form-control" name="password2" id="password2"
+										placeholder="password2" title="enter your password2.">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-12">
+									<br>
+									<button class="btn btn-lg btn-success pull-right" type="submit"> Save</button>
+									<!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+				<!--/tab-pane-->
+			</div>
+			<!--/tab-content-->
+
+		</div>
+		<!--/col-9-->
+	</div>
+	<!--/row-->
+</section>
+
+<!-- Start footer -->
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div class="block">
+					<h1 class="block-title">Kênh tin tức</h1>
+					<div class="block-body">
+						<figure class="foot-logo">
+							<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/logo_rf0ocp.png"
+								class="img-responsive" alt="Logo">
+						</figure>
+						<p class="brand-description">
+							TH-News là kênh tin tức được phát triển bởi nhóm đẹp trai -HCMUS
+						</p>
+						<a href="page.html" class="btn btn-magz white">Giới thiệu <i
+								class="ion-ios-arrow-thin-right"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div class="block">
+					<h1 class="block-title">Tìm kiếm nhiều <div class="right"><a href="#">See All <i
+									class="ion-ios-arrow-thin-right"></i></a></div>
+					</h1>
+					<div class="block-body">
+						<ul class="tags">
+							<li><a href="#">Trâm Anh</a></li>
+							<li><a href="#">Chùa Ba Vàng</a></li>
+							<li><a href="#">Liverpool</a></li>
+							<li><a href="#">Link 4 phút</a></li>
+							<li><a href="#">Điểm thi</a></li>
+							<li><a href="#">Hố đen</a></li>
+							<li><a href="#">Giỗ tổ</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="block">
+					<h1 class="block-title">Tin tức qua email</h1>
+					<div class="block-body">
+						<p>Theo dõi để cập nhật tin mới qua email</p>
+						<form class="newsletter">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<i class="ion-ios-email-outline"></i>
+								</div>
+								<input type="email" class="form-control email" placeholder="Nhập email">
+							</div>
+							<button class="btn btn-primary btn-block white">Theo dõi</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div class="block">
+					<h1 class="block-title">Tin mới</h1>
+					<div class="block-body">
+						<article class="article-mini">
+							<div class="inner">
+								<figure>
+									<a href="single.html">
+										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/ngu-dan-nghia-hiep_ta6qez.jpg"
+											alt="Ngư dân nghĩa hiệp">
+									</a>
+								</figure>
+								<div class="padding">
+									<h1><a href="single.html">Anh ngư dân nghĩa hiệp</a></h1>
+								</div>
+							</div>
+						</article>
+						<article class="article-mini">
+							<div class="inner">
+								<figure>
+									<a href="single.html">
+										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/song-theo-tu-nhien_pfczh9.jpg"
+											alt="Sống theo tự nhiên">
+									</a>
+								</figure>
+								<div class="padding">
+									<h1><a href="single.html">Về vườn để học sống thuận theo tự nhiên</a></h1>
+								</div>
+							</div>
+						</article>
+						<article class="article-mini">
+							<div class="inner">
+								<figure>
+									<a href="single.html">
+										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/kiatisuk_gjlpbq.jpg"
+											alt="Kiatisuk">
+									</a>
+								</figure>
+								<div class="padding">
+									<h1><a href="single.html">Kiatisak bận rộn ra sao mà người Thái Lan không cầu cứu?
+										</a></h1>
+								</div>
+							</div>
+						</article>
+						<article class="article-mini">
+							<div class="inner">
+								<figure>
+									<a href="single.html">
+										<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041049/TH-News/News/nu-sinh-tu-tu_vw6k0v.jpg"
+											alt="Nu sinh tu tu">
+									</a>
+								</figure>
+								<div class="padding">
+									<h1><a href="single.html">Nữ sinh nhảy cầu tự tử, hai nam sinh xuống cứu nhưng bất
+											thành </a></h1>
+								</div>
+							</div>
+						</article>
+						<a href="#" class="btn btn-magz white btn-block">Xem thêm <i
+								class="ion-ios-arrow-thin-right"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-xs-12 col-sm-6">
+				<div class="block">
+					<h1 class="block-title">Follow</h1>
+					<div class="block-body">
+						<p>Theo dõi các trang mạng xã hội để cập nhật tin tức mới nhất</p>
+						<ul class="social trp">
+							<li>
+								<a href="#" class="facebook">
+									<svg>
+										<rect width="0" height="0" /></svg>
+									<i class="ion-social-facebook"></i>
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="youtube">
+									<svg>
+										<rect width="0" height="0" /></svg>
+									<i class="ion-social-youtube-outline"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="googleplus">
+									<svg>
+										<rect width="0" height="0" /></svg>
+									<i class="ion-social-googleplus"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="instagram">
+									<svg>
+										<rect width="0" height="0" /></svg>
+									<i class="ion-social-instagram-outline"></i>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="block">
+					<div class="block-body no-margin">
+						<ul class="footer-nav-horizontal">
+							<li><a href="index.html">Trang chủ</a></li>
+							<li><a href="#">Tin tức</a></li>
+							<li><a href="contact.html">Liên hệ</a></li>
+							<li><a href="page.html">Giới thiệu</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="copyright">
+					COPYRIGHT &copy; BY LE MINH TRI-HUYNH TRUNG-TIN-NGUYEN HUU TU
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- End Footer -->

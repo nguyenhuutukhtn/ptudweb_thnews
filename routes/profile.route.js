@@ -1,4 +1,5 @@
 var express = require('express');
+var articleModel = require('../models/article.model');
 var cookieParser = require('cookie-parser')
 
 var router = express.Router();
@@ -12,8 +13,11 @@ router.use(require('../middlewares/LastestPost.mdw'))
 router.use(require('../middlewares/FourLastestNews.mdw'))
 router.use(require('../middlewares/TopThreeHot.mdw'))
 
+var guestRole = require('../middlewares/guestRole.mdw');
+router.use('/', guestRole);
+
 router.get('/', (req, res) => {
-        res.render('reset')
+        res.render('profile')
 })
 
 module.exports = router;

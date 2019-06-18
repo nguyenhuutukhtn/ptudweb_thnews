@@ -6,10 +6,10 @@ module.exports={
     },
 
     TenTrendingTags: () => {
-        return db.load(`select* ,count(*) as Times from tag group by(tag.content) order by(Times) desc limit 10;`)
+        return db.load(`select tag.content ,count(*) as Times from tag group by(tag.content) order by(Times) desc limit 10;`)
     },
 
     FiveTrendingTags: () => {
-        return db.load(`select* ,count(*) as Times from tag group by(tag.content) order by(Times) desc limit 5;`)
+        return db.load(`select tag.content ,count(*) as Times from tag group by(tag.content) order by(Times) desc limit 5;`)
     },
 };
