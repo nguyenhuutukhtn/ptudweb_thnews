@@ -18,11 +18,13 @@ router.post('/', (req, res) => {
     var password = req.body.password
     console.log("email:", email);
     console.log("password: ", password);
+    var site;
     authentication.login(email, password)
-        .then(token => {
-            res.cookie('Authorization', token, { maxAge: 900000 * 10, httpOnly: true });
-            console.log("Success: ", token);
-            res.redirect('/');
+        .then(result => {
+            res.cookie('Authorization', result[0], { maxAge: 900000 * 10, httpOnly: true });
+            console.log("Success: ", result[0]);
+            console.log("site: ", result[1]);
+            res.redirect(result[1]);
         })
         .catch(err => {
             res.redirect('/401');

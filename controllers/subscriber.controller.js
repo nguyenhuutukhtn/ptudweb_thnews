@@ -39,6 +39,7 @@ module.exports = {
                 } else {
                     res = false;
                 }
+                
                 resolve(res);
             })
             .catch(err => {

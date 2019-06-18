@@ -102,7 +102,6 @@
 		</div>
 	</div>
 
-	<!-- Start nav -->
 	<nav class="menu">
 		<div class="container">
 			<div class="brand">
@@ -125,48 +124,17 @@
 					<!-- <li><a href="category.html">Thời sự</a></li> -->
 					<li class="dropdown magz-dropdown"><a href="#">Thời sự <i class="ion-ios-arrow-right"></i></a>
 						<ul class="dropdown-menu">
-							<li><a href="index.html">Chính trị</a></li>
-							<li><a href="category.html">Quốc tế</a></li>
-							<li><a href="single.html">Đô thị</a></li>
+							{{#each ChildrenOfNews}}
+							<li><a href="/category/{{id}}">{{CatName}}</a></li>
+							{{/each}}
 						</ul>
 					</li>
 					<li class="dropdown magz-dropdown">
 						<a href="category.html">Kinh doanh <i class="ion-ios-arrow-right"></i></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.html">Nông sản</a></li>
-							<li><a href="category.html">Thủy sản</a></li>
-							<li><a href="single.html">Nhà đất</a></li>
-						</ul>
+						
 					</li>
 					<li class="dropdown magz-dropdown"><a href="#">Công nghệ <i class="ion-ios-arrow-right"></i></a>
-						<ul class="dropdown-menu">
-							<li><a href="category.html">Internet</a></li>
-							<li class="dropdown magz-dropdown"><a href="category.html">Mobile <i
-										class="ion-ios-arrow-right"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="category.html">Điện thoại</a></li>
-									<li class="dropdown magz-dropdown"><a href="category.html">Ứng dụng <i
-												class="ion-ios-arrow-right"></i></a>
-										<ul class="dropdown-menu">
-											<li><a href="category.html">Android</a></li>
-											<li><a href="category.html">IOS</a></li>
-											<li><a href="category.html">Công nghệ mới</a></li>
-										</ul>
-									</li>
-									<li><a href="category.html">Trí tuệ nhân tạo</a>
-								</ul>
-							</li>
-							<li><a href="category.html">Office</a></li>
-							<li class="dropdown magz-dropdown"><a href="#">Lập trình <i
-										class="ion-ios-arrow-right"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="category.html">Web</a></li>
-									<li class="dropdown magz-dropdown"><a href="category.html">Android <i
-												class="ion-ios-arrow-right"></i></a>
-									</li>
-								</ul>
-							</li>
-						</ul>
+						
 					</li>
 					<li class="dropdown magz-dropdown magz-dropdown-megamenu"><a href="#"> Điểm báo <i
 								class="ion-ios-arrow-right"></i>
@@ -182,16 +150,10 @@
 											</div>
 										</div>
 										<ul class="vertical-menu">
-											<li><a href="#"><i class="ion-ios-circle-outline"></i> Link 4'47'' tại
-													đây</a></li>
-											<li><a href="#"><i class="ion-ios-circle-outline"></i> Chùa ba vàng</a>
-											</li>
-											<li><a href="#"><i class="ion-ios-circle-outline"></i> Tôi có thể thấy
-													sóng điện thoại</a></li>
-											<li><a href="#"><i class="ion-ios-circle-outline"></i> Phim 18+ </a>
-											</li>
-											<li><a href="#"><i class="ion-ios-circle-outline"></i> Game of
-													thrones</a></li>
+											{{#each FiveTrendingTags}}<li><a href="#">
+												<i class="ion-ios-circle-outline"></i>{{content}}</a></li>{{/each}}
+											
+											
 										</ul>
 									</div>
 									<div class="col-md-9">
@@ -201,63 +163,26 @@
 											</div>
 										</div>
 										<div class="row">
+											{{#each TopThreeHot}}
 											<article class="article col-md-4 mini">
 												<div class="inner">
 													<figure>
-														<a href="single.html">
-															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img10_wfgxr2.jpg"
+														<a href="/article/{{Id}}">
+															<img src="{{Thumbnail}}"
 																alt="Sample Article">
 														</a>
 													</figure>
 													<div class="padding">
 														<div class="detail">
-															<div class="time">April 15, 2019</div>
+															<div class="time">{{PublishDate}}</div>
 															<div class="category"><a href="category.html">Pet</a>
 															</div>
 														</div>
-														<h2><a href="single.html">Bạn đã chăm sóc cho chú mèo nhà
-																bạn đúng cách chưa?</a></h2>
+														<h2><a href="/article/{{Id}}">{{Title}}</a></h2>
 													</div>
 												</div>
 											</article>
-											<article class="article col-md-4 mini">
-												<div class="inner">
-													<figure>
-														<a href="single.html">
-															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img11_nxvm0l.jpg"
-																alt="Sample Article">
-														</a>
-													</figure>
-													<div class="padding">
-														<div class="detail">
-															<div class="time">April 13, 2019</div>
-															<div class="category"><a href="category.html">Lifestyle</a>
-															</div>
-														</div>
-														<h2><a href="single.html"></a>Đạp xe mỗi ngày 10km làm cơ
-															thể săn chắc</h2>
-													</div>
-												</div>
-											</article>
-											<article class="article col-md-4 mini">
-												<div class="inner">
-													<figure>
-														<a href="single.html">
-															<img src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041048/TH-News/News/img14_xyrdv3.jpg"
-																alt="Sample Article">
-														</a>
-													</figure>
-													<div class="padding">
-														<div class="detail">
-															<div class="time">April 10, 2019</div>
-															<div class="category"><a href="category.html">Travel</a>
-															</div>
-														</div>
-														<h2><a href="single.html">Đời người phải đi những điểm đến
-																này ít nhất một lần </a></h2>
-													</div>
-												</div>
-											</article>
+											{{/each}}
 										</div>
 									</div>
 								</div>
@@ -265,33 +190,18 @@
 						</div>
 					</li>
 					<li class="dropdown magz-dropdown"><a href="#">Thể thao <i class="ion-ios-arrow-right"></i></a>
+						
+					</li>
+					<li class="dropdown magz-dropdown"><a href="#"> Bạn đọc <i class="ion-ios-arrow-right"></i></a>
 						<ul class="dropdown-menu">
-							<li><a href="category.html">Thể thao Việt Nam</a></li>
-							<li class="dropdown magz-dropdown"><a href="category.html">Thể thao thế giới<i
-										class="ion-ios-arrow-right"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="category.html">Ngoại hạng Anh</a></li>
-									<li><a href="category.html">Tây Ban Nha</a></li>
-									<li><a href="category.html">Ý</a></li>
-									<li><a href="category.html">Pháp</a></li>
-									<li><a href="category.html">Đức</a></li>
-								</ul>
-							</li>
+							{{#each ChildrenOfReader}}
+							<li><a href="/category/{{id}}">{{CatName}}</a></li>
+							{{/each}}
+							
 						</ul>
 					</li>
-					<li class="dropdown magz-dropdown"><a href="#"> Giải trí <i class="ion-ios-arrow-right"></i></a>
-						<ul class="dropdown-menu">
-							<li><a href="category.html">Sao Việt </a></li>
-							<li><a href="category.html">Sao Châu Á </a></li>
-							<li><a href="category.html">Sao Hollywood </a></li>
-						</ul>
-					</li>
-					<li class="dropdown magz-dropdown"><a href="#"> Âm nhạc <i class="ion-ios-arrow-right"></i></a>
-						<ul class="dropdown-menu">
-							<li><a href="category.html"> Nhạc Việt </a></li>
-							<li><a href="category.html"> Nhạc Hàn </a></li>
-							<li><a href="category.html"> Nhạc Âu Mỹ </a></li>
-						</ul>
+					<li class="dropdown magz-dropdown"><a href="#"> Khác <i class="ion-ios-arrow-right"></i></a>
+					
 					</li>
 					<li class="dropdown magz-dropdown"><a href="#"> Quản lý cá nhân <i
 								class="ion-ios-arrow-right"></i></a>

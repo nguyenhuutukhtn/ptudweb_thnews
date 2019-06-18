@@ -86,7 +86,24 @@ module.exports = {
                                             console.log("user permission: ", result[0]);
                                             tokenHandler.issue(email, user_id, result[0].name)
                                                 .then(token => {
-                                                    resolve(token);
+                                                    if (result[0].name === "guests" ||
+                                                        result[0].name === "subscribers") {
+                                                        site = '/'
+                                                    } else {
+                                                        if (result[0].name === "editors") {
+                                                            site = '/auth/editor'
+                                                        } else {
+                                                            if (result[0].name === "admins") {
+                                                                site = '/auth/admin'
+                                                            } else {
+                                                                if (result[0].name === "writers") {
+                                                                    site = '/auth/writer'
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    let res = [token, site];
+                                                    resolve(res);
                                                 })
                                                 .catch(err => {
                                                     console.log(err);

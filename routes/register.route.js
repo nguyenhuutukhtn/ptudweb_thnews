@@ -19,31 +19,31 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    if (req.body['g-recaptcha-response'] === undefined ||
-        req.body['g-recaptcha-response'] === '' ||
-        req.body['g-recaptcha-response'] === null) {
-        console.log("Fill captcha please");
-        res.redirect('/401');
-        return;
-    }
+    // if (req.body['g-recaptcha-response'] === undefined ||
+    //     req.body['g-recaptcha-response'] === '' ||
+    //     req.body['g-recaptcha-response'] === null) {
+    //     console.log("Fill captcha please");
+    //     res.redirect('/401');
+    //     return;
+    // }
+    // //site key: 6LewbakUAAAAAJBNwFMlrtzoJxeIiLDJPIlAEvMd
+    // const secretKey = "6LewbakUAAAAAKNW2pBz5YBLl22ujN1_Q5FPdXBo";
 
-    const secretKey = "6LewbakUAAAAAKNW2pBz5YBLl22ujN1_Q5FPdXBo";
+    // const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" +
+    //     secretKey + "&response=" +
+    //     req.body['g-recaptcha-response'] +
+    //     "&remoteip=" + req.connection.remoteAddress;
 
-    const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" +
-        secretKey + "&response=" +
-        req.body['g-recaptcha-response'] +
-        "&remoteip=" + req.connection.remoteAddress;
+    // request(verificationURL, function (error, response, body) {
+    //     body = JSON.parse(body);
 
-    request(verificationURL, function (error, response, body) {
-        body = JSON.parse(body);
-
-        if (body.success !== undefined && !body.success) {
-            console.log("Fail captcha verification");
-            res.redirect('/500');
-            return;
-        }
-        console.log("Success");
-    });
+    //     if (body.success !== undefined && !body.success) {
+    //         console.log("Fail captcha verification");
+    //         res.redirect('/500');
+    //         return;
+    //     }
+    //     console.log("Success");
+    // });
     user = {
         email: req.body.email,
         password: req.body.password,

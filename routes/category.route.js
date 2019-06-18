@@ -17,6 +17,7 @@ router.use(require('../middlewares/LastestPost.mdw'))
 router.use(require('../middlewares/FourLastestNews.mdw'))
 router.use(require('../middlewares/TopThreeHot.mdw'))
 
+<<<<<<< HEAD
 var guestRole = require('../middlewares/guestRole.mdw');
 router.use('/', guestRole);
 
@@ -48,6 +49,10 @@ router.get('/:id', (req, res, next) => {
             pages
         });
     })
+=======
+router.get('/:id', (req, res) => {
+    res.render('category')
+>>>>>>> 455f6dea4e4482c48e478b0ec117345d80273e57
 })
 
 
