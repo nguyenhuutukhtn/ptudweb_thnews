@@ -23,6 +23,9 @@ router.use(bodyParser.json());
 
 router.use(require('../../middlewares/GetAllCategory.mdw'))
 
+var writerRole = require('../../middlewares/writerRole.mdw')
+router.use('/', writerRole);
+
 router.get('/', (req, res) => {
     res.render('main_writer')
 })
@@ -34,6 +37,8 @@ router.post('/new_post',(req,res)=>{
     var thumbnail=req.body.thumbnail;
     var content=req.body.editor1;
     var tags=req.body.tags;
+    console.log('Success');
+    res.redirect('/auth/writer');
 })
 
 module.exports = router;

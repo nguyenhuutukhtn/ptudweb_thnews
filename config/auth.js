@@ -5,8 +5,8 @@ module.exports = {
         'call_back': 'http://localhost:3000/authentication/facebook/callback'
     },
     'google': {
-        'app_id': 'your-secret-clientID-here',
-        'app_secret': 'your-client-secret-here',
+        'app_id': '369207635195-a4e1cbv7r79vv8utvn26evrh3lla0obf.apps.googleusercontent.com',
+        'app_secret': 'yQoKupoZ_xFghrjDVxeNdR3k',
         'call_back': 'http://localhost:3000/authentication/google/callback'
     }
 }

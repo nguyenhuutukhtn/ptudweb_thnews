@@ -1,5 +1,4 @@
 var express = require('express');
-var articleModel = require('../models/article.model');
 var cookieParser = require('cookie-parser')
 
 var router = express.Router();

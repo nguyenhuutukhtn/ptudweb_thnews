@@ -81,6 +81,7 @@ module.exports = {
                             reject(err);
                         } else {
                             var user_id = result[0].id;
+                            console.log("user_id: ", user_id);
                             userPermissionModel.getByUserID(result[0].id)
                                 .then(result => {
                                     console.log("user permission: ", result[0]);
@@ -152,14 +153,4 @@ module.exports = {
             })
         })
     }
-
-    // logOut: async () => {
-
-    // },
-    // fbLogIn: async () => {
-
-    // },
-    // ggLogIn: async () => {
-
-    // }
 }
