@@ -2,7 +2,7 @@ var express = require('express');
 var cookieParser = require('cookie-parser')
 var authentication = require('../controllers/authentication.controller')
 var subscriber = require('../controllers/subscriber.controller');
-
+var request = require('request');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
@@ -19,6 +19,31 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+    if (req.body['g-recaptcha-response'] === undefined ||
+        req.body['g-recaptcha-response'] === '' ||
+        req.body['g-recaptcha-response'] === null) {
+        console.log("Fill captcha please");
+        res.redirect('/401');
+        return;
+    }
+
+    const secretKey = "6LewbakUAAAAAKNW2pBz5YBLl22ujN1_Q5FPdXBo";
+
+    const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" +
+        secretKey + "&response=" +
+        req.body['g-recaptcha-response'] +
+        "&remoteip=" + req.connection.remoteAddress;
+
+    request(verificationURL, function (error, response, body) {
+        body = JSON.parse(body);
+
+        if (body.success !== undefined && !body.success) {
+            console.log("Fail captcha verification");
+            res.redirect('/500');
+            return;
+        }
+        console.log("Success");
+    });
     user = {
         email: req.body.email,
         password: req.body.password,
@@ -27,14 +52,17 @@ router.post('/', (req, res) => {
         birth_date: req.body.birth_date,
         pseudonym: req.body.pseudonym,
     }
+    console.log(0);
     authentication.register(user, 'guests', res)
         .then(token => {
             res.cookie('Authorization', token, { maxAge: 900000 * 10, httpOnly: true });
             console.log("Success: ", token);
             res.redirect('/');
+            return;
         })
         .catch(err => {
             res.redirect('/401');
+            return;
         })
 })
 
