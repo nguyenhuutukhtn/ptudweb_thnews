@@ -54,5 +54,11 @@ module.exports = {
     },
     AddNewArticle:(title,catId,summary,thumbnail,content,writerId)=>{
         return db.load(`insert into article(Id,Title,Thumbnail,Summary, Content,Views,Liked,PublishDay,CreateDay,WriterId,CatId,isPremium,HotPoint,PriorityPoint,Shared) values(0,'${title}','${thumbnail}','${summary}','${content}',0,0,NULL,now(),${writerId},${catId},0,0,0,0);`)
+    },
+    PageByCat: (catId,limit,offset)=>{
+        return db.load(`SELECT article.Id,article.Title,article.Thumbnail,article.Summary,article.Views,article.Liked,category.id,category.CatName,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id and article.CatId=${catId} limit ${limit} offset ${offset};`)
+    },
+    CountByCat: catId=>{
+        return db.load(`select count(*) as total from article where article.CatId=${catId};`)
     }
 };

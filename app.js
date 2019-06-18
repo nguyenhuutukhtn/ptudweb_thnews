@@ -63,9 +63,9 @@ app.use((req,res,next)=>{
     res.render('404',{layout:false});
 })
 
-app.use((error,req,res,next)=>{
-    res.render('500',{layout:false});
-})
+// app.use((error,req,res,next)=>{
+//     res.render('500',{layout:false});
+// })
 
 Handlebars.registerHelper('grouped_each', function(every, context, options) {
     var out = "", subcontext = [], i;
