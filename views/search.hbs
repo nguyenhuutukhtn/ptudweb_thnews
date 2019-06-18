@@ -32,13 +32,11 @@
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-12">
-					<form class="search" autocomplete="off">
+					<form class="search" action="/search">
 						<div class="form-group">
-							<div class="input-group">
-								<input type="text" name="search" class="form-control" placeholder="Tìm kiếm">
-								<div class="input-group-btn">
-									<button class="btn btn-primary"><i class="ion-search"></i></button>
-								</div>
+							<div>
+								<input type="text" name="keyword" class="form-control" placeholder="Tìm kiếm">
+									<button class="btn btn-primary input-group-btn"><i class="ion-search"></i></button>
 							</div>
 						</div>
 						<div class="help-block">
@@ -266,34 +264,30 @@
 						</select>
 					</div>
 				</div>
-				<div class="search-result">
-					Kết quả tìm kiếm cho từ khóa "hello" là 5200
-				</div>
 				<div class="row">
+					{{#each ArticleByKeyWord}}
 					<article class="col-md-12 article-list">
 						<div class="inner">
 							<figure>
-								<a href="single.html">
+								<a href="/article/{{Id}}">
 									<img
-										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/son-la_qj03dg.jpg">
+										src="{{Thumbnail}}">
 								</a>
 							</figure>
 							<div class="details">
 								<div class="detail">
 									<div class="category">
-										<a href="#">Thời sự</a>
+										<a href="#">{{CatName}}</a>
 									</div>
-									<time>18/4/2019</time>
+									<time>{{PublishDate}}</time>
 								</div>
-								<h1><a href="single.html">Phó bí thư Sơn La: Tỉnh đang nghiên cứu giải quyết vụ gian lận
-										điểm</a></h1>
+								<h1><a href="/article/{{Id}}">{{Title}}</a></h1>
 								<p>
-									Phó bí thư Tỉnh ủy Sơn La cho biết mới nhận được thông tin về danh sách con em lãnh
-									đạo tỉnh được nâng điểm qua kênh báo chí.
+									{{Summary}}
 								</p>
 								<footer>
 									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>501</div>
+										<div>{{Liked}}</div>
 									</a>
 									<a class="btn btn-primary more" href="single.html">
 										<div>Xem chi tiết</div>
@@ -303,120 +297,8 @@
 							</div>
 						</div>
 					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<div class="badge">
-								Sponsored by VietJet
-							</div>
-							<figure>
-								<a href="single.html">
-									<img
-										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041060/TH-News/News/viet-jet_vml8h9.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="#">Du lịch</a>
-									</div>
-									<time>18/4/2019</time>
-								</div>
-								<h1><a href="single.html">VietJet tung vé tiết kiệm bay thẳng tới Bali</a></h1>
-								<p>
-									Đường bay khứ hồi trực tiếp từ TP HCM đến Bali rút ngắn còn 4 tiếng giúp du khách
-									tiết kiệm thời gian và chi phí so với bay nối chuyến.
-								</p>
-								<footer>
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>4209</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>Xem chi tiết</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img
-										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041051/TH-News/News/phi-cong_rqcubi.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="#">Kinh doanh</a>
-									</div>
-									<time>18/4/2019</time>
-								</div>
-								<h1><a href="single.html">Lương phi công Vietnam Airlines bình quân hơn 132 triệu
-										đồng</a></h1>
-								<p>
-									Lương bình quân của phi công Vietnam Airlines đã tăng gần 11 triệu đồng mỗi tháng
-									nhưng vẫn thấp hơn các hãng trong nước khác.
-								</p>
-								<footer>
-									<a href="#" class="love active"><i class="ion-android-favorite"></i>
-										<div>8430</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>Xem chi tiết</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img
-										src="https://res.cloudinary.com/dsqfchskj/image/upload/v1557041047/TH-News/News/chuyen-ams_vxc5jt.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="#">Giáo dục</a>
-									</div>
-									<time>18/4/2019</time>
-								</div>
-								<h1><a href="single.html">Hà Nội muốn có nhiều trường học đẳng cấp khu vực</a></h1>
-								<p>
-									Lãnh đạo Sở Giáo dục và Đào tạo cho rằng, thủ đô có nhiều lợi thế để xây dựng những
-									trường học chất lượng cao.
-								</p>
-								<footer>
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>783</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>Xem chi tiết</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
-					<div class="col-md-12 text-center">
-						<ul class="pagination">
-							<li class="prev"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">...</a></li>
-							<li><a href="#">97</a></li>
-							<li class="next"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
-						</ul>
-						<div class="pagination-help-text">
-							Showing 8 results of 776 &mdash; Page 1
-						</div>
-					</div>
+					{{/each}}
+					
 				</div>
 			</div>
 		</div>

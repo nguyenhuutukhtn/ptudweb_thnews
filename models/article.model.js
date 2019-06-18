@@ -60,5 +60,11 @@ module.exports = {
     },
     CountByCat: catId=>{
         return db.load(`select count(*) as total from article where article.CatId=${catId};`)
-    }
+    },
+    ArticleByWriterId: writerId=>{
+        return db.load(`SELECT article.Id,article.Title,article.Thumbnail,article.Summary,article.Views,article.Liked,category.id,category.CatName,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id and article.CatId=${writerId}`)
+    },
+    ArticleByKeyWord: keyword=>{
+        return db.load(`SELECT article.Id,article.Title,article.Thumbnail,article.Summary,article.Views,article.Liked,category.id,category.CatName,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id and match(Title,Summary) against('${keyword}');`)
+    },
 };

@@ -13,8 +13,17 @@ router.use(require('../middlewares/LastestPost.mdw'))
 router.use(require('../middlewares/FourLastestNews.mdw'))
 router.use(require('../middlewares/TopThreeHot.mdw'))
 
-router.get('/', (req, res) => {
-    res.render('search')
+router.post('/', (req, res, next) => {
+    var keyword=req.body.keyword;
+    console.log(keyword);
+    Promise.all([
+        articleModel.ArticleByKeyWord(keyword)
+    ]).then(([rows]) => {
+        res.render('search', {
+            ArticleByKeyWord: rows,
+        });
+        console.log(rows);
+    })
 })
 
 module.exports = router;
