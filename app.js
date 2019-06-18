@@ -53,6 +53,9 @@ app.use('/auth/profile',require('./routes/profile.route'));
 app.use('/auth/writer',require('./routes/writer/dashboard.route'));
 app.use('/authentication', require('./routes/authentication.route'));
 app.use('/auth/info', require('./routes/info.route'));
+app.use('/auth/register/subscriber', require('./routes/register_subscriber.route'))
+app.use('/auth/subscriber', require('./routes/subscriber.route'));
+
 app.use((req,res,next)=>{
     res.render('404',{layout:false});
 })

@@ -17,5 +17,8 @@ module.exports={
         var AllTags= db.load(
             `SELECT * FROM tag where tag.articleId=${id}`);
             return AllTags
+    },
+    AddNewTag:(articleId,content)=>{
+        return db.load(`insert into tag(id,articleId,content,dateCreate) value(0,${articleId},'${content}',now());`);
     }
 };

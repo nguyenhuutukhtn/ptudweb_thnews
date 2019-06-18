@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
             .then(temp => {
                 authentication.getPayLoadToken(token, res)
                     .then(temp => {
-                        if (res.role === "subscribers") {
+                        if (res.role === "subscribers" || res.role === "admins") {
                             res.locals.role="subscribers";
                             console.log("subscribers role");
                             next();
