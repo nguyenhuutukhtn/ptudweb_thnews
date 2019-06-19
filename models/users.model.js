@@ -41,7 +41,7 @@ module.exports = {
     },
     Subcriber: ()=>{
         var Subcriber= db.load(
-            `SELECT * FROM users,subcriber_registrations where users.id=subcriber_registrations.user_id`);
+            `SELECT * FROM users,subscriber_registerations where users.id=subscriber_registerations.user_id`);
             return Subcriber
     }
 };
