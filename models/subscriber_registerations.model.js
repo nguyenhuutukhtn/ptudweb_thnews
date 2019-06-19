@@ -12,5 +12,8 @@ module.exports = {
     },
     delete: (id) => {
         return db.delete('subscriber_registerations', 'id', id);
+    },
+    getByUserID : (user_id) => {
+        return db.load(`select * from subscriber_registerations where user_id = ${user_id}`);
     }
 };

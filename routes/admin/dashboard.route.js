@@ -9,6 +9,7 @@ var passport = require('passport');
 //var session = require('express-session');
 var flash = require('connect-flash');
 var subscriber = require('../../controllers/subscriber.controller');
+var adminController = require('../../controllers/admin.controller');
 
 var fs = require("fs");
 var privateKey = fs.readFileSync('private.key');
@@ -24,11 +25,6 @@ router.use(bodyParser.json());
 
 router.use(require('../../middlewares/GetAllCategory.mdw'))
 
-router.use(require('../../middlewares/Subcriber.mdw'))
-
-// var writerRole = require('../../middlewares/writerRole.mdw')
-// router.use('/', writerRole);
-
 var guestRole = require('../../middlewares/guestRole.mdw')
 router.use('/', guestRole);
 
@@ -38,6 +34,22 @@ router.get('/', (req, res) => {
 router.get('/users', (req, res) => {
     res.render('admin_users')
 })
+
+router.post('/', (req, res) => {
+    var email = req.body.email;
+    var password = req.body.password;
+    var confirmPassword = req.body.confirm_password;
+    var role = req.body.role;
+    adminController.register(email, password, confirmPassword, role)
+    .then(result => {
+        res.redirect('/auth/admin');
+    })
+    .catch(err => {
+        console.log(err);
+        res.render('/500');
+    })
+})
+
 
 
 module.exports = router;
