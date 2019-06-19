@@ -150,12 +150,14 @@
             <tbody>
               {{#each Subcriber}}
               <tr>
-                <td scope></td>
+                <form method="POST" action="/auth/admin/confirm">
+                  <td><input name='user_id' value={{user_id}}></td>
                 <td>{{email}}</td>
                 <td>{{subcribe_date}}</td>
                 <td><a href="details.html" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Gia hạn
+                    <button><i class="fa fa-angle-double-right"></i> Gia hạn</button>
                   </a></td>
+                </form>
               </tr>
               {{/each}}
               
