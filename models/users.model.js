@@ -38,5 +38,10 @@ module.exports = {
         var UserProfile= db.load(
             `SELECT * FROM users where users.id=${id}`);
             return UserProfile
+    },
+    Subcriber: ()=>{
+        var Subcriber= db.load(
+            `SELECT * FROM users,subcriber_registrations where users.id=subcriber_registrations.user_id`);
+            return Subcriber
     }
 };

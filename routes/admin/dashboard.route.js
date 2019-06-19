@@ -24,6 +24,8 @@ router.use(bodyParser.json());
 
 router.use(require('../../middlewares/GetAllCategory.mdw'))
 
+router.use(require('../../middlewares/Subcriber.mdw'))
+
 // var writerRole = require('../../middlewares/writerRole.mdw')
 // router.use('/', writerRole);
 

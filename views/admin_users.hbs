@@ -143,39 +143,23 @@
               <tr>
                 <th>#</th>
                 <th>Email</th>
-                <th>Ngày đăng ký</th>
                 <th>Ngày gia hạn gần nhất</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
+              {{#each Subcriber}}
               <tr>
-                <td scope>1</td>
-                <td>Post One</td>
-                <td>Web Development</td>
-                <td>November 5, 2017</td>
+                <td scope></td>
+                <td>{{email}}</td>
+                <td>{{subcribe_date}}</td>
                 <td><a href="details.html" class="btn btn-secondary">
                     <i class="fa fa-angle-double-right"></i> Gia hạn
                   </a></td>
               </tr>
-              <tr>
-                <td scope>2</td>
-                <td>Post Two</td>
-                <td>Tech Gadgets</td>
-                <td>November 6, 2017</td>
-                <td><a href="details.html" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Chi tiết
-                  </a></td>
-              </tr>
-              <tr>
-                <td scope>3</td>
-                <td>Post Three</td>
-                <td>Web Development</td>
-                <td>November 9, 2017</td>
-                <td><a href="details.html" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Chi tiết
-                  </a></td>
-              </tr>
+              {{/each}}
+              
+              
 
             </tbody>
           </table>
