@@ -47,6 +47,7 @@ CREATE TABLE `article` (
   KEY `fk_article_category_idx` (`CatId`),
   KEY `fk_article_admin_idx` (`adminId`),
   KEY `fk_article_edt_idx` (`editorId`),
+  FULLTEXT KEY `key` (`Title`,`Summary`),
   CONSTRAINT `fk_article_admin` FOREIGN KEY (`adminId`) REFERENCES `users` (`id`),
   CONSTRAINT `fk_article_category` FOREIGN KEY (`CatId`) REFERENCES `category` (`id`),
   CONSTRAINT `fk_article_edt` FOREIGN KEY (`editorId`) REFERENCES `users` (`id`)
@@ -86,7 +87,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Du lịch',NULL),(2,'Thời sự',NULL),(3,'Giáo dục',NULL),(4,'Thế giới',NULL),(5,'Kinh doanh',NULL),(6,'Thể thao',NULL),(7,'Công nghệ',NULL),(8,'Bạn đọc',NULL),(9,'Pháp luật',NULL),(10,'Xe',NULL);
+INSERT INTO `category` VALUES (1,'Du lịch',8),(2,'Thời sự',NULL),(3,'Giáo dục',8),(4,'Thế giới',2),(5,'Kinh doanh',NULL),(6,'Thể thao',NULL),(7,'Công nghệ',NULL),(8,'Bạn đọc',NULL),(9,'Pháp luật',2),(10,'Xe',8);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,6 +201,31 @@ INSERT INTO `permissions` VALUES (1,'guests'),(2,'subscribers'),(3,'editors'),(4
 UNLOCK TABLES;
 
 --
+-- Table structure for table `subscriber_registerations`
+--
+
+DROP TABLE IF EXISTS `subscriber_registerations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `subscriber_registerations` (
+  `ID` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `bmk_idx` (`user_id`),
+  CONSTRAINT `bmk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `subscriber_registerations`
+--
+
+LOCK TABLES `subscriber_registerations` WRITE;
+/*!40000 ALTER TABLE `subscriber_registerations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `subscriber_registerations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tag`
 --
 
@@ -243,7 +269,7 @@ CREATE TABLE `user_permissions` (
   KEY `fk_user_permissions_permissions_idx` (`permission_id`),
   CONSTRAINT `fk_user_permissions_permissions` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`),
   CONSTRAINT `fk_user_permissions_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +278,7 @@ CREATE TABLE `user_permissions` (
 
 LOCK TABLES `user_permissions` WRITE;
 /*!40000 ALTER TABLE `user_permissions` DISABLE KEYS */;
-INSERT INTO `user_permissions` VALUES (1,1,33);
+INSERT INTO `user_permissions` VALUES (1,1,33),(2,1,34),(3,1,35),(4,1,36),(5,1,37),(6,1,38),(7,1,39),(8,1,40),(9,1,NULL),(10,2,NULL),(11,3,NULL),(12,4,NULL),(13,5,NULL);
 /*!40000 ALTER TABLE `user_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,7 +303,7 @@ CREATE TABLE `users` (
   `avatar` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `stars` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -286,7 +312,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,NULL,NULL,NULL,'Nguyễn Hữu Tú',NULL,'Tú đẹp trai',NULL,NULL,NULL,'https://res.cloudinary.com/dsqfchskj/image/upload/v1557041012/TH-News/tu-dep-trai_srpltm.jpg',15214),(2,NULL,NULL,NULL,'Tín Huỳnh',NULL,'Tín Huỳnh',NULL,NULL,NULL,'https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/default-writer_sglwso.jpg',14212),(3,NULL,NULL,NULL,'Lê Minh Trí',NULL,'Trí LM',NULL,NULL,NULL,'https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/le-minh-tri_qg0apd.jpg',1421),(4,'trungtin2qn1@gmail.com','$2a$08$wFRTBcevVA4YzqsqVpUUUuS7dyQlhubapWziHY/zFvMi9MSqMvi0u',NULL,'Đỗ Đăng Đức',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(5,'trungtin2qn2@gmail.com','$2a$08$/SA7jzThNGOy585e6I9eMetQ.KWxAhHNxN5Zh9iiy52/8rNEeZuFK',NULL,'Nguyễn Thanh Trúc',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(7,'trungtin2qn3@gmail.com','$2a$08$8sttyiaShR6PaLmfK9UXde7j65zeMglmNSgJVL6LCtF8OfgP9ECzq',NULL,'Lê Ngọc Tứ',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(8,'trungtin2qn4@gmail.com','$2a$08$rUN6McqIjQmiZRtnVHaHneAGK8ZfrKQtIy0YBXKK1oaGjU86fSJ0K',NULL,'Hoàng Thu Hiền','1997-05-10',NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(10,'trungtin2qn5@gmail.com','$2a$08$4ghacyh6RasriGtp2VSJN.k6DKKpTARgys8psYi0Z/735o7YCdRuq',NULL,'Lê Thị Hồng',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(12,'trungtin2qn6@gmail.com','$2a$08$GPnJm7xHkjqYfekemPLA2.dPj0WXijQmrOxw.t/gIlGQvzD/lTRx2',NULL,'Nguyễn Hồng Tới',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(13,'trungtin2qn7@gmail.com','$2a$08$T7G.uoM7uRLphpLFKre3xO5nE4xBZOUpP2jSYcdANlAlaVezGZd3a',NULL,'Lê Toại',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(14,'tin1@gmail.com','$2a$08$gdwKnzfEzOJMtBE3klEPz.3DMovYzicgY9UNDD7GdiGodnDZHD/5O',NULL,'Nguyễn Minh Trí',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(15,'tin2@gmail.com','$2a$08$x9gCJHlaRrDKGxKAnS2udOecx3HxBbhVk6v0j9lwY0JTIjwKECZWi',NULL,'Lê Hữu Trí',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(16,'tin3@gmail.com','$2a$08$D0kbuR7WBY0ULtNOu.kMQeKaH.OmWD5Rm76/2TfijGi4.IsNvRdbG',NULL,'Nguyễn Thanh Trí',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(17,'tin4@gmail.com','$2a$08$nrH/w2CYkg7Tz6U8MhhD9eIv6whjIibbIH5qMfnCpVxpGwv8hF0hC',NULL,'Trương Tiến',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(19,'tin5@gmail.com','$2a$08$7UzLjfPJEWwyco6u1Y6nyu2t57NjfbbkP6JMHngtLXKJ1tDhTSc5a',NULL,'Ngô Tín',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(20,'tin6@gmail.com','$2a$08$Es/XTVDmmfy0HQsrizpxDO.wi85.VUZmejsbGAy2Z1uHXmwu335Am',NULL,'Nguyễn Thành Huy',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(22,'tin7@gmail.com','$2a$08$hWxRI0nZL0gq3jzJ5yGnhek2EuYuIaEqE8QZUD6GAv19AC1l7s8J2',NULL,'Ngô Tấn Lập',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(23,'tin8@gmail.com','$2a$08$HWZVd9WCcXJpsGS4oML7peHSZA.rDxHk2PtQTt7aeEfPOlvpVioy6',NULL,'Nguyễn Văn Phúc',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(24,'tin9@gmail.com','$2a$08$UGO3jFKB7SA5sZHYPT1Tgu7Muw5G.CNHAzl23eSe3GYg/CEDiLgcW',NULL,'Lê Hữu Phước',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(25,'tin10@gmail.com','$2a$08$VpokHKSKczBbzI.pibC2.OjSkZnIoNlhL1utEDpfjadDiQ0CgVT9S',NULL,'Phan Thanh Sang',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(28,'tin11@gmail.com','$2a$08$KMdus.j1KGoajonDS8Xz1.2V/43TS5WitVmtm7OtK0CFj5esjnCCy',NULL,'Trương Thanh Sang',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(29,'tin12@gmail.com','$2a$08$aS6SGyITv4VoHf35UFYq3uVcgexgtDiTRtdnfXFCDOF2aH/wLLHLW',NULL,'Lê Minh Châu',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(30,'tin13@gmail.com','$2a$08$1YWhE5xaG.R4bJYzGI3Wd.Apr/hN8wov.wljFhM5xA8TnhfENLKY2',NULL,'Chung Hoàng Mai',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(31,'tin14@gmail.com','$2a$08$6vdkTYe6OisTDjnthbE.EuQZN/6QebL9SMfSQm62qrLD5ZoXA8uTG',NULL,'Huỳnh Lê Thu Thảo',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(32,'tin15@gmail.com','$2a$08$QE0TEo/YVZKHk6qC/TseWeOAcnIC6JFK3XzqpDkgzCY1Qy4jMssbS',NULL,'Trần Thị Thảo',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(33,'tin16@gmail.com','$2a$08$K2xA/w55lQmaxl0bMPGEOOiFF2oTvOR4DSQNGIpimniDtoLQglmQK',NULL,'Đặng Hoàng Ân',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL);
+INSERT INTO `users` VALUES (1,NULL,NULL,NULL,'Nguyễn Hữu Tú',NULL,'Tú đẹp trai',NULL,NULL,NULL,'https://res.cloudinary.com/dsqfchskj/image/upload/v1557041012/TH-News/tu-dep-trai_srpltm.jpg',15214),(2,NULL,NULL,NULL,'Tín Huỳnh',NULL,'Tín Huỳnh',NULL,NULL,NULL,'https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/default-writer_sglwso.jpg',14212),(3,NULL,NULL,NULL,'Lê Minh Trí',NULL,'Trí LM',NULL,NULL,NULL,'https://res.cloudinary.com/dsqfchskj/image/upload/v1557041010/TH-News/le-minh-tri_qg0apd.jpg',1421),(4,'trungtin2qn1@gmail.com','$2a$08$wFRTBcevVA4YzqsqVpUUUuS7dyQlhubapWziHY/zFvMi9MSqMvi0u',NULL,'Đỗ Đăng Đức',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(5,'trungtin2qn2@gmail.com','$2a$08$/SA7jzThNGOy585e6I9eMetQ.KWxAhHNxN5Zh9iiy52/8rNEeZuFK',NULL,'Nguyễn Thanh Trúc',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(7,'trungtin2qn3@gmail.com','$2a$08$8sttyiaShR6PaLmfK9UXde7j65zeMglmNSgJVL6LCtF8OfgP9ECzq',NULL,'Lê Ngọc Tứ',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(8,'trungtin2qn4@gmail.com','$2a$08$rUN6McqIjQmiZRtnVHaHneAGK8ZfrKQtIy0YBXKK1oaGjU86fSJ0K',NULL,'Hoàng Thu Hiền','1997-05-10',NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(10,'trungtin2qn5@gmail.com','$2a$08$4ghacyh6RasriGtp2VSJN.k6DKKpTARgys8psYi0Z/735o7YCdRuq',NULL,'Lê Thị Hồng',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(12,'trungtin2qn6@gmail.com','$2a$08$GPnJm7xHkjqYfekemPLA2.dPj0WXijQmrOxw.t/gIlGQvzD/lTRx2',NULL,'Nguyễn Hồng Tới',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(13,'trungtin2qn7@gmail.com','$2a$08$T7G.uoM7uRLphpLFKre3xO5nE4xBZOUpP2jSYcdANlAlaVezGZd3a',NULL,'Lê Toại',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(14,'tin1@gmail.com','$2a$08$gdwKnzfEzOJMtBE3klEPz.3DMovYzicgY9UNDD7GdiGodnDZHD/5O',NULL,'Nguyễn Minh Trí',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(15,'tin2@gmail.com','$2a$08$x9gCJHlaRrDKGxKAnS2udOecx3HxBbhVk6v0j9lwY0JTIjwKECZWi',NULL,'Lê Hữu Trí',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(16,'tin3@gmail.com','$2a$08$D0kbuR7WBY0ULtNOu.kMQeKaH.OmWD5Rm76/2TfijGi4.IsNvRdbG',NULL,'Nguyễn Thanh Trí',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(17,'tin4@gmail.com','$2a$08$nrH/w2CYkg7Tz6U8MhhD9eIv6whjIibbIH5qMfnCpVxpGwv8hF0hC',NULL,'Trương Tiến',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(19,'tin5@gmail.com','$2a$08$7UzLjfPJEWwyco6u1Y6nyu2t57NjfbbkP6JMHngtLXKJ1tDhTSc5a',NULL,'Ngô Tín',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(20,'tin6@gmail.com','$2a$08$Es/XTVDmmfy0HQsrizpxDO.wi85.VUZmejsbGAy2Z1uHXmwu335Am',NULL,'Nguyễn Thành Huy',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(22,'tin7@gmail.com','$2a$08$hWxRI0nZL0gq3jzJ5yGnhek2EuYuIaEqE8QZUD6GAv19AC1l7s8J2',NULL,'Ngô Tấn Lập',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(23,'tin8@gmail.com','$2a$08$HWZVd9WCcXJpsGS4oML7peHSZA.rDxHk2PtQTt7aeEfPOlvpVioy6',NULL,'Nguyễn Văn Phúc',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(24,'tin9@gmail.com','$2a$08$UGO3jFKB7SA5sZHYPT1Tgu7Muw5G.CNHAzl23eSe3GYg/CEDiLgcW',NULL,'Lê Hữu Phước',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(25,'tin10@gmail.com','$2a$08$VpokHKSKczBbzI.pibC2.OjSkZnIoNlhL1utEDpfjadDiQ0CgVT9S',NULL,'Phan Thanh Sang',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(28,'tin11@gmail.com','$2a$08$KMdus.j1KGoajonDS8Xz1.2V/43TS5WitVmtm7OtK0CFj5esjnCCy',NULL,'Trương Thanh Sang',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(29,'tin12@gmail.com','$2a$08$aS6SGyITv4VoHf35UFYq3uVcgexgtDiTRtdnfXFCDOF2aH/wLLHLW',NULL,'Lê Minh Châu',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(30,'tin13@gmail.com','$2a$08$1YWhE5xaG.R4bJYzGI3Wd.Apr/hN8wov.wljFhM5xA8TnhfENLKY2',NULL,'Chung Hoàng Mai',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(31,'tin14@gmail.com','$2a$08$6vdkTYe6OisTDjnthbE.EuQZN/6QebL9SMfSQm62qrLD5ZoXA8uTG',NULL,'Huỳnh Lê Thu Thảo',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(32,'tin15@gmail.com','$2a$08$QE0TEo/YVZKHk6qC/TseWeOAcnIC6JFK3XzqpDkgzCY1Qy4jMssbS',NULL,'Trần Thị Thảo',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(33,'tin16@gmail.com','$2a$08$K2xA/w55lQmaxl0bMPGEOOiFF2oTvOR4DSQNGIpimniDtoLQglmQK',NULL,'Đặng Hoàng Ân',NULL,NULL,NULL,NULL,NULL,'http://stc.zuni.vn/resource/module/default/layout/image/default_avatar.png?v=',NULL),(34,'tri2007@gmail.com','$2a$08$TtqXpUiPnlFLTdZaeV6wauwEyQQRgr/1p6QHSQ1a5zKLMvXUWdzK2','tri','tri',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(35,'tri97@gmail.com','$2a$08$LfDqt4vRNd4F.ydyIoOWZe/lG6L5Q8HOt60MPn3hB/BhLUsifTttK','Minh Trí','Lê',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(36,'tri1@gmail.com','$2a$08$zkyw5sp3TQGwX.S1cLPDDuNgn2n3nPm/oaGUM6p5QQNMdL.bpNf6C','Trí','Lê',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(37,'tri2@gmail.com','$2a$08$0b3m6KOFB5UXH0UxqdPZKeaqJpzFslzM8uFmmPFg8QzKYzGswttjO','Trí Trí','Lê',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(38,'tri3@gmail.com','$2a$08$tPjudV2wT4BBzNdLqB1zdePzWUZl.expIKJPJRe.pFMufd8sbBgqS','Tri Tri Tri','Lê',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(39,'tri4@gmail.com','$2a$08$d5zJXhi6Yovk5eexjlUmEuQkYgozi3e4Dfp1491oVxiwrZk9bXgp6','Tri','Lê',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(40,'tri5@gmail.com','$2a$08$/scMLN81erRWWIjqA6Yum.eD46d0ctgoH3Tmri8FoFtYdBLxZWN/W','Trisss','Lê',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -299,4 +325,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-18 17:03:21
+-- Dump completed on 2019-06-19  9:36:47

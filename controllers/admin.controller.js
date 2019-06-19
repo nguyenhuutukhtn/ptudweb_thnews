@@ -1,9 +1,15 @@
 var permissionModel = require('../models/permissions.model');
 var userModel = require('../models/users.model');
 var userPermissionModel = require('../models/user_permissions.model');
+var bcrypt = require('bcryptjs');
+var tokenHandler = require('../utils/tokenHandler');
 
 module.exports = {
     register: (email, password, confirmPassword, role) => {
+        console.log("email: ", email);
+        console.log("password: ", password);
+        console.log("confirmPassword: ", confirmPassword);
+        console.log("role: ", role);
         return new Promise((resolve, reject) => {
             if (password !== confirmPassword) {
                 console.log("Password and confirm password need to be similar");
