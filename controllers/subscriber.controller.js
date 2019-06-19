@@ -51,10 +51,10 @@ module.exports = {
         return new Promise((resolve, reject) => {
             userModel.single(id)
             .then(result => {
-                result[0].subscribe_date = Date.now();
+                result[0].subscribe_date = new Date('2020-06-19');
                 userModel.update(result[0])
                 .then(result => {
-                    subscriberRegisterationsModel.getByUserID(result[0].id)
+                    subscriberRegisterationsModel.getByUserID(id)
                     .then(result => {
                         subscriberRegisterationsModel.delete(result[0].id)
                         .then(result => {
