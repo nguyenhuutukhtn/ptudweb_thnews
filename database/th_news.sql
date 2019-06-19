@@ -201,6 +201,31 @@ INSERT INTO `permissions` VALUES (1,'guests'),(2,'subscribers'),(3,'editors'),(4
 UNLOCK TABLES;
 
 --
+-- Table structure for table `subscriber_registerations`
+--
+
+DROP TABLE IF EXISTS `subscriber_registerations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `subscriber_registerations` (
+  `ID` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `bmk_idx` (`user_id`),
+  CONSTRAINT `bmk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `subscriber_registerations`
+--
+
+LOCK TABLES `subscriber_registerations` WRITE;
+/*!40000 ALTER TABLE `subscriber_registerations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `subscriber_registerations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tag`
 --
 
@@ -300,4 +325,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-19  9:19:48
+-- Dump completed on 2019-06-19  9:36:47
