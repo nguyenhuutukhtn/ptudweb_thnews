@@ -33,5 +33,15 @@ module.exports = {
         var Writer= db.load(
             `SELECT users.last_name,users.avatar FROM users,article where article.WriterId=users.id and article.Id=${id}`);
             return Writer
+    },
+    UserProfile: id=>{
+        var UserProfile= db.load(
+            `SELECT * FROM users where users.id=${id}`);
+            return UserProfile
+    },
+    Subcriber: ()=>{
+        var Subcriber= db.load(
+            `SELECT * FROM users,subscriber_registerations where users.id=subscriber_registerations.user_id`);
+            return Subcriber
     }
 };

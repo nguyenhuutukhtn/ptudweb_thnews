@@ -39,8 +39,41 @@ module.exports = {
                 } else {
                     res = false;
                 }
-                
                 resolve(res);
+            })
+            .catch(err => {
+                console.log(err);
+                reject(err);
+            })
+        })
+    },
+    confirm : (id) => {
+        return new Promise((resolve, reject) => {
+            userModel.single(id)
+            .then(result => {
+                result[0].subscribe_date = Date.now();
+                userModel.update(result[0])
+                .then(result => {
+                    subscriberRegisterationsModel.getByUserID(result[0].id)
+                    .then(result => {
+                        subscriberRegisterationsModel.delete(result[0].id)
+                        .then(result => {
+                            resolve(result);
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            reject(err);
+                        })
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        reject(err);
+                    })
+                })
+                .catch(err => {
+                    console.log(err);
+                    reject(err);
+                })
             })
             .catch(err => {
                 console.log(err);

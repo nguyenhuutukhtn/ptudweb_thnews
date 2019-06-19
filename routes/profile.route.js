@@ -1,5 +1,6 @@
 var express = require('express');
 var articleModel = require('../models/article.model');
+var userModel = require('../models/users.model');
 var cookieParser = require('cookie-parser')
 
 var router = express.Router();
@@ -16,8 +17,15 @@ router.use(require('../middlewares/TopThreeHot.mdw'))
 var guestRole = require('../middlewares/guestRole.mdw');
 router.use('/', guestRole);
 
-router.get('/', (req, res) => {
-        res.render('profile')
-})
+router.get('/', (req, res, next) => {
+    
+        Promise.all([
+            userModel.UserProfile(res.id)
+        ]).then(([rows]) => {
+            res.render('profile', {
+                UserProfile: rows
+            });
+        })
+    })
 
 module.exports = router;
