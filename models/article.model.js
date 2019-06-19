@@ -67,4 +67,11 @@ module.exports = {
     ArticleByKeyWord: keyword=>{
         return db.load(`SELECT article.Id,article.Title,article.Thumbnail,article.Summary,article.Views,article.Liked,category.id,category.CatName,date_format(article.PublishDay,"%M %d, %Y") AS PublishDate FROM article,category WHERE article.CatId=category.id and match(Title,Summary) against('${keyword}');`)
     },
+    UnconfirmPost: () => {
+        return db.load(
+            'SELECT * from article where article.PublishDay IS NULL');
+    },
+    AcceptArticle: id=>{
+        return db.load(`update article set article.PublishDay=now() where article.Id=${id};`)
+    }
 };

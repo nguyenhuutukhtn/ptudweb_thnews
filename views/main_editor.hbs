@@ -127,52 +127,23 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td scope="">1</td>
-									<td>Bê tông hóa Đà Lạt</td>
-									<td>Tú dz</td>
-									<td>16/04/2019</td>
-									<td><a href="details.html" class="btn btn-secondary">
-											<i class="fa fa-angle-double-right"></i> Chi tiết
-										</a></td>
-								</tr>
-								<tr>
-									<td scope="">2</td>
-									<td>Ajax - Nơi tôi luyện những cầu thủ can trường</td>
-									<td>Tín Huỳnh</td>
-									<td>17/04/2019</td>
-									<td><a href="details.html" class="btn btn-secondary">
-											<i class="fa fa-angle-double-right"></i> Chi tiết
-										</a></td>
-								</tr>
+								{{#each UnconfirmPost}}
+								<form method="POST" action="/auth/editor/accept/{{Id}}">
+									<tr>
+										<td scope="">{{Id}}</td>
+										<td>{{Title}}</td>
+										<td>{{WriterId}}</td>
+										<td>{{CreateDay}}</td>
+										<td>
+											<button>
+												<i class="fa fa-angle-double-right"></i> Duyệt
+											</button>
+										</td>
+									</tr>
+								</form>
 
-								<tr>
-									<td scope="">3</td>
-									<td>Súng nổ giữa quốc lộ khi nhóm giang hồ chặn đầu xe khách </td>
-									<td>Trí</td>
-									<td>15/04/2019</td>
-									<td><a href="details.html" class="btn btn-secondary">
-											<i class="fa fa-angle-double-right"></i> Chi tiết
-										</a></td>
-								</tr>
-								<tr>
-									<td scope="">4</td>
-									<td>Luật sư: Phụ huynh mua điểm cho con có thể bị khởi tố đưa hối lộ </td>
-									<td>Không biết</td>
-									<td>18/04/2019</td>
-									<td><a href="details.html" class="btn btn-secondary">
-											<i class="fa fa-angle-double-right"></i> Chi tiết
-										</a></td>
-								</tr>
-								<tr>
-									<td scope="">5</td>
-									<td>Cái chết thảm chưa có lời giải của đôi vợ chồng </td>
-									<td>Óc chó</td>
-									<td>15/4/2019</td>
-									<td><a href="details.html" class="btn btn-secondary">
-											<i class="fa fa-angle-double-right"></i> Chi tiết
-										</a></td>
-								</tr>
+								{{/each}}
+
 							</tbody>
 						</table>
 					</div>
@@ -288,5 +259,3 @@
 		</div>
 	</div>
 </div>
-
-

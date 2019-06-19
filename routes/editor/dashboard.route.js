@@ -23,6 +23,7 @@ router.use(cookieParser())
 router.use(bodyParser.json());
 
 router.use(require('../../middlewares/GetAllCategory.mdw'))
+router.use(require('../../middlewares/UnconfirmPost.mdw'))
 
 // var writerRole = require('../../middlewares/writerRole.mdw')
 // router.use('/', writerRole);
@@ -33,6 +34,10 @@ router.use('/', guestRole);
 router.get('/', (req, res) => {
     res.render('main_editor')
 })
-
+router.post('/accept/:id', (req, res) => {
+    var id=req.param.id;
+    articleModel.AcceptArticle(id);
+    res.redirect('/')
+})
 
 module.exports = router;
