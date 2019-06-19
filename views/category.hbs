@@ -1,35 +1,35 @@
 {{#section 'header'}}
-<title>TH-News</title>
+<title>Điểm báo</title>
 <!-- Bootstrap -->
-<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/scripts/bootstrap/bootstrap.min.css">
 <!-- IonIcons -->
-<link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
+<link rel="stylesheet" href="/scripts/ionicons/css/ionicons.min.css">
 <!-- Toast -->
-<link rel="stylesheet" href="scripts/toast/jquery.toast.min.css">
+<link rel="stylesheet" href="/scripts/toast/jquery.toast.min.css">
 <!-- OwlCarousel -->
-<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="/scripts/owlcarousel/dist/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="/scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
 <!-- Magnific Popup -->
-<link rel="stylesheet" href="scripts/magnific-popup/dist/magnific-popup.css">
-<link rel="stylesheet" href="scripts/sweetalert/dist/sweetalert.css">
+<link rel="stylesheet" href="/scripts/magnific-popup/dist/magnific-popup.css">
+<link rel="stylesheet" href="/scripts/sweetalert/dist/sweetalert.css">
 <!-- Custom style -->
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/skins/all.css">
-<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/skins/all.css">
+<link rel="stylesheet" href="/css/demo.css">
 {{/section}}
 {{#section 'footer'}}
-<script src="/js/jquery.js"></script>
-<script src="/js/jquery.migrate.js"></script>
-<script src="/scripts/bootstrap/bootstrap.min.js"></script>
-<script>var $target_end = $(".best-of-the-week");</script>
-<script src="/scripts/jquery-number/jquery.number.min.js"></script>
-<script src="/scripts/owlcarousel/dist/owl.carousel.min.js"></script>
-<script src="/scripts/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-<script src="/scripts/easescroll/jquery.easeScroll.js"></script>
-<script src="/scripts/sweetalert/dist/sweetalert.min.js"></script>
-<script src="/scripts/toast/jquery.toast.min.js"></script>
-<script src="/js/demo.js"></script>
-<script src="/js/e-magz.js"></script>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/jquery.migrate.js"></script>
+	<script src="/scripts/bootstrap/bootstrap.min.js"></script>
+	<script>var $target_end = $(".best-of-the-week");</script>
+	<script src="/scripts/jquery-number/jquery.number.min.js"></script>
+	<script src="/scripts/owlcarousel/dist/owl.carousel.min.js"></script>
+	<script src="/scripts/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+	<script src="/scripts/easescroll/jquery.easeScroll.js"></script>
+	<script src="/scripts/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="/scripts/toast/jquery.toast.min.js"></script>
+	<script src="/js/demo.js"></script>
+	<script src="/js/e-magz.js"></script>
 {{/section}}
 
 
@@ -203,286 +203,63 @@
 		<div class="row">
 			<div class="col-md-8 text-left">
 				<div class="row">
+					{{#each CatDetails}}
 					<div class="col-md-12">
 						<ol class="breadcrumb">
-							<li><a href="#">Home</a></li>
-							<li class="active">Computer</li>
+							<li><a href="#">Trang chủ</a></li>
+							<li class="active">{{CatName}}</li>
 						</ol>
-						<h1 class="page-title">Category: Computer</h1>
-						<p class="page-subtitle">Showing all posts with category <i>Computer</i></p>
+						<h1 class="page-title">Chuyên mục: {{CatName}}</h1>
 					</div>
+					{{/each}}
+					
 				</div>
 				<div class="line"></div>
 				<div class="row">
+					{{#each articleByCat}}
 					<article class="col-md-12 article-list">
 						<div class="inner">
 							<figure>
-								<a href="single.html">
-									<img src="images/news/img01.jpg">
+								<a href="/article/{{Id}}">
+									<img src="{{Thumbnail}}">
 								</a>
 							</figure>
 							<div class="details">
 								<div class="detail">
 									<div class="category">
-										<a href="category.html">Film</a>
+										<a href="/category/{{id}}">{{CatName}}</a>
 									</div>
-									<div class="time">December 26, 2016</div>
+									<div class="time">{{PublishDate}}</div>
 								</div>
-								<h1><a href="single.html">Lorem Ipsum Dolor Sit Consectetur Adipisicing Elit</a></h1>
+								<h1><a href="/article/{{Id}}">{{Title}}</a></h1>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitat...
+									{{Summary}}
 								</p>
 								<footer>
 									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>237</div>
+										<div>{{Liked}}</div>
 									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>More</div>
+									<a class="btn btn-primary more" href="/article/{{Id}}">
+										<div>Đọc tiếp</div>
 										<div><i class="ion-ios-arrow-thin-right"></i></div>
 									</a>
 								</footer>
 							</div>
 						</div>
 					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img11.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="category.html">Film</a>
-									</div>
-									<div class="time">December 26, 2016</div>
-								</div>
-								<h1><a href="single.html">Lorem Ipsum Dolor Sit Consectetur Adipisicing Elit</a></h1>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitat...
-								</p>
-								<footer>
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>78</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>More</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img08.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="category.html">Film</a>
-									</div>
-									<div class="time">December 26, 2016</div>
-								</div>
-								<h1><a href="single.html">Lorem Ipsum Dolor Sit Consectetur Adipisicing Elit</a></h1>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitat...
-								</p>
-								<footer>
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>10</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>More</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img13.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="category.html">Film</a>
-									</div>
-									<div class="time">December 26, 2016</div>
-								</div>
-								<h1><a href="single.html">Lorem Ipsum Dolor Sit Consectetur Adipisicing Elit</a></h1>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitat...
-								</p>
-								<footer>
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>1820</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>More</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img15.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="category.html">Film</a>
-									</div>
-									<div class="time">December 26, 2016</div>
-								</div>
-								<h1><a href="single.html">Lorem Ipsum Dolor Sit Consectetur Adipisicing Elit</a></h1>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitat...
-								</p>
-								<footer>
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>739</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>More</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img03.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="category.html">Film</a>
-									</div>
-									<div class="time">December 26, 2016</div>
-								</div>
-								<h1><a href="single.html">Lorem Ipsum Dolor Sit Consectetur Adipisicing Elit</a></h1>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitat...
-								</p>
-								<footer>
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>902</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>More</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img15.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="category.html">Film</a>
-									</div>
-									<div class="time">December 26, 2016</div>
-								</div>
-								<h1><a href="single.html">Lorem Ipsum Dolor Sit Consectetur Adipisicing Elit</a></h1>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitat...
-								</p>
-								<footer>
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>78</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>More</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
-					<article class="col-md-12 article-list">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img16.jpg">
-								</a>
-							</figure>
-							<div class="details">
-								<div class="detail">
-									<div class="category">
-										<a href="category.html">Film</a>
-									</div>
-									<div class="time">December 26, 2016</div>
-								</div>
-								<h1><a href="single.html">Lorem Ipsum Dolor Sit Consectetur Adipisicing Elit</a></h1>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitat...
-								</p>
-								<footer>
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i>
-										<div>198</div>
-									</a>
-									<a class="btn btn-primary more" href="single.html">
-										<div>More</div>
-										<div><i class="ion-ios-arrow-thin-right"></i></div>
-									</a>
-								</footer>
-							</div>
-						</div>
-					</article>
+					{{/each}}
+					
+					
 					<div class="col-md-12 text-center">
 						<ul class="pagination">
-							<li class="prev"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">...</a></li>
-							<li><a href="#">97</a></li>
-							<li class="next"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
+							{{#each this.pages}}
+							{{#if active}}
+							<li class="active"><a href="javascript:;">{{value}}</a></li>
+							{{else}}
+							<li><a href="?page={{value}}">{{value}}</a></li>
+							{{/if}}
+							{{/each}}
 						</ul>
-						<div class="pagination-help-text">
-							Showing 8 results of 776 &mdash; Page 1
-						</div>
 					</div>
 				</div>
 			</div>

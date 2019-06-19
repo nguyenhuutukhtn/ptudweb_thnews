@@ -8,6 +8,7 @@ var configAuth = require('../config/auth');
 var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
+var authenticationController = require('../controllers/authentication.controller');
 
 const NodeCache = require("node-cache");
 const myCache = new NodeCache();
@@ -60,7 +61,7 @@ passport.use(new FacebookStrategy({
                     console.log(user);
                     if (user.length !== 0) {
                         var temp;
-                        authentication.issueTokenWithUser(user, temp)
+                        authenticationController.issueTokenWithUser(user, temp)
                             .then(token => {
                                 console.log("Have itttttttttttttttt");
                                 console.log("token: ", token);
@@ -85,7 +86,7 @@ passport.use(new FacebookStrategy({
                         // // lưu các thông tin cho user
                         // lưu vào db
                         var temp;
-                        authentication.register(newUser, 'guests', temp)
+                        authenticationController.register(newUser, 'guests', temp)
                             .then(token => {
                                 console.log("Start cache");
                                 console.log("token: ", token);
@@ -128,7 +129,7 @@ passport.use(new GoogleStrategy({
                     console.log(user);
                     if (user.length !== 0) {
                         var temp;
-                        authentication.issueTokenWithUser(user, temp)
+                        authenticationController.issueTokenWithUser(user, temp)
                             .then(token => {
                                 success = myCache.set("token", token, 10000);
                                 return done(null, user);
@@ -152,7 +153,7 @@ passport.use(new GoogleStrategy({
                         }
                         console.log("Save user to data");
                         var temp;
-                        authentication.register(newUser, 'guests', temp)
+                        authenticationController.register(newUser, 'guests', temp)
                             .then(token => {
                                 console.log("Start cache");
                                 success = myCache.set("token", token, 10000);
@@ -176,7 +177,7 @@ passport.use(new GoogleStrategy({
 
 //-----------------------------------------------
 
-router.get('/authentication/google/callback',
+router.get('/google/callback',
     passport.authenticate('google', { successRedirect: '/', failureRedirect: '/login' }),
     function (req, res) {
         value = myCache.get("token");
@@ -189,18 +190,18 @@ router.get('/authentication/google/callback',
         res.redirect('/');
     });
 
-router.get('/authentication/facebook/callback',
+router.get('/facebook/callback',
     passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }),
     function (req, res) {
     });
 
-router.get('/authentication/google',
+router.get('/google',
     passport.authenticate('google', {
         scope: ['profile', 'email']
     })
 );
 
-router.get('/authentication/facebook',
+router.get('/facebook',
     passport.authenticate('facebook', {
         scope: ['email']
     })

@@ -33,6 +33,9 @@ router.use('/', guestRole);
 router.get('/', (req, res) => {
     res.render('main_admin')
 })
+router.get('/users', (req, res) => {
+    res.render('admin_users')
+})
 
 
 module.exports = router;

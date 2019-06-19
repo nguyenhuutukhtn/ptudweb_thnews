@@ -38,13 +38,23 @@ router.get('/:id', (req, res) => {
                     var x = commentModel.AllComments(id);
                     x.then(AllComments => {
                         console.log(5);
+                        console.log("articleDetail[0].isPremium: ", articleDetail[0].isPremium);
                         if (articleDetail[0].isPremium === 1) {
                             subscriberController.verify(res.id)
                                 .then(result => {
                                     console.log(6);
+                                    console.log(result);
                                     if (result === false) {
                                         res.render('/401');
                                         return
+                                    } else {
+                                        res.render('article_details', {
+                                            relateNews: RelateNews,
+                                            articleDetail: articleDetail,
+                                            AllTags: AllTags,
+                                            Writer: Writer,
+                                            AllComments: AllComments
+                                        });
                                     }
                                 })
                                 .catch(err => {
@@ -53,36 +63,19 @@ router.get('/:id', (req, res) => {
                                     res.render('/500');
                                     return
                                 })
+                        } else {
+                            res.render('article_details', {
+                                relateNews: RelateNews,
+                                articleDetail: articleDetail,
+                                AllTags: AllTags,
+                                Writer: Writer,
+                                AllComments: AllComments
+                            });
                         }
-                        res.render('article_details', {
-                            relateNews: RelateNews,
-                            articleDetail: articleDetail,
-                            AllTags: AllTags,
-                            Writer: Writer,
-                            AllComments: AllComments
-                        });
                     })
                 })
             })
         })
-
-        // if (articleDetail[0].isPremium === 1) {
-        //     subscriberController.verify(res.id)
-        //         .then(result => {
-        //             console.log(6);
-        //             if (result === false) {
-        //                 res.render('/401');
-        //                 return
-        //             }
-        //         })
-        //         .catch(err => {
-        //             console.log(7);
-        //             console.log(err);
-        //             res.render('/500');
-        //             return
-        //         })
-        // }
-        //console.log(rows);
     }).catch(err => {
         console.log(10);
         console.log(err);

@@ -10,5 +10,10 @@ module.exports = {
 
     ChildrenOfReader:()=>{
         return db.load(`select * from category where category.ParentId=8;`)
+    },
+    CatDetails: id => {
+        var CatDetails= db.load(
+            `SELECT * from category where category.id=${id};`);
+            return CatDetails
     }
 };
