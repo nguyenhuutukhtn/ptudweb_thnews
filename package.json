@@ -34,7 +34,7 @@
     "handlebars-intl": "^1.1.2",
     "handlebars-paginate": "^0.1.0",
     "install": "^0.12.2",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "morgan": "^1.9.1",
     "mysql": "^2.17.1",
     "node-cache": "^4.2.0",
